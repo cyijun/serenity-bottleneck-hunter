@@ -13,4 +13,13 @@ record_date,theme,eodhd_symbol,name,tier,archetypes,entry_price,currency,entry_s
 2026-05-28,800VDC电源半导体,VICR,Vicor,反面参照,反向,345.84,USD,early-uptrend(临界-ATH附近),AVOID,DC-DC模块龙头但P/E110+ATH+GF高估442%
 2026-05-28,800VDC电源半导体,IPWR,Ideal Power,高风险投机,②⑦⑧,8.99,USD,extended(1m+135%),AVOID-chase,B-TRAN+NVDA Rubin Ultra LOI微盘但已大幅front-run
 2026-05-28,800VDC电源半导体,POWI,Power Integrations,中游卖铲子,④⑧,86.9,USD,extended(at_top98%),WAIT,800V链稳健但区间98%顶点
-2026-05-28,800VDC电源半导体,XFAB.PA,X-FAB,上游咽喉,①⑤⑦⑧⑨,12,EUR,extended(1m+77.9%/3m+155.4%),AVOID-chase,美国唯一高产能SiC代工+EU/US CHIPS Act双背书但已被大幅front-run
+2026-05-28,800VDC电源半导体,XFAB.PA,X-FAB,上游咽喉,①⑤⑦⑧⑨,12,EUR,extended(1m+77.9%/3m+155.4%),🟡观望[trigger:回€8-9或CHIPS资金落地或SiC利用率≥85%],美国唯一高产能SiC代工+EU/US CHIPS Act双背书但已被大幅front-run
+2026-05-28,800VDC电源半导体,STM.US,STMicroelectronics,上游咽喉,①⑤⑧⑨,67.75,USD,early-uptrend(1m+36%/3m+97%/rng93%),🟢候选[Serenity风格模式A近完美setup],SiC综合第一+800V模块+EU CHIPS Act 2受益+无ATM稀释/v1广扫不够漏掉
+2026-05-28,800VDC电源半导体,WOLF.US,Wolfspeed,上游咽喉,①⑥⑨,63.26,USD,extended(1m+144.7%/3m+213%),🟡观望[trigger:回$40或下季营收/产能/现金跑道任一指标符合预期],美国SiC wafer近垄断+新管理层资本重组+150mm→200mm转产/重组后是NewCo独立评估
+2026-05-28,800VDC电源半导体,ON.US,onsemi,上游咽喉,①⑧,124.89,USD,extended(rng95%+3m+83%),🟡观望[trigger:回$100+汽车SiC需求面无实质受损],SiC综合第二+自家fab+Treo 800V平台
+2026-05-28,800VDC电源半导体,IFX.DE,Infineon,中游器件,⑧,78.66,EUR,extended(1m刚过40%阈值+rng97%),🟡观望[trigger:回€70+数据中心订单visibility],SiC+GaN综合+与NVDA联合开发800V
+2026-05-28,800VDC电源半导体,MPWR.US,Monolithic Power,中游卖铲子,④,1620.17,USD,early(1m+8%/3m+37%但rng89%),🟡观望[trigger:800V子项营收占比可量化≥10%],高效率buck/boost电源管理弹性大但非纯800V
+2026-05-28,800VDC电源半导体,VRT.US,Vertiv,中游系统,④⑧,319.78,USD,early(1m+5%/3m+23%温和),🟡观望[trigger:800V产品线营收/订单visibility明确],数据中心电源系统集成(液冷+UPS+PDU)
+2026-05-28,800VDC电源半导体,ETN.US,Eaton,中游系统,④,406.37,USD,early(1m-2%/3m+9%横盘),🟡观望[trigger:800V数据中心营收占比可量化],电气基础设施(数据中心配电)弹性小
+2026-05-28,800VDC电源半导体,NVDA.US,NVIDIA,下游对照,排除,212.60,USD,early(横盘),🔴排除[非Serenity风格猎物-下游巨头失⑦前机构关],下游GPU龙头-市值4T+/已被全市场覆盖
+2026-05-28,800VDC电源半导体,AVGO.US,Broadcom,下游对照,排除,421.86,USD,early(1m+5%/3m+31%温和),🔴排除[非Serenity风格猎物-下游巨头失⑦前机构关],下游定制ASIC-MC过大
