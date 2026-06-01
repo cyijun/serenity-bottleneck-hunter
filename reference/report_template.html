@@ -102,6 +102,32 @@
   .cross-row .themes{color:var(--ink-soft)}
   .cross-row .themes em{font-style:normal; color:var(--burg); font-weight:600}
   .cross-row .stars-cell{font-size:18px; color:var(--gold); letter-spacing:-2px}
+  /* === 术语 abbr tooltip(2026-06-01 加,Level 1 可读性升级)=== */
+  abbr[title]{border-bottom:1px dotted var(--burg); cursor:help; text-decoration:none; font-style:normal}
+  abbr[title]:hover{border-bottom-color:var(--gold); background:rgba(184,144,46,.06)}
+  /* === 30 秒看懂主题(Level 2)=== */
+  .thirty-sec{background:linear-gradient(135deg, #fbf6e8 0%, var(--surface-2) 100%); border:1px solid var(--gold); border-radius:8px; padding:24px 28px; margin:24px 0; position:relative}
+  .thirty-sec::before{content:"⏱"; position:absolute; top:-14px; left:24px; background:var(--gold); color:#fff; padding:5px 12px; border-radius:99px; font-size:14px; font-weight:700}
+  .thirty-sec .label{font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:8px; margin-top:6px}
+  .thirty-sec h3{font-family:var(--display); color:var(--burg); margin:0 0 10px; font-size:22px}
+  .thirty-sec p{font-size:15.5px; color:var(--ink-soft); line-height:1.7; margin-bottom:0}
+  /* === 候选行 "为什么重要" 人话解释(Level 2)=== */
+  .nmcell .why{font-size:13px; color:var(--ink-soft); margin-top:6px; padding:6px 10px; background:rgba(122,46,58,.04); border-left:2px solid var(--burg-soft); border-radius:0 4px 4px 0; line-height:1.5; font-style:italic}
+  .nmcell .why::before{content:"💡 "; font-style:normal; margin-right:2px}
+  /* === 报告底部 Glossary 速查表(Level 1)=== */
+  .glossary-section{background:var(--surface-2); border:1px solid var(--line); padding:18px 24px; margin:36px 0 8px; border-radius:8px}
+  .glossary-section summary{font-family:var(--display); font-weight:700; color:var(--burg); font-size:18px; cursor:pointer; list-style:none; padding:6px 0; user-select:none}
+  .glossary-section summary::-webkit-details-marker{display:none}
+  .glossary-section summary::before{content:"▸ "; display:inline-block; transition:transform .15s; margin-right:6px; font-family:var(--mono)}
+  .glossary-section[open] summary::before{transform:rotate(90deg)}
+  .glossary-section[open] summary{margin-bottom:18px; padding-bottom:14px; border-bottom:1px dashed var(--line)}
+  .glossary-section .gloss-note{font-size:13px; color:var(--muted); margin-top:6px; margin-bottom:14px; font-family:var(--mono)}
+  .glossary-list{display:grid; grid-template-columns:1fr; gap:0; max-height:480px; overflow-y:auto; padding-right:8px}
+  .glossary-row{display:grid; grid-template-columns:140px 1fr; gap:14px; padding:8px 0; border-bottom:1px dashed var(--line); font-size:13.5px; line-height:1.45}
+  .glossary-row:last-child{border-bottom:0}
+  .glossary-row .term{font-family:var(--mono); color:var(--burg); font-weight:700; word-break:break-all}
+  .glossary-row .def{color:var(--ink-soft)}
+  @media(max-width:760px){.glossary-row{grid-template-columns:1fr; gap:2px}}
   /* === Step 2 · 产业链网状视图(.chain-viz) === */
   .chain-viz{position:relative; padding:30px 0 26px; margin:14px 0 18px; background:var(--surface-2); border:1px solid var(--line); border-radius:10px}
   .chain-viz .chain-edges{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:1; overflow:visible}
@@ -199,6 +225,25 @@
   <h3>{{最该被先看到的那句话}}</h3>
   <p>{{瓶颈落在哪层、有无干净纯 play、暴露路径}}</p>
 </div></div></section>
+
+<!-- ============ 30 秒看懂这个主题(Level 2,术语友好度纪律)============ -->
+<!--
+  FILL · 150-220 字大白话,对完全不熟主题的读者解释:
+    1. 这个主题在解决什么问题
+    2. 关键瓶颈在哪一层
+    3. 为什么"突然"成为主题(催化剂)
+  风格示例(800VDC):
+    "AI 服务器机柜的功率从 30kW 升到 1MW,传统 48V 直流配电会让铜缆粗到没法装。
+     NVIDIA 提出 800V 高压直流方案,但 SiC 功率半导体(替代传统硅 IGBT)是关键瓶颈。
+     美国独家高产能 SiC 代工只有 XFAB 一家,叠加 EU/US 政策背书,这是 2026 H1 最确定的硬瓶颈主题。"
+-->
+<section style="padding-top:30px"><div class="wrap rv">
+  <div class="thirty-sec">
+    <div class="label">30 秒看懂这个主题</div>
+    <h3>{{一句话主题定义}}</h3>
+    <p>{{大白话解释 — 这个主题解决什么问题、关键瓶颈在哪、为什么此刻成为主题。150-220 字。}}</p>
+  </div>
+</div></section>
 
 <!-- ============ Step 2 · 逆向拆链(5 层 · 网状视图)============ -->
 <!--
@@ -360,6 +405,15 @@
   <b>数据可用性 & 方法备注:</b> 价格/动量为 <code>price.py</code> 实测;基本面/市占率为网页研究近似值,<b>需以财报/IR 复核</b>。EODHD 本套餐不含 fundamentals/财报日历,亦不含东京交易所(日股走 yfinance <code>.T</code> 回退)。stage 由启发式给出,仅供模式 A 择时参考,非买卖信号。
 </div></div></section>
 
+<!-- ============ 术语速查表(默认折叠,JS 自动从所有 <abbr> 抽取)============ -->
+<section style="padding-top:0"><div class="wrap rv">
+  <details class="glossary-section">
+    <summary>📚 本报告术语速查表(点击展开)</summary>
+    <p class="gloss-note">来源 <code style="font-family:var(--mono);font-size:12.5px">reference/glossary.md</code> · 由 JS 自动从本报告所有 <code>&lt;abbr title&gt;</code> 抽取,无需手动维护。</p>
+    <div class="glossary-list"></div>
+  </details>
+</div></section>
+
 <!-- ============ 免责页脚(必带) ============ -->
 <footer><div class="wrap">
   <p class="disc"><b style="color:#f4efe5">⚠ 免责声明</b> &nbsp;本报告由 serenity-bottleneck-hunter 框架生成,<b>仅供研究与教育用途,非投资建议(Not Financial Advice)</b>。估值/市占率为网页研究近似值,务必复核;微盘/海外/ADR 标的有流动性、汇率与政策风险;本框架"业绩"含选股循环论证与幸存者偏差,不可外推为收益预期。投资有风险,决策需自负。</p>
@@ -373,6 +427,40 @@
   /* 滚入动画 */
   const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+  /* === Glossary 速查表:从所有 <abbr title> 抽取并按字母排序 === */
+  (function(){
+    function buildGloss(){
+      var container = document.querySelector('.glossary-section .glossary-list');
+      if (!container) return;
+      container.innerHTML = '';
+      var seen = {};
+      document.querySelectorAll('abbr[title]').forEach(function(a){
+        var k = (a.textContent || '').trim();
+        var v = a.getAttribute('title') || '';
+        if (k && v && !seen[k]) seen[k] = v;
+      });
+      var keys = Object.keys(seen).sort(function(a, b){
+        return a.toLowerCase().localeCompare(b.toLowerCase());
+      });
+      if (keys.length === 0){
+        container.innerHTML = '<div class="gloss-note" style="text-align:center; padding:14px">本报告未使用 abbr 注释,无术语条目。</div>';
+        return;
+      }
+      keys.forEach(function(k){
+        var row = document.createElement('div');
+        row.className = 'glossary-row';
+        var t = document.createElement('span'); t.className = 'term'; t.textContent = k;
+        var d = document.createElement('span'); d.className = 'def'; d.textContent = seen[k];
+        row.appendChild(t); row.appendChild(d);
+        container.appendChild(row);
+      });
+      var note = document.querySelector('.glossary-section .gloss-note');
+      if (note){ note.textContent = '共 ' + keys.length + ' 个术语 · 来源 reference/glossary.md · JS 自动从本页 <abbr> 抽取'; }
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', buildGloss);
+    else buildGloss();
+  })();
 
   /* === Step 2 网状产业链:SVG 边自动布局 + 瓶颈点自动判定 === */
   (function(){

@@ -96,6 +96,11 @@ description: 给定一个投资主题/趋势,复用交易者 Serenity(@aleabitor
   - 🔴 **极度克制**:只用于商业模式作假 / 欺诈 / 业务死亡 / 个人原则(中国军技)。**严禁"历史事件式硬排除"**——如"曾经重组"、"曾经增发过"、"1m 涨太多"都不算永久排除理由,前两个是过期信息,第三个是 stage 问题(降 🟡 等回调)。
   - 例:`$WOLF` 不应因"重组后旧股东归零"被永久排除——重组后是 NewCo,业务/瓶颈逻辑可独立评估;**正确处理**:🟡 观望,trigger 条件 = "回到 $X 以下 + 下季度营收/产能数据"。
 - **可读性纪律(用户明确要求)**:语义化三档配色(🟢green / 🟡amber / 🔴red)、动量条让"谁已抛物线"一眼可见、表格/卡片清爽、留白充足。
+- **术语友好度纪律(2026-06-01 加,用户反馈"很多专业缩写读得一知半解")**:报告必须做 3 件事:
+  1. **顶部加"30 秒看懂这个主题"区块**(150-220 字大白话,对完全不熟主题的读者解释"这个主题在解决什么问题、关键瓶颈在哪")。位置:hero verdict 之后、Step 1 之前。class 用 `.thirty-sec`。
+  2. **每个 🟢/🟡 候选行加"为什么重要"一行**(20-40 字人话,讲它实际做什么、为什么是瓶颈)。位置:`.nmcell .d` 之下加 `.why` 块。例:`AMKR(它就像 SoC 的"组装工厂":TSMC 做完芯片晶圆,AMKR 把芯片裸片切下贴到基板上)`。
+  3. **专业缩写第一次出现用 `<abbr title="{中文解释}">{缩写}</abbr>` 包裹**;术语来源是 `reference/glossary.md`(预填 120+ 条);**若 glossary 没有的新术语**,**LLM 必须先 append 到 glossary.md 对应分类,再回报告使用**(策略 C 改良:宁滥勿缺,允许膨胀)。
+  4. **报告底部加 `<details class="glossary-section">` 折叠速查表**(默认折叠);JS 自动从本报告所有 `<abbr title>` 抽取条目生成,无需 LLM 手动维护两份。
 
 **页脚必带**:⚠️ 仅供研究教育,非投资建议;估值为网页研究近似值需复核;微盘/诉讼/海外标的风险极高。
 
@@ -112,6 +117,7 @@ description: 给定一个投资主题/趋势,复用交易者 Serenity(@aleabitor
 - `reference/supply-chain-and-archetypes.md` —— 元框架、CPO/硅光产业链速查表、**Part D 9 大瓶颈原型库**、EODHD 数据映射
 - `reference/report_template.html` —— **HTML 报告骨架 + 配色模板**(交付物按此生成,见"输出模板(HTML)")
 - `reference/example_commercial_space.md` —— worked example(商业航天),**示范分析内容与颗粒度**(报告格式以 HTML 模板为准)
+- `reference/glossary.md` —— **术语库**(120+ 条预填,LLM 自动 enrich);所有报告的 `<abbr>` 注释来源,新术语必须先 append 再用
 - `tracking/forward_picks.csv` + `tracking/score_tracker.py` —— 向前(样本外)跟踪表 + EODHD 打分脚本
 - `tracking/cross_theme_scan.py` + `tracking/cross_theme_index_snapshot.csv` —— **跨主题节点扫描**(Step 4 末尾强制跑)+ 最近一次快照
 
