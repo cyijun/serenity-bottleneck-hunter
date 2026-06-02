@@ -1,7 +1,7 @@
 snapshot_date,symbol,name,tier,archetypes,theme_count,stars,themes_list,themes_active_status
-2026-06-01,MPWR.US,Monolithic Power,中游卖铲子,④,5,⭐⭐,800VDC电源半导体;AMR无人机视觉;个人AIPC;物理AI;自动驾驶L4,🔥 active/❄️ cooled/🔥 active/🔥 active/🌡️ mixed
-2026-06-01,ARM.US,ARM Holdings,上游咽喉,①②④⑧⑨,5,⭐⭐,AI算力;AMR无人机视觉;个人AIPC;物理AI;自动驾驶L4,🌱 seed-only/❄️ cooled/🔥 active/🔥 active/🌡️ mixed
-2026-06-01,AMBA.US,Ambarella,中游卖铲子,④⑦,3,⭐⭐,AMR无人机视觉;物理AI;自动驾驶L4,❄️ cooled/🔥 active/🌡️ mixed
-2026-06-01,AEHR.US,AEHR,上游设备,⑥⑤,2,⭐,800VDC电源半导体;光子学,🔥 active/🌱 seed-only
-2026-06-01,CDNS.US,Cadence,上游咽喉,①④,2,⭐,个人AIPC;自动驾驶L4,🔥 active/🌡️ mixed
-2026-06-01,SNPS.US,Synopsys,上游咽喉,①④,2,⭐,个人AIPC;自动驾驶L4,🔥 active/🌡️ mixed
+2026-06-02,MPWR.US,Monolithic Power,中游卖铲子,④,6,⭐⭐,800VDC电源半导体;AIAgent经济;AMR无人机视觉;个人AIPC;物理AI;自动驾驶L4,🔥 active/🌡️ mature/❄️ cooled/🔥 active/🔥 active/🌡️ mixed
+2026-06-02,ARM.US,ARM Holdings,上游咽喉,①②④⑧⑨,5,⭐⭐,AI算力;AMR无人机视觉;个人AIPC;物理AI;自动驾驶L4,🌱 seed-only/❄️ cooled/🔥 active/🔥 active/🌡️ mixed
+2026-06-02,CDNS.US,Cadence,上游咽喉,①④,3,⭐⭐,AIAgent经济;个人AIPC;自动驾驶L4,🌡️ mature/🔥 active/🌡️ mixed
+2026-06-02,SNPS.US,Synopsys,上游咽喉,①④,3,⭐⭐,AIAgent经济;个人AIPC;自动驾驶L4,🌡️ mature/🔥 active/🌡️ mixed
+2026-06-02,AMBA.US,Ambarella,中游卖铲子,④⑦,3,⭐⭐,AMR无人机视觉;物理AI;自动驾驶L4,❄️ cooled/🔥 active/🌡️ mixed
+2026-06-02,AEHR.US,AEHR,上游设备,⑥⑤,2,⭐,800VDC电源半导体;光子学,🔥 active/🌱 seed-only

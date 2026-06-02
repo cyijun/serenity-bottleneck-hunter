@@ -139,3 +139,37 @@
 2026-06-01,AMR无人机视觉,ARM.US,ARM Holdings,IP层,①②④⑧⑨,353.29,USD,extended(已抛物线),🟡观望[trigger:回\-260],ARM IP-AMR/无人机/视觉 SoC 普适-跨5主题升级
 2026-06-01,AMR无人机视觉,MPWR.US,Monolithic Power,中游卖铲子,④,1566.21,USD,early(3m+37%),🟡观望[trigger:回\],PMIC-AMR/视觉机器人电源跨5主题升级
 2026-06-01,AMR无人机视觉,AMBA.US,Ambarella,中游卖铲子,④⑦,72.18,USD,early-uptrend(rng50%),🟢候选+跨主题⭐[工业视觉SoC+AMR/无人机视觉 SoC],边缘视觉 SoC-工业/物流/无人机视觉跨主题
+2026-06-02,AIAgent经济,MNDY.US,monday.com,中游系统,④⑦,95.47,USD,basing-momentum(1m+31%/3m+30%/rng35%/off-42%),🟢候选[模式A启动+应用层深度回调],work mgmt+AI workflow agents-深度回调启动信号
+2026-06-02,AIAgent经济,APPN.US,Appian,中游系统,④⑦,27.77,USD,basing-momentum(1m+23%/3m+3%/rng36%/off-37%),🟢候选[低代码 Agent 平台深度回调启动],Process Automation+AI agents 低代码平台
+2026-06-02,AIAgent经济,PATH.US,UiPath,中游系统,④⑦,13.1,USD,basing-momentum(1m+23%/3m+19%/rng37%/off-34%),🟢候选[RPA转 AI agents 启动 但历史包袱],RPA 龙头转 Agentic Automation
+2026-06-02,AIAgent经济,MDB.US,MongoDB,中游器件,④⑦,403.88,USD,extended(1m+53%/3m+60%/rng82%),🟡观望+跨主题⭐[trigger:回\],Atlas Vector-RAG 必备但已被认知
+2026-06-02,AIAgent经济,CRM.US,Salesforce,中游系统,④⑧,209.6,USD,range中度回调(1m+14%/3m+7%/rng44%/off-22%),🟡观望[trigger:Agentforce ARR visibility],Agentforce 2024 末发布尚早期
+2026-06-02,AIAgent经济,PLTR.US,Palantir,中游系统,④⑧,160.65,USD,range中位(1m+11%/3m+9%/rng50%),🟡观望[trigger:政府 Agent 订单],AIP+Foundry 但 MC ~3500亿过大
+2026-06-02,AIAgent经济,HUBS.US,HubSpot,中游系统,④⑦,262.2,USD,range深度回调(1m+9%/3m-5%/rng38%/off-36%),🟡观望[trigger:营销 Agent ARR],HubSpot AI marketing/sales agents
+2026-06-02,AIAgent经济,NICE.US,NICE Ltd,中游系统,④⑧,99.45,USD,range深度回调(1m-12%/3m-20%/rng29%),🟡观望[trigger:1m转正],客服自动化 AI - 深度回调
+2026-06-02,AIAgent经济,ZS.US,Zscaler,中游系统,④⑦,155.71,USD,range深度回调(1m+11%/3m+0.7%/rng29%/off-39%),🟡观望[trigger:AI agents 安全护栏 ARR],AI agents API 安全防护
+2026-06-02,AIAgent经济,BILL.US,BILL Holdings,中游系统,④,39.51,USD,range深度回调(1m+1%/3m-10%/rng23%/off-31%),🟡观望[trigger:1m启动],SMB 财务 AI 自动化
+2026-06-02,AIAgent经济,AI.US,C3.ai,中游系统,④⑦,11.75,USD,extended(1m+28%/3m+29%),🟡观望[trigger:回-15%],企业 AI agents 但执行历史一般
+2026-06-02,AIAgent经济,GTLB.US,GitLab,中游系统,④⑦,33.79,USD,extended(1m+40%/3m+27%),🟡观望[trigger:回\],GitLab Duo 开发者 Agent
+2026-06-02,AIAgent经济,FSLY.US,Fastly,中游器件,④,19.08,USD,range深度回调(1m-32%/3m-10%/off-45%),🟡观望[trigger:1m止跌],edge compute 深度调整 待启动
+2026-06-02,AIAgent经济,SOUN.US,SoundHound,中游系统,④⑦,9.25,USD,extended边缘(1m-3%/3m+9%),🟡观望[trigger:营收兑现],语音 AI agents-市值已大幅波动
+2026-06-02,AIAgent经济,NOW.US,ServiceNow,中游系统,④⑧,NEEDS-VERIFY,USD,EODHD数据异常显示\-真实价应~\,🟡观望[trigger:EODHD verify],Now Assist 企业流程 Agent - 数据需重 verify
+2026-06-02,AIAgent经济,ARM.US,ARM Holdings,IP层,①②④⑧⑨,408.85,USD,extended(1m+94%/3m+236%/rng96%),🔴跳过[已极度抛物线 但跨6主题⭐⭐升级],ARM IP - AI Agent 推理也基于 ARM SoC
+2026-06-02,AIAgent经济,MPWR.US,MPWR,中游卖铲子,④,1542.39,USD,extended(rng79%/3m+44%),🟡观望[跨6主题⭐⭐升级],PMIC - 数据中心 Agent 推理电源
+2026-06-02,AIAgent经济,CDNS.US,Cadence,IP层,①④,414.16,USD,extended(rng100%/3m+38%),🟡观望[跨3主题⭐升级],EDA - LLM 推理芯片设计
+2026-06-02,AIAgent经济,SNPS.US,Synopsys,IP层,①④,492.29,USD,extended(rng71%/off-9%),🟡观望[跨3主题⭐升级],EDA - 同 CDNS
+2026-06-02,AIAgent经济,DDOG.US,Datadog,中游器件,④⑦,277.49,USD,extended(1m+98%/3m+148%/rng99%),🔴跳过[已抛物线 LLM observability 被市场认知],LLM observability+APM agents 监控
+2026-06-02,AIAgent经济,MSFT.US,Microsoft,下游对照,排除,460.52,USD,extended(rng76%),🔴排除[下游巨头],Copilot Studio/Azure AI Foundry
+2026-06-02,AIAgent经济,GOOGL.US,Google,下游对照,排除,376.37,USD,extended(rng76%),🔴排除[下游巨头],Gemini Agents
+2026-06-02,AIAgent经济,AMZN.US,Amazon,下游对照,排除,261.26,USD,extended(rng79%),🔴排除[下游巨头],AWS Bedrock Agents
+2026-06-02,AIAgent经济,NVDA.US,NVIDIA,下游对照,排除,224.36,USD,extended(rng83%),🔴排除[下游巨头-Agent推理 GPU],NIM/AI Workbench
+2026-06-02,AIAgent经济,SNOW.US,Snowflake,中游器件,④,280.16,USD,extended(1m+99%/3m+69%/rng97%),🔴跳过[已抛物线],Cortex AI - 数据 Agent
+2026-06-02,AIAgent经济,NET.US,Cloudflare,中游器件,④,270.82,USD,extended(rng100%/3m+51%),🔴跳过[已抛物线-AI Gateway 被认知],AI Gateway + Workers AI
+2026-06-02,AIAgent经济,FROG.US,JFrog,中游器件,④,88.31,USD,extended(1m+77%/3m+109%/rng100%),🔴跳过[已抛物线],Software supply + AI
+2026-06-02,AIAgent经济,CFLT.US,Confluent,中游器件,④,30.99,USD,extended/at-top(rng100%),🔴跳过[已贴顶],Kafka streaming
+2026-06-02,AIAgent经济,ESTC.US,Elastic,中游器件,④,68.06,USD,extended(1m+40%/3m+29%),🔴跳过[已偏热],Search+vector
+2026-06-02,AIAgent经济,APP.US,AppLovin,中游系统,④,613.7,USD,extended(3m+40%),🔴跳过[已偏热-广告非纯 Agent],AI 广告
+2026-06-02,AIAgent经济,ZI.US,ZoomInfo,中游系统,④,10.55,USD,range贴顶(rng94%),🔴跳过[小盘+rng94%],销售 AI - 商业表现待复核
+2026-06-02,AIAgent经济,META.US,Meta,下游对照,排除,600.47,USD,range(rng36%),🔴排除[下游巨头-Llama 自营],开源 LLM 持有方
+2026-06-02,AIAgent经济,S.US,SentinelOne,中游系统,④⑦,17.81,USD,extended边缘(1m+19%/3m+34%),🔴跳过[偏热],AI 安全
+2026-06-02,AIAgent经济,DBX.US,Dropbox,中游系统,④,28.91,USD,extended(1m+16%/3m+10%/rng85%),🔴跳过[偏热],Dropbox AI 文档 agent
