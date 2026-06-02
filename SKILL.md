@@ -128,12 +128,17 @@ description: 给定一个投资主题/趋势,复用交易者 Serenity(@aleabitor
 - `reference/report_template.html` —— **HTML 报告骨架 + 配色模板**(交付物按此生成,见"输出模板(HTML)")
 - `reference/example_commercial_space.md` —— worked example(商业航天),**示范分析内容与颗粒度**(报告格式以 HTML 模板为准)
 - `reference/glossary.md` —— **术语库**(120+ 条预填,LLM 自动 enrich);所有报告的 `<abbr>` 注释来源,新术语必须先 append 再用
-- `reference/company_desc.md` —— **公司业务描述库(static,永久可复用)**(2026-06-02 加,用户挑战 driven 重构):**只存 business**(主营/产业链位置/技术/客户)— **严禁包含 price/stage/跨主题数/市值/估值** 等动态数据。
-  - **拆分纪律(2026-06-02 重构,用户反馈"会让人疑惑或出错")**:
-    - 🟢 **business 描述(static, 复用)**:5 年不变 — 在 `company_desc.md` + `.cnode[data-desc=]` 属性
-    - 🔴 **status 描述(dynamic, 每次重写)**:price/stage/跨主题/估值 — 不进 company_desc.md,只在 `.cnode[data-status=]` 属性,**必须带日期标签** `[YYYY-MM-DD]`
-  - **HTML hover tooltip 同时显示两段**:business(上,无日期)+ status(下,带日期),让读者一眼分清"事实"和"快照"。
-  - 维护:每跑新主题,**只 append business** 到 company_desc.md;dynamic status LLM 在报告里现写。
+- `reference/company_desc.md` —— **公司业务描述库**(2026-06-02 加,用户挑战 driven 3 次迭代):**只存 business**(主营/产业链位置/技术/客户)— **严禁包含 price/stage/跨主题数/市值/估值** 等动态数据。
+  - **格式**:`- **SYM.EX** [YYYY-MM-DD] = 业务描述...`(每条 entry 必带 last_updated 时间戳)
+  - **拆分纪律 v2(2026-06-02 第 2 次重构)**:
+    - 🟢 **business(本文件 + `.cnode[data-desc=]`)**:相对稳定但**非永久** — 加 last_updated 时间戳
+    - 🔴 **status(`.cnode[data-status=]`)**:price/stage/跨主题/估值 — 每次重写,带 `[YYYY-MM-DD]`
+  - **Cache invalidation 纪律 v3(2026-06-02 第 3 次重构,用户反馈"业务重点也会变化")**:LLM 用 data-desc 前**必查 last_updated**:
+    - **≤ 90 天** → 直接复用(信任 business 描述未漂移)
+    - **> 90 天** → **必须重新评估**(查最新公司战略 / 财报 / 业务调整),若有重大变化则 update business 描述 + bump 时间戳;若无变化则只 bump 时间戳到当前日期
+    - 工具:`tracking/check_desc_freshness.py` 跑一遍输出过期 entry 列表
+  - **HTML hover tooltip 2 段**:business(上,无日期)+ status(下,带日期)。
+  - 维护:每跑新主题 → 检查 freshness → 必要时 update business → append 新标的 business → 报告里写 status。
 - `tracking/forward_picks.csv` + `tracking/score_tracker.py` —— 向前(样本外)跟踪表 + EODHD 打分脚本
 - `tracking/cross_theme_scan.py` + `tracking/cross_theme_index_snapshot.csv` —— **跨主题节点扫描**(Step 4 末尾强制跑)+ 最近一次快照
 
