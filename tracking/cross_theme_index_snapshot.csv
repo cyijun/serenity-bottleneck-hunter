@@ -1,23 +1,24 @@
 snapshot_date,symbol,name,tier,archetypes,theme_count,stars,themes_list,themes_active_status
-2026-06-05,MPWR.US,Monolithic Power,中游卖铲子,④,6,⭐⭐,800VDC电源半导体;AIAgent经济;AMR无人机视觉;个人AIPC;物理AI;自动驾驶L4,🔥 active/🌡️ mature/❄️ cooled/🔥 active/🔥 active/🌡️ mixed
-2026-06-05,ARM.US,ARM Holdings,上游咽喉,①②④⑧⑨,5,⭐⭐,AI算力;AMR无人机视觉;个人AIPC;物理AI;自动驾驶L4,🌱 seed-only/❄️ cooled/🔥 active/🔥 active/🌡️ mixed
-2026-06-05,CDNS.US,Cadence,上游咽喉,①④,3,⭐⭐,AIAgent经济;个人AIPC;自动驾驶L4,🌡️ mature/🔥 active/🌡️ mixed
-2026-06-05,SNPS.US,Synopsys,上游咽喉,①④,3,⭐⭐,AIAgent经济;个人AIPC;自动驾驶L4,🌡️ mature/🔥 active/🌡️ mixed
-2026-06-05,603667.SHG,五洲新春,上游咽喉,①⑨,3,⭐⭐,人形机器人A股;物理AI;物理AI中国,❄️ cooled/🔥 active/❄️ cooled
-2026-06-05,603009.SHG,北特科技,上游咽喉,①⑨,3,⭐⭐,人形机器人A股;物理AI;物理AI中国,❄️ cooled/🔥 active/❄️ cooled
-2026-06-05,002338.SHE,奥普光电,上游咽喉,①⑨,3,⭐⭐,人形机器人A股;物理AI;物理AI中国,❄️ cooled/🔥 active/❄️ cooled
-2026-06-05,603728.SHG,鸣志电器,上游咽喉,①⑨,3,⭐⭐,人形机器人A股;物理AI;物理AI中国,❄️ cooled/🔥 active/❄️ cooled
-2026-06-05,688160.SHG,步科股份,上游咽喉,①⑨,3,⭐⭐,人形机器人A股;物理AI;物理AI中国,❄️ cooled/🔥 active/❄️ cooled
-2026-06-05,AMBA.US,Ambarella,中游卖铲子,④⑦,3,⭐⭐,AMR无人机视觉;物理AI;自动驾驶L4,❄️ cooled/🔥 active/🌡️ mixed
-2026-06-05,AEHR.US,AEHR,上游设备,⑥⑤,2,⭐,800VDC电源半导体;光子学,🔥 active/🌱 seed-only
-2026-06-05,603297.SHG,永新光学,上游咽喉,①⑦,2,⭐,物理AI;物理AI中国,🔥 active/❄️ cooled
-2026-06-05,HSAI.US,Hesai 禾赛,上游咽喉,①⑦⑨,2,⭐,物理AI美国;自动驾驶L4,🌡️ mature/🌡️ mixed
-2026-06-05,INVZ.US,Innoviz,上游咽喉,①,2,⭐,物理AI美国;自动驾驶L4,🌡️ mature/🌡️ mixed
-2026-06-05,603501.SHG,韦尔股份,上游咽喉,①⑧⑨,2,⭐,物理AI中国;自动驾驶L4,❄️ cooled/🌡️ mixed
-2026-06-05,TRMB.US,Trimble,上游设备,①④,2,⭐,物理AI美国;自动驾驶L4,🌡️ mature/🌡️ mixed
-2026-06-05,HXGBY.US,Hexagon ADR,上游设备,①④,2,⭐,物理AI美国;自动驾驶L4,🌡️ mature/🌡️ mixed
-2026-06-05,MBLY.US,Mobileye,中游器件,④⑦⑧,2,⭐,物理AI美国;自动驾驶L4,🌡️ mature/🌡️ mixed
-2026-06-05,688256.SHG,寒武纪,上游材料,①④⑨,2,⭐,AIAgent中国;物理AI中国,❄️ cooled/❄️ cooled
-2026-06-05,300699.SHE,光威复材,上游材料,②,2,⭐,人形机器人A股;物理AI中国,❄️ cooled/❄️ cooled
-2026-06-05,300100.SHE,双林股份,中游器件,⑦,2,⭐,人形机器人A股;物理AI中国,❄️ cooled/❄️ cooled
-2026-06-05,688017.SHG,绿的谐波,上游咽喉,②⑦,2,⭐,物理AI;物理AI中国,🔥 active/❄️ cooled
+2026-06-09,MPWR.US,Monolithic Power,中游卖铲子,④,6,⭐⭐,800VDC电源半导体;AIAgent经济;AMR无人机视觉;个人AIPC;物理AI;自动驾驶L4,🔥 active/🌡️ mature/❄️ cooled/🔥 active/🔥 active/🌡️ mixed
+2026-06-09,ARM.US,ARM Holdings,上游咽喉,①②④⑧⑨,5,⭐⭐,AI算力;AMR无人机视觉;个人AIPC;物理AI;自动驾驶L4,🌱 seed-only/❄️ cooled/🔥 active/🔥 active/🌡️ mixed
+2026-06-09,603728.SHG,鸣志电器,上游咽喉,①⑨,4,⭐⭐,人形机器人A股;低空经济A股;物理AI;物理AI中国,❄️ cooled/❄️ cooled/🔥 active/❄️ cooled
+2026-06-09,CDNS.US,Cadence,上游咽喉,①④,3,⭐⭐,AIAgent经济;个人AIPC;自动驾驶L4,🌡️ mature/🔥 active/🌡️ mixed
+2026-06-09,SNPS.US,Synopsys,上游咽喉,①④,3,⭐⭐,AIAgent经济;个人AIPC;自动驾驶L4,🌡️ mature/🔥 active/🌡️ mixed
+2026-06-09,603667.SHG,五洲新春,上游咽喉,①⑨,3,⭐⭐,人形机器人A股;物理AI;物理AI中国,❄️ cooled/🔥 active/❄️ cooled
+2026-06-09,603009.SHG,北特科技,上游咽喉,①⑨,3,⭐⭐,人形机器人A股;物理AI;物理AI中国,❄️ cooled/🔥 active/❄️ cooled
+2026-06-09,002338.SHE,奥普光电,上游咽喉,①⑨,3,⭐⭐,人形机器人A股;物理AI;物理AI中国,❄️ cooled/🔥 active/❄️ cooled
+2026-06-09,688160.SHG,步科股份,上游咽喉,①⑨,3,⭐⭐,人形机器人A股;物理AI;物理AI中国,❄️ cooled/🔥 active/❄️ cooled
+2026-06-09,AMBA.US,Ambarella,中游卖铲子,④⑦,3,⭐⭐,AMR无人机视觉;物理AI;自动驾驶L4,❄️ cooled/🔥 active/🌡️ mixed
+2026-06-09,300699.SHE,光威复材,上游材料,②,3,⭐⭐,人形机器人A股;低空经济A股;物理AI中国,❄️ cooled/❄️ cooled/❄️ cooled
+2026-06-09,AEHR.US,AEHR,上游设备,⑥⑤,2,⭐,800VDC电源半导体;光子学,🔥 active/🌱 seed-only
+2026-06-09,603297.SHG,永新光学,上游咽喉,①⑦,2,⭐,物理AI;物理AI中国,🔥 active/❄️ cooled
+2026-06-09,HSAI.US,Hesai 禾赛,上游咽喉,①⑦⑨,2,⭐,物理AI美国;自动驾驶L4,🌡️ mature/🌡️ mixed
+2026-06-09,INVZ.US,Innoviz,上游咽喉,①,2,⭐,物理AI美国;自动驾驶L4,🌡️ mature/🌡️ mixed
+2026-06-09,603501.SHG,韦尔股份,上游咽喉,①⑧⑨,2,⭐,物理AI中国;自动驾驶L4,❄️ cooled/🌡️ mixed
+2026-06-09,TRMB.US,Trimble,上游设备,①④,2,⭐,物理AI美国;自动驾驶L4,🌡️ mature/🌡️ mixed
+2026-06-09,HXGBY.US,Hexagon ADR,上游设备,①④,2,⭐,物理AI美国;自动驾驶L4,🌡️ mature/🌡️ mixed
+2026-06-09,MBLY.US,Mobileye,中游器件,④⑦⑧,2,⭐,物理AI美国;自动驾驶L4,🌡️ mature/🌡️ mixed
+2026-06-09,688256.SHG,寒武纪,上游材料,①④⑨,2,⭐,AIAgent中国;物理AI中国,❄️ cooled/❄️ cooled
+2026-06-09,300100.SHE,双林股份,中游器件,⑦,2,⭐,人形机器人A股;物理AI中国,❄️ cooled/❄️ cooled
+2026-06-09,688017.SHG,绿的谐波,上游咽喉,②⑦,2,⭐,物理AI;物理AI中国,🔥 active/❄️ cooled
+2026-06-09,600862.SHG,中航高科,上游材料,②,2,⭐,人形机器人A股;低空经济A股,❄️ cooled/❄️ cooled
