@@ -37,8 +37,9 @@ git clone https://github.com/Mrjie7205/serenity-bottleneck-hunter.git ~/.claude/
 | **一句话结论** | 开门见山:这个主题值不值得做、最佳切入点是什么 |
 | **Step 1 · 资本开支确定性** | 3-4 个关键数字:谁在花钱、花多少、确定性来源 |
 | **30 秒看懂** | 给非从业者的主题速览(术语友好度纪律) |
-| **Step 2 · 产业链网状图** | 5 层逆向拆链,SVG 自动绘制依赖边,**瓶颈节点按入度自动判定**并高亮 |
-| **Step 4-6 · 候选 leaderboard** | 核心区,每候选一行:🟢候选 / 🟡观望(写明重估触发条件)/ 🔴排除 + 9 字段价格动量(rng/off/1m/3m/stage)+ 瓶颈原型 + thesis,按 stage 从 early→extended 排序 |
+| **Step 2 · 产业链网状图** | 5 层逆向拆链,SVG 自动绘制依赖边,瓶颈节点**双规则自动判定**:漏斗型(入度≥2 出度≤1,金边)+ 枢纽型(入度≥2 出度≥2,多对多最难绕开,酒红边) |
+| **⚑ 本次行动点** | 头条位:最多 2 张行动卡(设什么警报 / 什么条件做什么)无视排序置顶——读者 10 秒拿到本次唯一要做的事 |
+| **Step 4-6 · 候选 leaderboard** | 核心区,每候选一行:🟢候选 / 🟡观望 / 🔴排除 + **水位标尺**(贴顶/高位/中位/低位/贴底 + 距高点% + 近1月/3月,人话化动量)+ trigger 分层(⚙ 可自动盯 / 👁 需人工)+ 行内三道闸小标 + **判定史**(同标的历史判定:旧价→今价±%、对错复盘);原型/基本面/情景/风险折叠进"详情",按 stage 从 early→extended 排序 |
 | **⭐ 跨主题信号** | 本主题候选与其他已扫主题的交集 — 被多个 capex 周期同时锁定的 root 节点(⑤原型) |
 | **Step 5 · 三道闸门** | 穷尽性 A / ETF audit A+ / ticker 验证 A++ 的逐项通过情况(过/半过/不过) |
 | **Step 7 · 落地结论** | 仓位思路 + 触发器清单(什么条件下重估哪只) |
@@ -62,7 +63,9 @@ Theme → reverse supply-chain map → apply **9 "bottleneck archetypes"** → o
 | **A+ ETF audit** | LLM 的"知名度偏见" | `scripts/theme_etf_coverage.py` 拉主题 ETF 持仓做兜底 |
 | **A++ ticker 双向验证** | LLM hallucination 错位(把 603297 永新光学当成绿的谐波,价格/判定全反) | `scripts/ticker_truth.py` ground-truth 库 + `verify_tickers.py` git pre-commit hook 自动拦截 |
 | **价格纪律** | 用 WebSearch/记忆猜价格 | `scripts/price.py` 强制 EODHD→yfinance,9 字段全留档 |
+| **公司状态检查** | LLM 过期先验:私有→已 IPO(SpaceX 上市**当天**报告仍标"私有")/ 上市→被收购(SkyWater 被 IonQ 买走) | 判定前强制搜一次 acquisition/IPO 状态;状态断言必须带日期 |
 | **向前验证** | 事后吹回测 | `tracking/forward_picks.csv` 带日期锁定的样本外记录 |
+| **防循环论证** | 把回填的已知赢家算进"向前业绩"(曾把均α 灌水到 +90%,真实值为负) | 标 `历史种子` 的回填行强制从一切统计中剔除 |
 
 ## Use / 用法
 
@@ -100,6 +103,8 @@ tracking/
 ## Validation honesty / 验证说明
 
 The only credible test is **forward / out-of-sample**: see `tracking/forward_picks.csv` (dated, rules-locked picks) + `tracking/score_tracker.py` (re-pulls prices later and scores them). Any in-sample "backtest" suffers look-ahead & survivorship bias and is **not** a performance claim.
+
+⚠️ `forward_picks.csv` 里判定含 **`历史种子`** 字样的行是回填的参照锚点(Serenity 本人的原始 call,按 2026-01-02 价格记录),**不是本框架的实时判定,做任何业绩统计必须剔除**——混入会造成循环论证(我们自己踩过:含种子时 🟢 均α 显示 +90%,剔除后真实向前样本为负且观察期未满)。真实向前验证基线自 **2026-05-26** 起算。
 
 ## ⚠️ Disclaimer / 免责声明
 

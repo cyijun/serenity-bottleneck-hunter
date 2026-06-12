@@ -5,14 +5,21 @@
   ----------------------------------------------------------------------------
   用法:复制本文件 → 填充所有 {{PLACEHOLDER}} 与 <!-- FILL: ... --> 注释处 →
         另存为 reports/<主题>_分析报告.html。
-  规则(见 SKILL.md「输出模板(HTML)」):
+  规则(见 SKILL.md「输出模板(HTML)」;2026-06-13 升级:水位标尺/头条位/判定史/trigger分层/枢纽瓶颈):
    • 单文件、样式内联,仅 Google Fonts CDN 可外链。
-   • 候选 leaderboard 必须按 stage 排序:early-uptrend 在前、extended 在后。
-   • 动量条 class:  s-early(绿,可入场) / s-range(琥珀,横盘) / s-ext(红,抛物线别追)
-     .fill 的 width = 6 月区间位置(range_pos_6mo_pct)。
+   • 头条位(.top-picks)必填:最多 2 张"本次行动点"卡,无视 stage 排序置顶。
+   • 候选 leaderboard 按 stage 排序:early-uptrend 在前、extended 在后;下游对照合并为一行。
+   • 动量单元 = 水位标尺:.dot 的 left = range_pos_6mo_pct;.word 人话水位
+     (贴顶≥90 / 高位70-89 / 中位30-69 / 低位10-29 / 贴底<10);附注 距高点 off% + 近1月/近3月。
+     stage class:s-early(绿) / s-range(琥珀) / s-ext(红)。
    • 判定 badge:  b-green(🟢候选) / b-amber(🟡观望) / b-red(🔴排除) / b-gray(剔除/不可投)
-   • 🟡 必填重估触发条件;价格/动量必须来自 price.py 实测,不得臆测。
-   • 配色语义:green=早期上行/候选, amber=观望/横盘, red=抛物线/排除。
+   • 🟡 必配 trigger,且分层:.trig.auto(纯价格,Cockpit 自动核对)/ .trig.manual(需人工)。
+   • 行内 .gates-mini 三道闸标的级打分;forward_picks 有旧判定的标的必带 .hist 判定史
+     (旧 entry → 今价 ±%,用真实数字算,勿凭印象)。
+   • 密度纪律:行内只留 判定/trigger/stage + 一句话;原型/基本面要点/情景/风险收进 details.more。
+   • 链路图瓶颈双规则:漏斗(入度≥2 出度≤1,金边)+ 枢纽(入度≥2 出度≥2,酒红边),JS 自动判。
+   • 情景基准率引用 Cockpit 计分卡实测分布(见 数据备注 区),不再拍脑袋。
+   • 价格/动量必须来自 price.py 实测,不得臆测。配色语义:green=早期/候选, amber=观望, red=抛物线/排除。
   ============================================================================
 -->
 <html lang="zh-CN">
@@ -145,6 +152,9 @@
   .cnode.s-range{border-left:3px solid var(--amber)}
   .cnode.s-seed{border-left:3px solid var(--gray); opacity:.78}
   .cnode.is-bottleneck{box-shadow:0 0 0 2px var(--gold), 0 8px 18px -10px rgba(184,144,46,.5); background:linear-gradient(180deg, var(--surface) 0%, #fcf6e8 100%)}
+  /* 枢纽瓶颈(2026-06-13 加,KRMN 教训):入度≥2 且 出度≥2 的多对多枢纽——
+     上游多家供它、下游多线靠它,采购方最难绕开,但旧"漏斗"规则(出度≤1)抓不住 */
+  .cnode.is-hub{box-shadow:0 0 0 2px var(--burg), 0 8px 18px -10px rgba(122,46,58,.5); background:linear-gradient(180deg, var(--surface) 0%, #f9eef0 100%)}
   .cnode .star-inline{position:absolute; top:-9px; right:-7px; font-size:13px; color:var(--gold); filter:drop-shadow(0 1px 2px rgba(0,0,0,.25)); letter-spacing:-2px}
   .cnode:hover{transform:translateY(-1px); box-shadow:0 4px 10px -4px rgba(0,0,0,.15); z-index:10}
   .cnode.is-bottleneck:hover{box-shadow:0 0 0 2px var(--gold), 0 8px 18px -8px rgba(184,144,46,.6)}
@@ -177,16 +187,57 @@
   .chain-legend .sw-thin{background:var(--gray); height:2px}
   .chain-legend .sw-bn{width:14px; height:14px; border-radius:3px; box-shadow:0 0 0 2px var(--gold); background:var(--surface)}
   .chain-legend .sw-star{font-size:14px; color:var(--gold); width:auto}
+  /* === 动量单元(2026-06-13 重设计:水位标尺+人话,代替旧填充条)===
+     旧版填充条语义歧义(满=贴顶=危险,但视觉直觉"满=好");新版:
+     · 标尺两端 = 6月低/6月高,游标点 = 现价位置(.dot 的 left:NN%)
+     · .word 人话水位:贴顶(rng≥90)/高位(70-89)/中位(30-69)/低位(10-29)/贴底(<10)
+     · 数字降级为附注:距高点 off% · 近1月/近3月 */
   .mo{font-family:var(--mono)}
-  .mo .track{height:8px; background:var(--surface-2); border:1px solid var(--line); border-radius:99px; overflow:hidden; position:relative; margin-bottom:6px}
-  .mo .fill{height:100%; border-radius:99px}
-  .mo.s-early .fill{background:linear-gradient(90deg,var(--green),#46a877)}
-  .mo.s-ext .fill{background:linear-gradient(90deg,var(--amber),var(--red))}
-  .mo.s-range .fill{background:linear-gradient(90deg,#b9b09a,var(--gray))}
-  .mo .lbl{font-size:11px; color:var(--muted); display:flex; justify-content:space-between} .mo .lbl b{color:var(--ink)}
+  .mo .ends{display:flex; justify-content:space-between; font-size:9.5px; color:var(--faint); margin-bottom:1px}
+  .mo .gauge{position:relative; height:13px; margin-bottom:5px}
+  .mo .gauge .track{position:absolute; left:0; right:0; top:5px; height:3px; background:var(--line-strong); border-radius:2px}
+  .mo .gauge .dot{position:absolute; top:0; width:13px; height:13px; border-radius:50%; transform:translateX(-50%); border:2.5px solid var(--surface); box-shadow:0 0 0 1px var(--line-strong),0 1px 3px rgba(0,0,0,.25)}
+  .mo.s-early .dot{background:var(--green)} .mo.s-ext .dot{background:var(--red)} .mo.s-range .dot{background:var(--amber)}
+  .mo .word{font-size:12.5px; font-weight:700}
+  .mo.s-early .word{color:var(--green)} .mo.s-ext .word{color:var(--red)} .mo.s-range .word{color:var(--amber)}
+  .mo .lbl{font-size:11px; color:var(--muted); line-height:1.5} .mo .lbl b{color:var(--ink)}
   .stage-t{font-family:var(--mono); font-size:11.5px; font-weight:700; text-align:right}
   .stage-t.early{color:var(--green)} .stage-t.ext{color:var(--red)} .stage-t.range{color:var(--amber)}
   .stage-t small{display:block; color:var(--muted); font-weight:400; font-size:10.5px; margin-top:3px}
+  /* === 头条位(2026-06-13 加):1-2 个"本次行动点"无视 stage 排序置顶 === */
+  .top-picks{margin:0 0 24px}
+  .tp-label{font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--burg); font-weight:700; margin-bottom:10px}
+  .tp-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:14px}
+  .tp-card{background:var(--surface); border:1px solid var(--gold); border-left:5px solid var(--gold); border-radius:8px; padding:18px 20px; box-shadow:0 14px 30px -22px rgba(184,144,46,.55)}
+  .tp-card .tp-k{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; color:var(--gold); font-weight:700; text-transform:uppercase}
+  .tp-card .tp-t{font-family:var(--display); font-weight:700; font-size:19px; margin:6px 0 4px}
+  .tp-card .tp-d{font-size:13.5px; color:var(--ink-soft); line-height:1.55}
+  .tp-card .tp-act{font-family:var(--mono); font-size:12px; font-weight:700; margin-top:10px; color:var(--burg)}
+  /* === 行内三道闸门小标(标的级打分,2026-06-13 加)=== */
+  .gates-mini{display:flex; gap:6px; margin-top:7px; font-size:10.5px; font-family:var(--mono); flex-wrap:wrap}
+  .gates-mini span{padding:2px 7px; border-radius:4px}
+  .gates-mini .ok{color:var(--green); background:var(--green-bg)}
+  .gates-mini .mid{color:var(--amber); background:var(--amber-bg)}
+  .gates-mini .no{color:var(--gray); background:var(--gray-bg)}
+  /* === trigger 分层标注:⚙=Cockpit 每日自动核对 / 👁=需人工判断(2026-06-13 加)=== */
+  .trig{display:inline-block; font-family:var(--mono); font-size:11px; margin-left:6px; margin-top:7px; padding:3px 8px; border-radius:5px; background:var(--surface-2); border:1px dashed var(--line-strong); color:var(--amber)}
+  .trig.auto::before{content:"⚙ "; color:var(--muted)}
+  .trig.manual::before{content:"👁 "; color:var(--muted)}
+  /* === 判定史(同标的历史判定自动带出,2026-06-13 加)=== */
+  .hist{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-top:8px; padding-top:7px; border-top:1px dashed var(--line)}
+  .hist b{color:var(--ink)}
+  .hist .v-ok{color:var(--green); font-weight:700}
+  .hist .v-bad{color:var(--red); font-weight:700}
+  /* === 折叠详情(密度纪律:行内只留决策三要素,其余收进 details)=== */
+  details.more{margin-top:8px; font-size:13px; color:var(--ink-soft)}
+  details.more summary{cursor:pointer; font-family:var(--mono); font-size:11.5px; color:var(--burg); user-select:none; list-style:none}
+  details.more summary::-webkit-details-marker{display:none}
+  details.more summary::before{content:"▸ "}
+  details.more[open] summary::before{content:"▾ "}
+  details.more p{margin:8px 0 0; line-height:1.55}
+  /* === Cockpit 实时联动链接(本地面板在跑时可点)=== */
+  .tk a.ck{font-size:12px; text-decoration:none; margin-left:5px; opacity:.55}
+  .tk a.ck:hover{opacity:1}
   .gates{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:8px 0}
   .gate{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:22px 20px; border-top:4px solid}
   .gate.g-ok{border-top-color:var(--green)} .gate.g-mid{border-top-color:var(--amber)} .gate.g-no{border-top-color:var(--red)}
@@ -290,7 +341,7 @@
 <section><div class="wrap rv">
   <div class="eyebrow">Step 2 · 逆向拆链</div>
   <h2><span class="num">02</span>产业链 5 层 — 网状视图</h2>
-  <p class="lead">节点颜色 = stage(绿=早期上行 / 红=已抛物线 / 琥珀=横盘 / 灰=种子或下游);<b style="color:#b8902e">金色描边</b> = 自动判定的瓶颈点(入度≥2,出度≤1);<b style="color:#b8902e">⭐</b> = 跨主题节点(见报告底部)。边粗细 = 依赖度(粗 &gt;50% / 中 20-50% / 细 &lt;20%)。</p>
+  <p class="lead">节点颜色 = stage(绿=早期上行 / 红=已抛物线 / 琥珀=横盘 / 灰=种子或下游);<b style="color:#b8902e">金色描边</b> = 漏斗瓶颈(多家依赖它、它只供少数客户);<b style="color:#7a2e3a">酒红描边</b> = 枢纽瓶颈(多对多,上游多家供它、下游多线靠它,最难绕开);<b style="color:#b8902e">⭐</b> = 跨主题节点(见报告底部)。边粗细 = 依赖度(粗 &gt;50% / 中 20-50% / 细 &lt;20%)。</p>
   <div class="chain-viz">
     <svg class="chain-edges" xmlns="http://www.w3.org/2000/svg"></svg>
 
@@ -347,7 +398,8 @@
       <div class="item"><span class="swatch sw-thick"></span> 主依赖 &gt;50%</div>
       <div class="item"><span class="swatch sw-mid"></span> 中等 20-50%</div>
       <div class="item"><span class="swatch sw-thin"></span> 弱 &lt;20%</div>
-      <div class="item"><span class="sw-bn swatch"></span> 自动瓶颈点(入度≥2 出度≤1)</div>
+      <div class="item"><span class="sw-bn swatch"></span> 漏斗瓶颈(入度≥2 出度≤1)</div>
+      <div class="item"><span class="swatch sw-bn" style="box-shadow:0 0 0 2px var(--burg)"></span> 枢纽瓶颈(入度≥2 出度≥2)</div>
       <div class="item"><span class="swatch sw-star">⭐</span> 跨主题节点</div>
     </div>
   </div>
@@ -359,29 +411,61 @@
 <section><div class="wrap rv">
   <div class="eyebrow">Step 4–6 · 候选 + 价格实测 + 模式 A 择时</div>
   <h2><span class="num">03</span>候选名单 — 按"还能不能进"排序</h2>
-  <p class="lead">条形 = 6 月区间位置(越满越贴顶);颜色 = stage(绿=早期上行可入场 / 红=已抛物线别追 / 琥珀=横盘)。价格为 <code style="font-family:var(--mono);font-size:13px">price.py</code> 实测。</p>
-  <div class="board">
-    <div class="row head"><span>代码 / 现价</span><span>是什么 · 判定</span><span>6月区间位置 · 动量</span><span style="text-align:right">stage</span></div>
 
-    <!-- ===== 候选行示例:复制此块,按 stage 从 early→extended 排序 ===== -->
-    <!-- stage=early-uptrend → mo.s-early + stage-t.early + badge b-green/b-amber -->
-    <!-- ⭐ 跨主题节点(来自 cross_theme_scan.py):在 .t 后面加 <span class="star" title="跨X主题: A + B">⭐</span> 或 ⭐⭐ -->
+  <!-- ============ 头条位(2026-06-13 加):本次行动点,无视 stage 排序置顶 ============
+       规则:最多 2 张卡。"行动点"= 读者本次唯一需要立即做的事(设警报/可入场/必须避开),
+       不是"最好的公司"。其余标的照旧按 stage 排序进 leaderboard。 -->
+  <div class="top-picks">
+    <div class="tp-label">⚑ 本次行动点 — 先看这 {{1-2}} 个</div>
+    <div class="tp-grid">
+      <div class="tp-card">
+        <div class="tp-k">{{ACTION 类型,如 Mode B 背离警报 / 唯一可入场}}</div>
+        <div class="tp-t">{{代码 · 名称}}</div>
+        <div class="tp-d">{{为什么是本次头条,1-2 句}}</div>
+        <div class="tp-act">→ {{具体动作:设什么警报 / 什么条件做什么}}</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="lead">标尺 = 现价在 <b>6 个月最低↔最高</b> 之间的水位(游标点位置);颜色 = stage(绿=早期上行可入场 / 红=已抛物线别追 / 琥珀=横盘或深跌)。水位词:贴顶(≥90%)/ 高位 / 中位 / 低位 / 贴底(<10%)。价格为 <code style="font-family:var(--mono);font-size:13px">price.py</code> 实测。</p>
+  <div class="board">
+    <div class="row head"><span>代码 / 现价</span><span>是什么 · 判定 · trigger</span><span>6月水位 · 动量</span><span style="text-align:right">stage</span></div>
+
+    <!-- ===== 候选行示例:复制此块,按 stage 从 early→extended 排序(头条卡里的标的也照常出现在这里) =====
+      密度纪律(2026-06-13):行内只留决策三要素(判定 badge / trigger / stage)+ 一句话是什么;
+        原型#、基本面要点、目标价情景、💡人话、风险 → 全部收进 <details class="more">。
+      trigger 分层:class="trig auto"(纯价格条件,Cockpit 每日 16:30 自动核对)/ class="trig manual"(基本面/事件条件,需人工)。
+      行内闸门小标:gates-mini 三档 ok/mid/no,对应 Step5 三道闸在【这只标的】上的打分(主题级总评仍在 Step5 区)。
+      判定史(若 forward_picks.csv 有同 symbol 旧判定,必带):.hist 一行
+        「判定史:MM-DD 🟡观察 @$XX → 今 $YY(±Z%)· 判定验证 ✓/✗」;价格变动按 (今价/旧entry-1) 计算,勿凭印象。
+      Cockpit 联动:代码后加 <a class="ck" href="http://localhost:5173/chart/{{SYM.US}}" title="在 Cockpit 看实时 K线+判定史">📈</a>(本地面板没开时点了也无害)。
+      字段更名(2026-06-13):旧"估值/增长"→"基本面要点"(EODHD 无 fundamentals,网页研究只填查得到的:backlog/增速/盈利状态,不硬凑 P/E)。 -->
     <div class="row">
-      <div class="tk">{{代码}}<span class="px">{{$现价}}</span></div>
+      <div class="tk">{{代码}}<a class="ck" href="http://localhost:5173/chart/{{SYM.US}}" title="在 Cockpit 看实时 K线+判定史">📈</a><span class="px">{{$现价}}</span></div>
       <div class="nmcell">
         <div class="t">{{名称 · 档位}}<span class="star" title="跨 2 主题:光子学 + 800VDC(示范)">⭐</span></div>
-        <div class="d">{{瓶颈逻辑(原型#) + 估值/增长 + 稀释红旗(若有)}}</div>
-        <span class="badge b-green">🟢 {{判定标签}}</span>
+        <div class="d">{{一句话:它卡住链条的哪个环节}}</div>
+        <span class="badge b-green">🟢 {{判定标签}}</span><span class="trig auto">trigger:{{可量化条件}}</span>
+        <div class="gates-mini"><span class="ok">🔒 真瓶颈 过</span><span class="mid">👁 前机构 半过</span><span class="no">💰 便宜 不过</span></div>
+        <details class="more"><summary>详情:原型 / 基本面要点 / 情景 / 风险</summary>
+          <p>💡 {{人话:为什么这家公司重要,给完全不懂的人}}</p>
+          <p><b>原型</b> {{①②…}} · <b>基本面要点</b> {{backlog/营收增速/盈利状态等查得到的}} · <b>情景</b> {{时间框 ±X%(非承诺)}} · <b>风险</b> {{1-2 条}}</p>
+        </details>
+        <div class="hist">判定史:{{MM-DD}} {{🟡观察}} @{{$旧价}} → 今 {{$现价}}(<span class="v-ok">{{±Z%}}</span>)· {{判定到目前为止 对/错 一句话}}</div>
       </div>
-      <div class="mo s-early"><div class="track"><div class="fill" style="width:{{range_pos}}%"></div></div>
-        <div class="lbl"><span>区间 <b>{{range_pos}}%</b></span><span>1m <b>{{+x%}}</b> · 3m <b>{{+x%}}</b></span></div></div>
-      <div class="stage-t early">EARLY-UPTREND<small>{{目标价/时间框 或 备注}}</small></div>
+      <div class="mo s-early">
+        <div class="ends"><span>6月低</span><span>6月高</span></div>
+        <div class="gauge"><div class="track"></div><div class="dot" style="left:{{range_pos}}%"></div></div>
+        <div class="lbl"><span class="word">{{贴顶/高位/中位/低位/贴底}}</span> · 距高点 <b>{{off%}}</b><br>近1月 <b>{{+x%}}</b> · 近3月 <b>{{+x%}}</b></div>
+      </div>
+      <div class="stage-t early">EARLY-UPTREND<small>{{备注}}</small></div>
     </div>
-    <!-- stage=extended/parabolic → mo.s-ext + stage-t.ext + badge b-amber/b-red;🟡 必须在 small 或 d 里写重估触发条件 -->
+    <!-- stage=extended/parabolic → mo.s-ext + stage-t.ext + badge b-amber/b-red;🟡 必须配 trigger -->
     <!-- stage=range/basing → mo.s-range + stage-t.range -->
+    <!-- 下游对照组:不占独立行,合并为一行说明(代码列写"下游对照",nmcell 列出全部跳过标的+理由) -->
 
   </div>
-  <p class="note" style="margin-top:18px"><b>怎么读这张表:</b>{{模式 A 提示:绿色=还能埋伏,红/琥珀=已抛物线应等回调标 🟡}};<b>⭐ = 跨主题节点</b>(被多个 capex cycle 同时驱动,前机构闸门自动加分)。</p>
+  <p class="note" style="margin-top:18px"><b>怎么读这张表:</b>{{模式 A 提示:绿色=还能埋伏,红/琥珀=已抛物线应等回调标 🟡}};<b>⭐ = 跨主题节点</b>(被多个 capex cycle 同时驱动,前机构闸门自动加分);<b>⚙ trigger</b> 会被 Cockpit 每日 16:30 自动核对,<b>👁 trigger</b> 需人工跟踪。</p>
 
   <!-- ============ 跨主题信号区块(Serenity ⑤跨 capex cycle 原型)============ -->
   <!-- 数据来自 tracking/cross_theme_index_snapshot.csv,LLM 把当前报告主题相关的 ⭐ 节点列在这里 -->
@@ -424,6 +508,7 @@
 <!-- ============ 数据备注 ============ -->
 <section><div class="wrap rv"><div class="note">
   <b>数据可用性 & 方法备注:</b> 价格/动量为 <code>price.py</code> 实测;基本面/市占率为网页研究近似值,<b>需以财报/IR 复核</b>。EODHD 本套餐不含 fundamentals/财报日历,亦不含东京交易所(日股走 yfinance <code>.T</code> 回退)。stage 由启发式给出,仅供模式 A 择时参考,非买卖信号。
+  <br><b>情景基准率(2026-06-13 起强制):</b>目标价情景必须引用 Cockpit 计分卡的<b>实测向前分布</b>(跑 <code>/api/scorecard</code> 或看计分卡页),格式:「本框架全体 🟢 实测:均α {{+X%}} / 中位α {{X%}} / 胜率 {{X%}}(n={{N}},截至 {{日期}})」——均值常被个别大赢家拉高,<b>中位数才是诚实预期</b>;新主题无同类历史时显式说明"无基准,情景为推断"。
 </div></div></section>
 
 <!-- ============ 术语速查表(默认折叠,JS 自动从所有 <abbr> 抽取)============ -->
@@ -510,11 +595,17 @@
           var id = n.dataset.id; if(!id) return;
           n.classList.remove('is-bottleneck');
           var inD = indeg[id] || 0, outD = outdeg[id] || 0;
-          /* 瓶颈判定 = 入度≥2 且 出度≤1,且**不在下游层**(下游天然是终端,不是猎物)*/
+          /* 瓶颈判定(2026-06-13 升级为双规则,KRMN 教训):
+             漏斗型 = 入度≥2 且 出度≤1(多家依赖、供少数客户)
+             枢纽型 = 入度≥2 且 出度≥2(多对多,采购方最难绕开,旧规则会漏)
+             均排除下游层(终端不是猎物) */
           var inDown = n.closest('.chain-layer-down') !== null;
+          n.classList.remove('is-hub');
           if(inD >= 2 && outD <= 1 && !inDown) n.classList.add('is-bottleneck');
+          else if(inD >= 2 && outD >= 2 && !inDown) n.classList.add('is-hub');
           var tip = '入度:' + inD + ' · 出度:' + outD;
-          if(n.classList.contains('is-bottleneck')) tip += ' · 🔒 自动判定为瓶颈点';
+          if(n.classList.contains('is-bottleneck')) tip += ' · 🔒 漏斗瓶颈(多家依赖它)';
+          else if(n.classList.contains('is-hub')) tip += ' · 🔗 枢纽瓶颈(多对多,最难绕开)';
           else if(inDown && inD >= 2) tip += ' · 链路终端(下游层,跳过)';
           if(n.querySelector('.star-inline')) tip += ' · ⭐ 跨主题节点';
           n.title = tip;

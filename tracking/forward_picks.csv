@@ -1,4 +1,4 @@
-"﻿""record_date""","theme","eodhd_symbol","name","tier","archetypes","entry_price","currency","entry_stage","skill_verdict","thesis"
+"record_date","theme","eodhd_symbol","name","tier","archetypes","entry_price","currency","entry_stage","skill_verdict","thesis"
 "2026-05-26","商业航天","VNP.TO","5N Plus","上游咽喉","①⑨⑧","47.65","CAD","early-uptrend(已先涨)","观察/小仓(非低位)","西方少数锗镓铟+AZUR空间太阳能/踩中China出口管制"
 "2026-05-26","商业航天","MTRN.US","Materion","上游咽喉","①","222.93","USD","early-uptrend(贴顶)","观察(非纯play)","铍近垄断(反射镜/制导/高超音速)"
 "2026-05-26","商业航天","RDW.US","Redwire","中游卖铲子","④⑧","22.04","USD","extended/parabolic","AVOID(稀释+抛物线)","ROSA太阳能阵/星敏感器但亏损+$3.5亿ATM+1月已+136%"
@@ -400,3 +400,20 @@
 "2026-06-05","网络安全","688168.SHG","安博通","中游卖铲子","⑦","53.08","CNY","range/down(1m-39%/3m-24%/rng9%/off-43%)","🟡观望[极深 1m-39 最弱]","安博通 策略可视化"
 "2026-06-05","个人AIPC","ASX.US","日月光ASE","上游咽喉","①③","35.08","USD","ext/parabolic(1m-1%/3m+60%/rng77%/off-15%)","🟡观望[ticker修复后重判:真日月光数据]","ASE 封测 OSAT 真 ADR — ASEKY 错位修复后补record"
 "2026-06-05","物理AI美国","EH.US","亿航智能","中游系统","⑦⑨","6.68","USD","range/down(1m-35%/3m-46%/rng2%/off-56%)","🟡观望[ticker修复后重判:eVTOL载人适航证唯一]","EHang 真数据 — EHGO 错位修复后补record"
+2026-06-12,商业航天美股,MTSI.US,MACOM,中游器件,④,374.76,USD,early-uptrend(rng83%/off-10.5%/1m-1.8%/3m+72.1%),🟢候选[健康回调中-ModeA可入],卫星通信RF/微波链SATCOM弹性-GoldenDome/SDA放量受益-全场唯一early健康回调标的
+2026-06-12,商业航天美股,RKLB.US,Rocket Lab,中游系统(垂直整合),③⑦,114.78,USD,early-uptrend(rng63%/off-24%/1m-7.5%/3m+67.8%),🟡观望[trigger:rng<50或Neutron首飞-框架不含持仓概念],种子样本另见2026-01-02行(自锚点+51%)-GoldenDome SBI生态受益+MYNA激光终端-回调中的强势股
+2026-06-12,商业航天美股,KRMN.US,Karman太空与防务,中游器件咽喉,②④⑦,49.58,USD,downtrend/basing(rng6%/off-58%/1m-26%/3m-50%),🟡观望[trigger:1m转正或站回SMA50=ModeB确认],发射五金垄断:整流罩/级间段/分离系统/SRM壳体-SpaceX/RKLB/导弹/高超4线供货-backlog$1.03B+61%与股价腰斩剧烈背离
+2026-06-12,商业航天美股,HEI.US,HEICO,中游器件(纯度弱),④⑧,339.22,USD,early-uptrend(rng79%/1m+16.3%/3m+17.6%),🟡观望[trigger:航天营收占比可量化或回调-10%],VPT抗辐照电源+Apogee--rad-hard细分垄断但占集团营收小-纯度弱搭便车
+2026-06-12,商业航天美股,HWM.US,Howmet,上游材料(纯度弱),①④,264.60,USD,early-uptrend(rng82%/1m-3.1%/3m+11.8%),🟡观望[trigger:航天营收占比或回调],钛结构/发动机件/紧固件Tier-1-健康巩固但主驱动商用航空
+2026-06-12,商业航天美股,HXL.US,Hexcel,上游材料,④,97.36,USD,early-uptrend贴顶(rng97%/1m+5.2%/3m+23.1%),🟡观望[trigger:回调rng<70],航天级碳纤维(RKLB Neutron主供)-温和上行但贴6月顶
+2026-06-12,商业航天美股,IPX.US,IperionX,上游材料,①⑦⑨,36.84,USD,early-uptrend但深回调(rng38%/off-40%/1m-11.3%/3m+5.6%),🟡观望[trigger:站稳SMA50+做空指控证伪或钛粉营收兑现],美国钛粉纯play-自5-31判定后续跌11%-做空阴影未散
+2026-06-12,商业航天美股,TDY.US,Teledyne,中游器件,①④,623.73,USD,range/neutral(rng64%/1m-1.9%/3m-2.4%),🟡观望[trigger:1m转正],空间成像传感器e2v近垄断-横盘等启动信号
+2026-06-12,商业航天美股,FEIM.US,Frequency Electronics,中游器件咽喉,①④⑦,77.15,USD,extended/parabolic(rng99%/1m+26.2%/3m+60.4%),🟡观望[trigger:回调rng<70],空间原子钟/振荡器纯play-proliferatedLEO新范式-backlog$100M+历史新高-贴顶勿追
+2026-06-12,商业航天美股,MOG-A.US,Moog A,中游器件咽喉,④⑧,405.44,USD,extended/parabolic(rng100%/1m+31.7%/3m+34.4%),🟡观望[trigger:回调rng<70],TVC推力矢量作动近垄断(SLS/导弹/高超音速)-贴6月顶勿追
+2026-06-12,商业航天美股,MTRN.US,Materion,上游材料,①⑦,246.00,USD,extended/parabolic(rng99%/1m+16.6%/3m+80.9%),🟡观望[trigger:回调rng<70],铍近垄断(JWST镜坯/惯导)-自5-26观察判定后再+30%逻辑被确认-等回调
+2026-06-12,商业航天美股,ATI.US,ATI,上游材料,①,199.50,USD,extended/parabolic(rng100%/1m+21.0%/3m+40.5%),🟡观望[trigger:回调rng<70],钛+特种合金平台贴历史顶-瓶颈逻辑被market确认但入场已晚
+2026-06-12,商业航天美股,CRS.US,Carpenter,上游材料,①,562.45,USD,extended/parabolic(rng99%/1m+28.9%/3m+55.7%),🟡观望[trigger:回调rng<70],镍钴超合金=发动机命脉-持续加速-等回调
+2026-06-12,商业航天美股,STM.US,STMicroelectronics,中游器件,④⑧,78.12,USD,extended/parabolic(rng94%/1m+23.2%/3m+137.7%),🟡观望[trigger:回$60区+Starlink占比visibility],唯一官方确认Starlink相控阵BiCMOS供应商-再度抛物线-⭐跨800VDC主题
+2026-06-12,商业航天美股,RDW.US,Redwire,中游系统,④,17.09,USD,extended/parabolic(rng53%/1m+49.1%/3m+78.2%),🟡观望[trigger:股本停止膨胀(ATM终止或连续两季股数持平)+EdgeAutonomy扭亏-稀释是可逆状态非永久排除项],ROSA太阳能阵/星敏是好业务但股本结构当前持续毁灭股东价值-5-26AVOID判定已验证(-22.5%)
+2026-06-12,商业航天美股,SKYT.US,SkyWater,上游代工,①②⑦,35.80,USD,early-uptrend(rng84%/1m+2.6%/3m+30.4%),🔴剔除[IonQ收购中$35/股-瓶颈逻辑不可投只剩并购套利],美国受信rad-hard代工被量子公司截胡-教训:真瓶颈资产会被战略买家先于二级市场拿走
+2026-06-12,商业航天美股,VOYG.US,Voyager Technologies,下游对照,排除,47.87,USD,extended/parabolic(rng85%/1m+42.5%/3m+77.2%),🔴跳过[下游空间站-类别错+抛物线],Starlab空间站运营方-下游不是猎物
