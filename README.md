@@ -28,11 +28,23 @@ git clone https://github.com/Mrjie7205/serenity-bottleneck-hunter.git ~/.claude/
 
 **价格数据(可选)**:`export EODHD_API_KEY=你的key`([EODHD](https://eodhd.com) 全球覆盖最广,海外股推荐);没有 key 时自动回退 yfinance(美股 OK)。**禁止用 WebSearch 猜价格** — 这是 skill 的硬纪律。
 
-## 📊 输出长什么样 / Sample output
+## 📊 输出长什么样 / Report anatomy
 
-每个主题产出一份单文件 HTML 报告:一句话结论 → 30 秒看懂 → 产业链网状图(瓶颈节点自动判定)→ 候选 leaderboard(🟢候选/🟡观望+触发条件/🔴排除)→ 三道闸门 → 跨主题信号 → 仓位落地:
+每个主题产出一份**自包含单文件 HTML 报告**(零依赖,浏览器直接打开,模板见 `reference/report_template.html`),从上到下:
 
-![Sample report — 网络安全主题](assets/sample_report.png)
+| 区块 | 内容 |
+|---|---|
+| **一句话结论** | 开门见山:这个主题值不值得做、最佳切入点是什么 |
+| **Step 1 · 资本开支确定性** | 3-4 个关键数字:谁在花钱、花多少、确定性来源 |
+| **30 秒看懂** | 给非从业者的主题速览(术语友好度纪律) |
+| **Step 2 · 产业链网状图** | 5 层逆向拆链,SVG 自动绘制依赖边,**瓶颈节点按入度自动判定**并高亮 |
+| **Step 4-6 · 候选 leaderboard** | 核心区,每候选一行:🟢候选 / 🟡观望(写明重估触发条件)/ 🔴排除 + 9 字段价格动量(rng/off/1m/3m/stage)+ 瓶颈原型 + thesis,按 stage 从 early→extended 排序 |
+| **⭐ 跨主题信号** | 本主题候选与其他已扫主题的交集 — 被多个 capex 周期同时锁定的 root 节点(⑤原型) |
+| **Step 5 · 三道闸门** | 穷尽性 A / ETF audit A+ / ticker 验证 A++ 的逐项通过情况(过/半过/不过) |
+| **Step 7 · 落地结论** | 仓位思路 + 触发器清单(什么条件下重估哪只) |
+| **底部** | 数据备注(价格快照日期/来源)· 术语速查表(自动从正文抽取,默认折叠)· 引用链接 · 免责声明 |
+
+报告中的每个 🟢🟡🔴 判定同步写入 `tracking/forward_picks.csv`(带日期锁定),供日后向前验证。
 
 ## What it does / 做什么
 
