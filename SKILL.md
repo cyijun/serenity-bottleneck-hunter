@@ -96,7 +96,7 @@ description: 给定一个投资主题/趋势,复用交易者 Serenity(@aleabitor
 
 **Step 6 · 入场时机**(见下方两套模式,别搞错)
 
-**Step 7 · 出报告**(单文件 HTML,用下方输出模板 + `reference/report_template.html`,含目标价+时间框架+**反向研究**+**证伪条件**+风险+免责)
+**Step 7 · 出报告**(单文件 HTML,用下方输出模板 + `reference/report_template.html`,含目标价+时间框架+**反向研究**+**证伪条件**+风险+免责)→ **交付前必过 `scripts/verify_report.py` 契约校验**(见下方"交付契约")
 
 ---
 
@@ -120,7 +120,19 @@ description: 给定一个投资主题/趋势,复用交易者 Serenity(@aleabitor
 
 > **交付物 = 一个自包含 HTML 文件**(单文件、样式内联,仅 Google Fonts 可外链),写到 `reports/<主题>_分析报告.html`。骨架与配色复用 `reference/report_template.html`。生成后 `Start-Process <file>.html`(Win)/ `open`(mac)打开。
 >
-> **report_template.html 已内置的模板特征(生成时必用)**:① **本次行动点**——头条位最多 2 张行动卡(设什么警报 / 什么条件做什么),无视排序置顶,读者 10 秒拿到本次唯一要做的事;② **水位标尺**——动量用 贴顶/高位/中位/低位/贴底 + 距高点% + 1m/3m 的人话化标尺;③ **产业链双规则瓶颈判定**——漏斗型(入度≥2 出度≤1,金边)+ 枢纽型(入度≥2 出度≥2,多对多最难绕开,酒红边);④ **判定史**——同标的历史判定(旧价→今价 ±%、对错复盘),体现框架连续性与诚实度;⑤ **§A 红队 + §B 证伪**——每候选折叠红队、🟢 带证伪(本次 Tier-1 新增,见上)。
+> **生成方式(硬规则)**:报告 = **克隆最近一份合格报告的完整外壳**(head CSS + body 末尾全部脚本 reveal/术语/chain-draw),只替换内容(候选/产业链节点/文字)。**严禁手搓 body 或把 chain-viz 画成静态简版**——chain-viz 必须是 `.cnode`+`.edge-list` 真组件喂 `layoutChain` 自动绘制判定。因预算/复杂度砍任何既定标准,**当场说明、不把缩水版当完整品交**。〔教训:契约≠保真,我把"过自己造的闸"当"做好了" → lessons.md#chain-viz-fidelity〕
+>
+> **report_template.html 已内置的模板特征(生成时必用)**:① **本次行动点**——头条位最多 2 张行动卡(设什么警报 / 什么条件做什么),无视排序置顶,读者 10 秒拿到本次唯一要做的事;② **水位标尺**——动量用 贴顶/高位/中位/低位/贴底 + 距高点% + 1m/3m 的人话化标尺,且**标尺两端标 6 个月最低/最高价、游标上方标现价**(6 月低/高/现价三价,币种按交易所后缀);③ **产业链双规则瓶颈判定**——漏斗型(入度≥2 出度≤1,金边)+ 枢纽型(入度≥2 出度≥2,多对多最难绕开,酒红边);④ **判定史**——同标的历史判定(旧价→今价 ±%、对错复盘),体现框架连续性与诚实度;⑤ **§A 红队 + §B 证伪**——每候选折叠红队、🟢 带证伪(本次 Tier-1 新增,见上)。
+
+### 交付契约(`scripts/verify_report.py`,交付前必过)
+
+报告写完、宣布完成**之前**必跑一次,把"漏交付/漏状态/漏入库"挡在交付前:
+
+```
+EODHD_API_KEY=… python scripts/verify_report.py reports/<主题>_分析报告.html
+```
+
+它查**契约**(不查思路):区块齐全(chain-viz / leaderboard / 行动点 / 三道闸 / 免责)· 每候选有 §A、🟢 有 §B · 标尺三价齐 · ticker 过 ground-truth · **现价/6月低/高 逐字段对账 scan JSON**(防手填/过期)· 状态断言带日期(过期 30 天提醒)· 每判定入轨 `forward_picks` 且 🟢 的 `invalidation` 非空 · 无占位符残留 · `<details>` 开合平衡。**有【拦】先修再交付,只剩【警】方可交付。**
 
 **报告必含区块(对应 7 步,所有项 hard rule 不允许跳过):**
 1. **页眉 + 一句话结论**:主题 | 资本开支确定性 | 类别 | 数据截止日 | 价格源 | 免责。
@@ -184,6 +196,7 @@ description: 给定一个投资主题/趋势,复用交易者 Serenity(@aleabitor
 - `reference/methodology.md` —— 完整方法论(理念、筛选清单、两套择时、回避清单、风险)
 - `reference/supply-chain-and-archetypes.md` —— 元框架、产业链速查表、**Part D 9 大瓶颈原型库**、EODHD 数据映射
 - `reference/report_template.html` —— **HTML 报告骨架 + 配色模板**
+- `scripts/verify_report.py` —— **交付契约 linter**(报告生成后必跑;查区块齐全 / §A§B / 标尺三价 / 价格对账 scan / 入轨 forward_picks / 状态日期 / 占位符,有【拦】先修再交付)
 - `reference/example_commercial_space.md` —— worked example(商业航天),示范分析内容与颗粒度
 - `reference/glossary.md` —— **术语库**(120+ 条,LLM 自动 enrich);报告 `<abbr>` 注释来源
 - `reference/company_desc.md` —— **公司业务描述库**:只存 business(主营/产业链位置/技术/客户),**严禁含 price/stage/估值等动态数据**。格式 `- **SYM.EX** [YYYY-MM-DD] = 业务描述`,每条带 last_updated 时间戳。

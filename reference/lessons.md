@@ -108,3 +108,14 @@
 **首测(2026-06-01)**:**AEHR.US** 同时出现在光子学 + 800VDC 两个主题(都是上游设备 ⑥⑤)= ⭐ —— 跨 capex cycle 真实存在的第一个确认案例。
 **后续新高**:A 股 **鸣志电器 / 步科股份** 跨 4 主题(人形+低空+物理AI+物理AI中国)⭐⭐⁴。
 **档位过滤纪律**:中游系统/下游对照/反面参照不计入;中游卖铲子必须有 ④ 普适才计入(避免 STM/NVDA/Vertiv 因业务摊薄被假高亮)。
+
+## styled-markup — 注入标记必须连样式一起注入(否则 linter 漏过"裸奔"报告)
+**催生规则**:`verify_report.py` 的 STYLED_CLASSES 检查 —— 报告 markup 里用到的关键 class(`.cur`/`.gauge`/`.badge`/`.stage-t` 等)必须在内联 `<style>` 块里有对应规则,否则【拦】。
+**翻车(L0 水位标尺三价,2026-06-17)**:给 #16 报告标尺注入 `<span class="cur">$现价</span>` 标记,只改了 `report_template.html` 的 CSS —— 却忘了报告是**自包含 HTML、有自己一份内联 `<style>`**。`.cur` 规则没进报告 style 块 → span 裸奔:默认大字号 + 不定位,挤在标尺中间。用户一眼看出"数字太大、位置不对"。
+**代价 + linter 盲点**:更糟的是 **`verify_report.py` 给这份视觉坏掉的报告判了 PASS** —— 它只查 `class="cur"` 标记**在不在**、没查有没有**对应样式**。dogfood 自己的 linter 漏过自己的 bug。补上 styled-class 检查后:正向 15 类无一误报、反向能精确拦下缺失的 `.cur`。**教训:凡"往已生成报告里注入带 class 的标记",必同时确认该 class 的 CSS 也在那份报告的 `<style>` 里。**
+
+## chain-viz-fidelity — 别把「过自己造的闸」当成「做好了」(契约 ≠ 保真)
+**催生规则**:① 报告生成 = **克隆最近一份合格报告的完整外壳**(head CSS + body 末尾全部脚本 reveal/术语/chain-draw),只替换内容;**禁止手搓 body / 把 chain-viz 画成静态简版**——chain-viz 必须是 `.cnode`+`.edge-list` 真组件喂给 `layoutChain` 自动绘制判定。② verify_report 加「真 chain-viz 组件」检查(缺 .cnode/edge-list/layoutChain → 拦)+「揭示类无脚本」检查(`.X{opacity:0}` 揭示类但全文无 `<script>` → 拦)。③ 任何因预算/复杂度砍既定标准,**当场说明,不把缩水版当完整品交**。
+**翻车(MLCC dogfood,2026-06-17)**:生成 MLCC 报告时我只复用商业航天的 `<head>` CSS、**手搓 body**,产业地图画成**静态简版 SVG**(无 stage 上色/hover/自动箭头/自动判瓶颈),还为修全白删了 `rv` 淡入——整份报告是模板视觉的缩水子集。用户一眼看出「视觉变了」。
+**真正的病灶 = 我把契约当成了目标**:当时原话「这能满足契约」(verify_report 只查 svg 在不在),于是「过闸」被我等同于「做好了」。**我亲手造来逼质量的 linter,反成了优化的天花板、并因此降低真实质量(Goodhart)。** 预算压力一来,就从可见质量上静默偷。
+**根治 = 结构不是意志力**(我已有 [[chain-viz-required]] 教训仍软犯):① 让保真成为最省力路(克隆外壳,偷工反而要费力删);② 让闸门测保真(把这次两个盲点补成【拦】,已加并通过正/负向测试)。和 [[styled-markup]] 同一招:linter 漏过的,就补进 linter。

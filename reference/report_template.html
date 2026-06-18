@@ -189,14 +189,16 @@
   .chain-legend .sw-star{font-size:14px; color:var(--gold); width:auto}
   /* === 动量单元(2026-06-13 重设计:水位标尺+人话,代替旧填充条)===
      旧版填充条语义歧义(满=贴顶=危险,但视觉直觉"满=好");新版:
-     · 标尺两端 = 6月低/6月高,游标点 = 现价位置(.dot 的 left:NN%)
+     · 标尺两端 = 6月低/6月高(2026-06-17 加:标注真实价格 $低/$高),游标点 = 现价位置(.dot left:NN%)+ 游标上方 .cur 牌标现价($现价,left 钳到 10~90% 防出界)
      · .word 人话水位:贴顶(rng≥90)/高位(70-89)/中位(30-69)/低位(10-29)/贴底(<10)
      · 数字降级为附注:距高点 off% · 近1月/近3月 */
   .mo{font-family:var(--mono)}
-  .mo .ends{display:flex; justify-content:space-between; font-size:9.5px; color:var(--faint); margin-bottom:1px}
-  .mo .gauge{position:relative; height:13px; margin-bottom:5px}
+  .mo .ends{display:flex; justify-content:space-between; font-size:10px; color:var(--faint); margin-bottom:1px}
+  .mo .ends b{color:var(--muted); font-weight:700; font-family:var(--mono)}  /* 6月低/高 实际价格 */
+  .mo .gauge{position:relative; height:13px; margin:18px 0 5px}  /* 上留白给现价游标牌 */
   .mo .gauge .track{position:absolute; left:0; right:0; top:5px; height:3px; background:var(--line-strong); border-radius:2px}
   .mo .gauge .dot{position:absolute; top:0; width:13px; height:13px; border-radius:50%; transform:translateX(-50%); border:2.5px solid var(--surface); box-shadow:0 0 0 1px var(--line-strong),0 1px 3px rgba(0,0,0,.25)}
+  .mo .gauge .cur{position:absolute; top:-15px; transform:translateX(-50%); font-size:10px; font-weight:700; color:var(--ink); background:var(--surface); border:1px solid var(--line-strong); border-radius:3px; padding:0 4px; white-space:nowrap; font-family:var(--mono)}  /* 游标上方:现价牌 */
   .mo.s-early .dot{background:var(--green)} .mo.s-ext .dot{background:var(--red)} .mo.s-range .dot{background:var(--amber)}
   .mo .word{font-size:12.5px; font-weight:700}
   .mo.s-early .word{color:var(--green)} .mo.s-ext .word{color:var(--red)} .mo.s-range .word{color:var(--amber)}
@@ -427,7 +429,7 @@
     </div>
   </div>
 
-  <p class="lead">标尺 = 现价在 <b>6 个月最低↔最高</b> 之间的水位(游标点位置);颜色 = stage(绿=早期上行可入场 / 红=已抛物线别追 / 琥珀=横盘或深跌)。水位词:贴顶(≥90%)/ 高位 / 中位 / 低位 / 贴底(<10%)。价格为 <code style="font-family:var(--mono);font-size:13px">price.py</code> 实测。</p>
+  <p class="lead">标尺 = 现价在 <b>6 个月最低↔最高</b> 之间的水位(游标点位置)—— 标尺两端标 6 个月最低/最高价、游标上方标现价;颜色 = stage(绿=早期上行可入场 / 红=已抛物线别追 / 琥珀=横盘或深跌)。水位词:贴顶(≥90%)/ 高位 / 中位 / 低位 / 贴底(<10%)。价格为 <code style="font-family:var(--mono);font-size:13px">price.py</code> 实测。</p>
   <div class="board">
     <div class="row head"><span>代码 / 现价</span><span>是什么 · 判定 · trigger</span><span>6月水位 · 动量</span><span style="text-align:right">stage</span></div>
 
@@ -454,8 +456,8 @@
         <div class="hist">判定史:{{MM-DD}} {{🟡观察}} @{{$旧价}} → 今 {{$现价}}(<span class="v-ok">{{±Z%}}</span>)· {{判定到目前为止 对/错 一句话}}</div>
       </div>
       <div class="mo s-early">
-        <div class="ends"><span>6月低</span><span>6月高</span></div>
-        <div class="gauge"><div class="track"></div><div class="dot" style="left:{{range_pos}}%"></div></div>
+        <div class="ends"><span>6月低 <b>{{$低}}</b></span><span><b>{{$高}}</b> 6月高</span></div>
+        <div class="gauge"><div class="track"></div><div class="dot" style="left:{{range_pos}}%"></div><span class="cur" style="left:{{range_pos_钳10_90}}%">{{$现价}}</span></div>
         <div class="lbl"><span class="word">{{贴顶/高位/中位/低位/贴底}}</span> · 距高点 <b>{{off%}}</b><br>近1月 <b>{{+x%}}</b> · 近3月 <b>{{+x%}}</b></div>
       </div>
       <div class="stage-t early">EARLY-UPTREND<small>{{备注}}</small></div>
