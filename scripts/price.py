@@ -109,12 +109,58 @@ def analyze(symbol, days=400):
     }
 
 
-def valuation(yf_symbol, info=None):
-    """估值/速度字段 —— 二轴判定的「基本面跟不跟得上」轴(价格水位之外的第二轴)。
-    走 yfinance .info(EODHD fundamentals 对免费 key 403)。A股常缺 forward/PEG → 优雅降级为 None。
-    传入已取的 info 可复用(扫描里取名字那次),避免重复 HTTP。
-    返回:forward_pe / trailing_pe / peg / eps_growth(%) / rev_growth(%)。"""
-    out = {"forward_pe": None, "trailing_pe": None, "peg": None, "eps_growth": None, "rev_growth": None}
+# ── 估值/速度字段(二轴判定的「基本面跟不跟得上」轴)= 多源 ──
+# A股→akshare(中国源:百度 PE-TTM + 东财券商一致预期 forward + 东财财务增速);美股/海外→yfinance。
+# 实测:yfinance 的 A股 trailing PE / 盈利增速 基本准,但 forward 系统性偏低(乐观)→ A股 forward 用 akshare 更可信;
+# 且两源对 trailing 可交叉验证。每个 akshare 接口独立 try(本机代理会拦部分 endpoint),缺字段由 yfinance 兜底。
+_AK_FC = None  # 东财全市场一致预期表,缓存一次(~2700 只,拉一次 ~35s)
+
+def _ak_forecast():
+    global _AK_FC
+    if _AK_FC is None:
+        import akshare as ak
+        _AK_FC = ak.stock_profit_forecast_em()
+    return _AK_FC
+
+def _ak_valuation(code, last=None):
+    out = {"forward_pe": None, "trailing_pe": None, "peg": None, "eps_growth": None, "rev_growth": None, "src": "akshare"}
+    import akshare as ak
+    try:  # ① PE-TTM(百度,序列尾 = 最新)
+        df = ak.stock_zh_valuation_baidu(symbol=code, indicator="市盈率(TTM)", period="近一年")
+        out["trailing_pe"] = round(float(df["value"].iloc[-1]), 2)
+    except Exception:
+        pass
+    try:  # ② forward = 现价 ÷ 次年券商一致预期 EPS(真 forward,非 yfinance 乐观值)
+        fc = _ak_forecast(); row = fc[fc["代码"] == code]
+        col = next((c for c in fc.columns if "2026" in str(c) and "每股收益" in str(c)), None)
+        if not row.empty and col and last:
+            eps = float(row[col].iloc[0])
+            if eps > 0:
+                out["forward_pe"] = round(last / eps, 2)
+    except Exception:
+        pass
+    try:  # ③ 增速:财务摘要 归母净利润 / 营业总收入 最新 vs 4 季前 YoY
+        fa = ak.stock_financial_abstract(symbol=code)
+        dc = [c for c in fa.columns if str(c).isdigit() and len(str(c)) == 8]
+        def yoy(metric):
+            r = fa[fa["指标"].astype(str) == metric]
+            if r.empty or len(dc) < 5:
+                return None
+            try:
+                cur, pri = float(r[dc[0]].iloc[0]), float(r[dc[4]].iloc[0])
+                return round((cur - pri) / abs(pri) * 100, 1) if pri else None
+            except Exception:
+                return None
+        out["eps_growth"] = yoy("归母净利润")
+        out["rev_growth"] = yoy("营业总收入")
+    except Exception:
+        pass
+    if out["trailing_pe"] and out["eps_growth"] and out["eps_growth"] > 0:  # 粗略 PEG
+        out["peg"] = round(out["trailing_pe"] / out["eps_growth"], 2)
+    return out
+
+def _yf_valuation(yf_symbol, info=None):
+    out = {"forward_pe": None, "trailing_pe": None, "peg": None, "eps_growth": None, "rev_growth": None, "src": "yfinance"}
     if info is None:
         try:
             import yfinance as yf
@@ -123,9 +169,8 @@ def valuation(yf_symbol, info=None):
             return out
     def g(k):
         v = info.get(k)
-        return round(float(v), 2) if isinstance(v, (int, float)) and v == v else None  # v==v 排 nan
-    out["forward_pe"] = g("forwardPE")
-    out["trailing_pe"] = g("trailingPE")
+        return round(float(v), 2) if isinstance(v, (int, float)) and v == v else None
+    out["forward_pe"] = g("forwardPE"); out["trailing_pe"] = g("trailingPE")
     out["peg"] = g("pegRatio") or g("trailingPegRatio")
     eg = g("earningsGrowth")
     if eg is None:
@@ -133,6 +178,30 @@ def valuation(yf_symbol, info=None):
     out["eps_growth"] = round(eg * 100, 1) if eg is not None else None
     rg = g("revenueGrowth")
     out["rev_growth"] = round(rg * 100, 1) if rg is not None else None
+    return out
+
+_A_SUFFIX = (".SS", ".SZ", ".SHG", ".SHE", ".SH")
+def valuation(symbol, info=None, last=None):
+    """多源估值:A股(.SS/.SZ/.SHG/.SHE 或 6 位数)→ akshare,缺字段 yfinance 兜底;美股/海外 → yfinance。
+    传 last(现价)供 A股算 forward。返回含 src 标来源,便于报告标注与交叉验证。"""
+    su = (symbol or "").upper()
+    is_a = su.endswith(_A_SUFFIX) or (len(su) >= 6 and su[:6].isdigit())
+    if not is_a:
+        return _yf_valuation(symbol, info)
+    code = su.split(".")[0][:6]
+    try:
+        out = _ak_valuation(code, last)
+    except Exception:
+        out = None
+    if not out or all(out.get(k) is None for k in ("trailing_pe", "forward_pe", "eps_growth")):
+        v = _yf_valuation(symbol, info); v["src"] = "yfinance(ak不可用)"; return v
+    if any(out.get(k) is None for k in ("trailing_pe", "forward_pe", "eps_growth", "rev_growth")):  # 缺字段兜底
+        yv = _yf_valuation(symbol, info); filled = False
+        for k in ("forward_pe", "trailing_pe", "peg", "eps_growth", "rev_growth"):
+            if out.get(k) is None and yv.get(k) is not None:
+                out[k] = yv[k]; filled = True
+        if filled:
+            out["src"] = "akshare+yf兜底"
     return out
 
 

@@ -38,16 +38,21 @@ def justify(d):
     if fpe and tpe and fpe > 0 and tpe > 0:
         mult = "压缩" if fpe < tpe * 0.95 else ("扩张" if fpe > tpe * 1.05 else "持平")
     growth = epsg if epsg is not None else revg
-    lead = (growth is not None and growth >= r3 * 0.6)        # 盈利/营收增速跟得上涨幅
+    g_sus = growth is not None and (growth > 300 or growth < -100)   # 小基数算爆/数据错 → 不计分,显示 ⚠️
+    g_eff = None if g_sus else growth
+    lead = (g_eff is not None and g_eff >= r3 * 0.6)         # 盈利/营收增速跟得上涨幅
     leader = bool(rs and rst and rs <= max(1, rst / 3))
     laggard = bool(rs and rst and rs > rst * 2 / 3)
     score = 0
     score += 1 if mult == "压缩" else (-1 if mult == "扩张" else 0)
     score += 1 if (peg is not None and 0 < peg <= 2) else (-1 if (peg is not None and peg > 3) else 0)
-    score += 1 if (growth is not None and lead) else (-1 if (growth is not None and not lead and growth < 10) else 0)
+    score += 1 if (g_eff is not None and lead) else (-1 if (g_eff is not None and not lead and g_eff < 10) else 0)
     score += 1 if leader else (-1 if laggard else 0)
+    pe_sus = fpe is not None and fpe >= 80                   # forward 绝对估值过高:压缩也不算「对」
     if rng >= 85:
         hint = "贵但对" if score >= 1 else ("真贴顶" if score <= -1 else "高位待判")
+        if hint == "贵但对" and pe_sus:
+            hint = "高位待判"
     elif rng <= 30:
         hint = "低位埋伏" if score >= 0 else "低位落后"
     else:
@@ -58,8 +63,9 @@ def justify(d):
     parts = [f"fwdP/E {s(fpe)}" + (f"·{mult}" if mult else ""), f"PEG {s(peg)}",
              (f"盈利{epsg:+.0f}%" if epsg is not None else (f"营收{revg:+.0f}%" if revg is not None else "增速—")),
              (f"RS {rs}/{rst}" if rs else "")]
+    warn = (" ⚠️增速存疑" if g_sus else "") + (" ⚠️估值极高" if pe_sus else "")
     disp = ('<br><span style="font-size:10px;color:var(--faint)">第二轴 · ' + " · ".join(p for p in parts if p)
-            + f' → <b style="color:{color}">{hint}</b></span>')
+            + warn + f' → <b style="color:{color}">{hint}</b></span>')
     return hint, disp
 
 def ruler(S, tk):

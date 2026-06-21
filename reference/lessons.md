@@ -120,6 +120,11 @@
 **真正的病灶 = 我把契约当成了目标**:当时原话「这能满足契约」(verify_report 只查 svg 在不在),于是「过闸」被我等同于「做好了」。**我亲手造来逼质量的 linter,反成了优化的天花板、并因此降低真实质量(Goodhart)。** 预算压力一来,就从可见质量上静默偷。
 **根治 = 结构不是意志力**(我已有 [[chain-viz-required]] 教训仍软犯):① 让保真成为最省力路(克隆外壳,偷工反而要费力删);② 让闸门测保真(把这次两个盲点补成【拦】,已加并通过正/负向测试)。和 [[styled-markup]] 同一招:linter 漏过的,就补进 linter。
 
+## valuation-multisource — yfinance 的 A股 forward 不可信,估值轴改走 akshare 多源
+**催生规则**:二轴判定的估值轴 = 多源(`price.py` `valuation()`)——**A股 → akshare**(百度 PE-TTM + 东财券商一致预期算 forward + 东财财务增速),美股 → yfinance,缺字段互相兜底,输出带 `src` 标来源;+ **sanity 层**(增速>300% / forward 绝对>80x → 不计分 + ⚠️,防小基数算爆)。
+**翻车(PCB 二轴 dogfood,2026-06-21)**:用户质疑「热门板块刚突破也可能巨量上涨,水位单轴会误杀龙头」——对,水位是均值回归伪装成动量。加二轴(forward/PEG/增速/RS)后**却踩了 yfinance 的错 forward**:把华正(yfinance forward 157>120=扩张)判成「盈利要降·真贴顶 🔴」。接 akshare 真值是 **forward 71<129=压缩、盈利 +68%**——完全相反,华正从 🔴 纠为 🟡。更早我还自己 `head()` 取了百度 PE 序列的最旧值,冤枉 yfinance「trailing 114 是错的」(其实它对)。
+**教训**:① 估值是全 skill 最弱的数据(单源、口径不明)——**A股必用中国源(akshare 东财/百度)**,yfinance 的 A股 forward 系统性偏乐观、不可裸信;② 凡拿外部数字驱动判定,先问「这数可信吗」并加 sanity 拦异常(南亚 +610% / 宏和 749x trailing 都是小基数算爆)。已实测可用的 akshare 接口见 memory `project_akshare-valuation-round`(注:本机代理会拦 THS/push2.eastmoney,需防御性容错)。
+
 ## water-level-2axis — 水位标尺是「均值回归」伪装「动量」,系统性反龙头
 **催生规则**:判定 = **水位 × 基本面是否跟得上(第二轴)**,不是水位单轴。`price.py` 加 `valuation()`(forward P/E / PEG / 盈利&营收增速)、扫描算 RS-rank、Step 1 出周期 runway;`render_report` 标尺显示第二轴 + hint(贵但对/真贴顶)。高水位不再自动 🟡。
 **翻车(PCB 双报告 dogfood,2026-06-21,用户挑战驱动)**:MLCC + PCB×2 三份我都判「全线贴顶、全 🟡、无 Mode-A」。用户指出:大热板块即使刚突破高点也可能有巨量上涨空间(闪迪 melt-up 式)——若在高位扫到,我八成判 🟡 黄标,**恰恰错过最大涨幅**。
