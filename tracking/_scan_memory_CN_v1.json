@@ -1,0 +1,1277 @@
+{
+  "meta": {
+    "theme_tag": "memory",
+    "theme_name": "A股存储芯片",
+    "scope": "Memory and storage chips in A-shares: DRAM, NAND Flash, NOR Flash, memory modules (SSD, eMMC), memory controllers/MCU, HBM-related advanced packaging, and upstream materials/equipment specific to memory fabs (e.g., precursor gases, photoresist, targets, cleaning, etch, deposition).",
+    "scan_date": "2026-07-06",
+    "data_sources": ["Tushare pro_bar/daily/daily_basic/fina_indicator/forecast via scripts/price.py", "scripts/price.py valuation()"],
+    "currencies": "CNY",
+    "notes": "Prices are forward-adjusted (qfq) as returned by Tushare. This scan focuses on upstream/small-mid-cap bottleneck-rich names; downstream giants are used as reference only."
+  },
+  "supply_chain_map": {
+    "L1_downstream_systems_modules": {
+      "description": "终端存储品牌、模组与系统：SSD/eMMC/UFS/企业级存储阵列，直接受益于容量涨价与国产替代，但品牌壁垒低、竞争加剧。",
+      "tickers": ["301308.SZ", "688525.SH", "300042.SZ", "300302.SZ"]
+    },
+    "L2_midstream_design": {
+      "description": "Fabless存储与控制芯片设计：NOR/NAND/DRAM设计、SSD主控、内存接口、EEPROM/SPD。技术壁垒分化大，利基型与国产替代弹性高。",
+      "tickers": ["603986.SH", "688766.SH", "688110.SH", "300223.SZ", "688123.SH", "688416.SH", "688008.SH", "300672.SZ", "001309.SZ"]
+    },
+    "L3_advanced_packaging": {
+      "description": "先进封装与封测：HBM/3D堆叠、TSV、2.5D/CoWoS类封装。当前产业链最硬瓶颈之一，产能紧张且扩产周期长。",
+      "tickers": ["002156.SZ", "000021.SZ", "600584.SH", "002185.SZ", "688362.SH", "603005.SH"]
+    },
+    "L4_fab_equipment": {
+      "description": "晶圆制造设备：刻蚀、薄膜沉积、CMP、清洗、检测/量测、测试。存储大厂扩产与国产替代直接拉动设备订单。",
+      "tickers": ["002371.SZ", "688012.SH", "688072.SH", "688120.SH", "300604.SZ", "300567.SZ", "688082.SH"]
+    },
+    "L5_materials_chemicals": {
+      "description": "上游材料与化学品：前驱体、电子特气、光刻胶、CMP耗材、溅射靶材。认证周期长、客户粘性强，是存储/HBM扩产中供给弹性最小的环节。",
+      "tickers": ["002409.SZ", "300054.SZ", "300346.SZ", "300666.SZ", "688019.SH", "603650.SH", "300655.SZ"]
+    }
+  },
+  "bottleneck_layers": [
+    "L5_materials_chemicals",
+    "L3_advanced_packaging"
+  ],
+  "bottleneck_archetype_hits": {
+    "materials/substrate monopoly": ["002409.SZ", "688019.SH", "300054.SZ"],
+    "single-source choke": ["688008.SH", "688012.SH", "688072.SH"],
+    "sold-out capacity": ["002156.SZ", "600584.SH", "688362.SH", "300604.SZ"],
+    "BOM-ubiquitous": ["688123.SH", "603986.SH"],
+    "valuation arbitrage": ["300655.SZ", "300042.SZ", "300302.SZ"],
+    "test/equipment bottleneck": ["300604.SZ", "300567.SZ", "688082.SH"],
+    "off-radar/pre-institutional": ["603005.SH", "688110.SH", "300655.SZ"],
+    "giant-dependent moat": ["002156.SZ", "000021.SZ", "600584.SH"],
+    "macro dislocation": ["theme-level memory upcycle / CXMT IPO"]
+  },
+  "global_private_acquired_players": [
+    "长鑫存储 (CXMT) — 未上市，拟科创板IPO；中国唯一规模化DRAM厂商，A股产业链最大单一客户与估值锚。",
+    "长江存储 (YMTC) — 未上市；国产NAND Flash龙头。",
+    "SK海力士/三星/美光 — 海外HBM三巨头，产能 Sold-out。",
+    "ISSI (北京矽成) — 已被北京君正收购。"
+  ],
+  "candidates": [
+    {
+      "ticker": "603005.SH",
+      "name": "晶方科技",
+      "layer": "L3_advanced_packaging",
+      "archetype_hits": ["off-radar/pre-institutional", "test/equipment bottleneck"],
+      "price": {
+        "last": 42.59,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 57,
+        "pct_off_6mo_high": -22.9,
+        "ret_1m_pct": -7.0,
+        "ret_3m_pct": 63.9,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 74.07,
+        "trailing_pe": 75.1317,
+        "peg": 615.33,
+        "eps_growth": 0.1221,
+        "rev_growth": 14.8624,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 1,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🟢 candidate",
+      "thesis": "晶圆级封装/TSV小盘龙头，受益存储/CIS/WLCSP国产替代；股价相对板块滞涨（1月-7%，距6月高点-22.9%），市值小、机构覆盖低，存在补涨与重估空间。",
+      "risk": "存储下游需求不及预期；CIS客户集中；扩产节奏慢于竞争对手；估值修复需业绩兑现。",
+      "invalidation": "收盘价跌破39元（约SMA50下方5%）或Q2营收环比下滑。",
+      "catalyst": "存储模组客户导入/TSV产能利用率提升/HBM封装技术突破。",
+      "entry_price": 42.59,
+      "target_range": "51-58",
+      "time_frame": "6-9个月"
+    },
+    {
+      "ticker": "688019.SH",
+      "name": "安集科技",
+      "layer": "L5_materials_chemicals",
+      "archetype_hits": ["materials/substrate monopoly", "single-source choke"],
+      "price": {
+        "last": 289.35,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 62,
+        "pct_off_6mo_high": -20.9,
+        "ret_1m_pct": 38.0,
+        "ret_3m_pct": 50.6,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 82.8,
+        "trailing_pe": 80.0313,
+        "peg": 3.48,
+        "eps_growth": 23.0072,
+        "rev_growth": 32.7618,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 1,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🟢 candidate",
+      "thesis": "国产CMP抛光液龙头，长鑫/长江存储扩产核心耗材供应商；认证壁垒高、复购属性强；股价尚未进入板块主升浪，相对低估。",
+      "risk": "海外巨头降价打压；新制程验证不及预期；存储大厂资本开支放缓；毛利率波动。",
+      "invalidation": "长鑫/长江存储扩产延期，或公司丢失关键制程验证。",
+      "catalyst": "先进制程抛光液份额提升/HBM用新品导入。",
+      "entry_price": 289.35,
+      "target_range": "350-400",
+      "time_frame": "6-12个月"
+    },
+    {
+      "ticker": "688008.SH",
+      "name": "澜起科技",
+      "layer": "L2_midstream_design",
+      "archetype_hits": ["single-source choke", "BOM-ubiquitous"],
+      "price": {
+        "last": 268.68,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 70,
+        "pct_off_6mo_high": -19.3,
+        "ret_1m_pct": 12.2,
+        "ret_3m_pct": 108.3,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 145.95,
+        "trailing_pe": 128.3931,
+        "peg": 2.09,
+        "eps_growth": 61.3046,
+        "rev_growth": 19.5146,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0.5,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🟢 candidate",
+      "thesis": "全球内存接口芯片(DDR4/DDR5)核心供应商，HBM4E接口已送样[网络检索:雪球2025-10-31]，服务器内存升级与国产算力替代双重驱动；相对海外对手估值仍有折价。",
+      "risk": "英特尔/AMD平台迭代慢于预期；DDR5渗透率波动；HBM接口认证周期长；中美技术限制。",
+      "invalidation": "核心客户平台延期或市场份额被Renesas/Inphi侵蚀。",
+      "catalyst": "DDR5渗透率提升/HBM接口芯片量产。",
+      "entry_price": 268.68,
+      "target_range": "320-370",
+      "time_frame": "6-12个月"
+    },
+    {
+      "ticker": "002185.SZ",
+      "name": "华天科技",
+      "layer": "L3_advanced_packaging",
+      "archetype_hits": ["sold-out capacity", "valuation arbitrage"],
+      "price": {
+        "last": 19.94,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 70,
+        "pct_off_6mo_high": -16.4,
+        "ret_1m_pct": 10.4,
+        "ret_3m_pct": 72.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 112.32,
+        "trailing_pe": 81.2296,
+        "peg": 0.14,
+        "eps_growth": 568.3904,
+        "rev_growth": 34.487,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0.5,
+        "cheap_de_risked": 1
+      },
+      "rating": "🟡 watch",
+      "thesis": "三线封测中估值最低、业绩弹性最大，先进封装产能持续爬坡；PEG仅0.14，利润增速极高。",
+      "risk": "先进封装技术差距大于长电/通富；利润率低；产能利用率波动。",
+      "invalidation": "毛利率环比下滑或先进封装订单低于预期。",
+      "catalyst": "2.5D/HBM封装产线投产/存储客户放量。",
+      "entry_price": 19.94,
+      "target_range": "24-28",
+      "time_frame": "6-9个月"
+    },
+    {
+      "ticker": "002156.SZ",
+      "name": "通富微电",
+      "layer": "L3_advanced_packaging",
+      "archetype_hits": ["sold-out capacity", "giant-dependent moat"],
+      "price": {
+        "last": 66.18,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 69,
+        "pct_off_6mo_high": -16.6,
+        "ret_1m_pct": -1.0,
+        "ret_3m_pct": 62.5,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 81.99,
+        "trailing_pe": 69.4387,
+        "peg": 0.31,
+        "eps_growth": 224.5487,
+        "rev_growth": 22.8027,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0.5,
+        "cheap_de_risked": 1
+      },
+      "rating": "🟡 watch",
+      "thesis": "AMD核心封测伙伴，国内HBM/2.5D封装技术领先[网络检索:东方财富2025-10-27]；近1月横盘整理，未进入板块最癫狂阶段。",
+      "risk": "AMD订单波动；HBM封装良率爬坡不及预期； capex回收周期长。",
+      "invalidation": "跌破60元支撑或AMD下修资本开支。",
+      "catalyst": "HBM样品量产/国产算力客户导入。",
+      "entry_price": 66.18,
+      "target_range": "80-95",
+      "time_frame": "6-12个月"
+    },
+    {
+      "ticker": "688110.SH",
+      "name": "东芯股份",
+      "layer": "L2_midstream_design",
+      "archetype_hits": ["off-radar/pre-institutional"],
+      "price": {
+        "last": 174.77,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 67,
+        "pct_off_6mo_high": -16.6,
+        "ret_1m_pct": 38.7,
+        "ret_3m_pct": 66.0,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": 28292.2666,
+        "peg": 84.85,
+        "eps_growth": 333.4237,
+        "rev_growth": 236.9496,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 0.5,
+        "pre_institutional": 1,
+        "cheap_de_risked": 0
+      },
+      "rating": "🟡 watch",
+      "thesis": "利基型存储(SLC NAND/NOR/DRAM)小盘设计商，车规/工业客户持续拓展；利润刚扭亏，市值小、机构覆盖低。",
+      "risk": "高估值需高增长持续兑现；产品结构单一；竞争加剧。",
+      "invalidation": "Q2净利润环比下滑或毛利率低于30%。",
+      "catalyst": "车规产品放量/国产工业客户导入。",
+      "entry_price": 174.77,
+      "target_range": "210-250",
+      "time_frame": "6-9个月"
+    },
+    {
+      "ticker": "300655.SZ",
+      "name": "晶瑞电材",
+      "layer": "L5_materials_chemicals",
+      "archetype_hits": ["valuation arbitrage", "off-radar/pre-institutional"],
+      "price": {
+        "last": 18.27,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 51,
+        "pct_off_6mo_high": -21.3,
+        "ret_1m_pct": 26.2,
+        "ret_3m_pct": 36.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 147.02,
+        "trailing_pe": 182.8944,
+        "peg": null,
+        "eps_growth": -84.6175,
+        "rev_growth": 13.3883,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 0.5,
+        "pre_institutional": 1,
+        "cheap_de_risked": 0
+      },
+      "rating": "🟡 watch",
+      "thesis": "半导体光刻胶/湿电子化学品小市值标的，股价绝对位置低、板块内滞涨；光刻胶国产替代叙事明确但业绩尚未兑现。",
+      "risk": "eps同比大幅下滑；高端ArF光刻胶验证慢；资产负债率高。",
+      "invalidation": "跌破16.5元前低或Q2继续亏损。",
+      "catalyst": "ArF光刻胶客户验证通过/存储大厂订单落地。",
+      "entry_price": 18.27,
+      "target_range": "22-26",
+      "time_frame": "6-12个月"
+    },
+    {
+      "ticker": "300054.SZ",
+      "name": "鼎龙股份",
+      "layer": "L5_materials_chemicals",
+      "archetype_hits": ["materials/substrate monopoly"],
+      "price": {
+        "last": 90.56,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 72,
+        "pct_off_6mo_high": -18.4,
+        "ret_1m_pct": 30.0,
+        "ret_3m_pct": 90.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 345.31,
+        "trailing_pe": 103.9877,
+        "peg": 1.33,
+        "eps_growth": 77.9914,
+        "rev_growth": 23.8179,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0.5,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🟡 watch",
+      "thesis": "CMP抛光垫国产龙头，同步布局光刻胶[网络检索:东方财富2026-07-02]；长鑫核心供应商，耗材复购属性强。",
+      "risk": "抛光垫价格下行；打印耗材主业拖累；光刻胶验证不及预期。",
+      "invalidation": "抛光垫份额下滑或单季扣非亏损。",
+      "catalyst": "KrF光刻胶放量/长鑫份额提升。",
+      "entry_price": 90.56,
+      "target_range": "108-125",
+      "time_frame": "6-12个月"
+    },
+    {
+      "ticker": "300346.SZ",
+      "name": "南大光电",
+      "layer": "L5_materials_chemicals",
+      "archetype_hits": ["single-source choke", "materials/substrate monopoly"],
+      "price": {
+        "last": 77.74,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 63,
+        "pct_off_6mo_high": -21.3,
+        "ret_1m_pct": 36.3,
+        "ret_3m_pct": 75.5,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 307.03,
+        "trailing_pe": 154.2226,
+        "peg": 5.15,
+        "eps_growth": 29.971,
+        "rev_growth": 5.4544,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 1,
+        "cheap_de_risked": 0
+      },
+      "rating": "🟡 watch",
+      "thesis": "MO源/电子特气/ArF光刻胶国产先锋，长鑫/存储产业链核心材料商[网络检索:今日头条2026-06-25]；稀缺性强但估值偏贵。",
+      "risk": "ArF光刻胶放量慢；MO源价格竞争；估值过高需时间消化。",
+      "invalidation": "ArF光刻胶客户验证未通过或单季营收负增长。",
+      "catalyst": "ArF光刻胶批量供货/前驱体份额提升。",
+      "entry_price": 77.74,
+      "target_range": "95-110",
+      "time_frame": "6-12个月"
+    },
+    {
+      "ticker": "300042.SZ",
+      "name": "朗科科技",
+      "layer": "L1_downstream_systems_modules",
+      "archetype_hits": ["valuation arbitrage", "off-radar/pre-institutional"],
+      "price": {
+        "last": 67.42,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 75,
+        "pct_off_6mo_high": -17.4,
+        "ret_1m_pct": -1.3,
+        "ret_3m_pct": 59.9,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 519.65,
+        "trailing_pe": 110.9757,
+        "peg": 0.15,
+        "eps_growth": 744.4263,
+        "rev_growth": 107.844,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 0,
+        "pre_institutional": 1,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🟡 watch",
+      "thesis": "U盘/移动存储品牌老兵，近年向数据中心SSD转型；板块内滞涨，利润增速极高但绝对估值高。",
+      "risk": "品牌溢价弱；下游价格竞争激烈；转型企业级存储验证慢。",
+      "invalidation": "跌破60元或企业级SSD订单低于预期。",
+      "catalyst": "企业级/信创SSD订单落地。",
+      "entry_price": 67.42,
+      "target_range": "80-95",
+      "time_frame": "6-9个月"
+    },
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "layer": "L2_midstream_design",
+      "archetype_hits": ["BOM-ubiquitous", "giant-dependent moat"],
+      "price": {
+        "last": 654.29,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 70,
+        "pct_off_6mo_high": -22.7,
+        "ret_1m_pct": 34.1,
+        "ret_3m_pct": 165.3,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 285.18,
+        "trailing_pe": 159.7235,
+        "peg": 0.31,
+        "eps_growth": 522.7881,
+        "rev_growth": 119.3787,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🔴 pass",
+      "thesis": "NOR Flash/MCU龙头，全球市占率前三[网络检索:什么值得买2026-02-13]；业绩与股价已充分反映存储涨价周期。",
+      "risk": "股价3个月+165%已透支；MCU价格战；利基型DRAM竞争加剧。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "301308.SZ",
+      "name": "江波龙",
+      "layer": "L1_downstream_systems_modules",
+      "archetype_hits": ["giant-dependent moat"],
+      "price": {
+        "last": 681.8,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 87,
+        "pct_off_6mo_high": -9.1,
+        "ret_1m_pct": 31.1,
+        "ret_3m_pct": 136.0,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 28.56,
+        "trailing_pe": 53.0485,
+        "peg": 0.02,
+        "eps_growth": 2644.0497,
+        "rev_growth": 132.7928,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 0.5,
+        "pre_institutional": 0,
+        "cheap_de_risked": 1
+      },
+      "rating": "🔴 pass",
+      "thesis": "国内存储模组龙头，HBM堆叠封装技术布局[网络检索:什么值得买2026-02-13]；但股价已大幅上涨，短期赔率不足。",
+      "risk": "模组毛利率低；NAND/DRAM价格波动；估值随周期高点回落。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "688525.SH",
+      "name": "佰维存储",
+      "layer": "L1_downstream_systems_modules",
+      "archetype_hits": ["off-radar/pre-institutional"],
+      "price": {
+        "last": 454.7,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 85,
+        "pct_off_6mo_high": -12.1,
+        "ret_1m_pct": 46.3,
+        "ret_3m_pct": 115.8,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 231.81,
+        "trailing_pe": 54.2907,
+        "peg": 0.03,
+        "eps_growth": 1567.8539,
+        "rev_growth": 341.528,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 0.5,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🔴 pass",
+      "thesis": "eMMC/UFS/AI终端存储模组新锐，AI手机PC受益；但1月+46%，处于加速段。",
+      "risk": "客户集中；模组毛利率波动；股价透支。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "688766.SH",
+      "name": "普冉股份",
+      "layer": "L2_midstream_design",
+      "archetype_hits": ["BOM-ubiquitous"],
+      "price": {
+        "last": 759.99,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 81,
+        "pct_off_6mo_high": -16.5,
+        "ret_1m_pct": 91.9,
+        "ret_3m_pct": 239.2,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 551.28,
+        "trailing_pe": 256.7509,
+        "peg": 0.2,
+        "eps_growth": 1259.8748,
+        "rev_growth": 256.078,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 0.5,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "NOR Flash高弹性标的；1月+91.9%，3月+239.2%，情绪过热。",
+      "risk": "股价已过度反应；NOR Flash涨价可持续性存疑。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "layer": "L2_midstream_design",
+      "archetype_hits": ["single-source choke"],
+      "price": {
+        "last": 253.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 85,
+        "pct_off_6mo_high": -9.5,
+        "ret_1m_pct": 81.5,
+        "ret_3m_pct": 138.7,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 316.58,
+        "trailing_pe": 196.9532,
+        "peg": 0.59,
+        "eps_growth": 331.6073,
+        "rev_growth": 47.1156,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "车规级DRAM/SRAM龙头（ISSI），汽车存储国产替代[网络检索:什么值得买2026-02-13]；但1月+81.5%，短期过热。",
+      "risk": "汽车芯片去库存；股价透支；收购商誉。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "688123.SH",
+      "name": "聚辰股份",
+      "layer": "L2_midstream_design",
+      "archetype_hits": ["BOM-ubiquitous"],
+      "price": {
+        "last": 214.99,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 89,
+        "pct_off_6mo_high": -6.1,
+        "ret_1m_pct": 65.9,
+        "ret_3m_pct": 109.3,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 166.65,
+        "trailing_pe": 115.829,
+        "peg": null,
+        "eps_growth": -68.9954,
+        "rev_growth": 7.2503,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "EEPROM/SPD龙头，DDR5 SPD放量；但利润同比下滑，股价处于高位。",
+      "risk": "利润下滑；估值偏高；需求波动。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "002409.SZ",
+      "name": "雅克科技",
+      "layer": "L5_materials_chemicals",
+      "archetype_hits": ["materials/substrate monopoly", "single-source choke"],
+      "price": {
+        "last": 186.45,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 66,
+        "pct_off_6mo_high": -24.3,
+        "ret_1m_pct": 62.1,
+        "ret_3m_pct": 142.1,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 99.7,
+        "trailing_pe": 88.1431,
+        "peg": 35.74,
+        "eps_growth": 2.466,
+        "rev_growth": -6.8504,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🔴 pass",
+      "thesis": "HBM前驱体/封装材料核心供应商，长鑫/三星/海力士长协[网络检索:网易2026-07-01]；但1月+62%，3月+142%，已过热。",
+      "risk": "收购整合风险；收入短期下滑；股价透支。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "300666.SZ",
+      "name": "江丰电子",
+      "layer": "L5_materials_chemicals",
+      "archetype_hits": ["single-source choke"],
+      "price": {
+        "last": 326.86,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 72,
+        "pct_off_6mo_high": -22.0,
+        "ret_1m_pct": 62.5,
+        "ret_3m_pct": 141.7,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 191.66,
+        "trailing_pe": 163.4018,
+        "peg": 4.89,
+        "eps_growth": 33.4161,
+        "rev_growth": 30.4917,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "高纯溅射靶材龙头，存储/逻辑 Fab必备；但股价3月+141%，估值偏高。",
+      "risk": "靶材价格竞争；海外原材料限制；股价透支。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "002371.SZ",
+      "name": "北方华创",
+      "layer": "L4_fab_equipment",
+      "archetype_hits": ["single-source choke", "giant-dependent moat"],
+      "price": {
+        "last": 803.6,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 70,
+        "pct_off_6mo_high": -16.9,
+        "ret_1m_pct": 33.3,
+        "ret_3m_pct": 83.6,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 369.09,
+        "trailing_pe": 104.5842,
+        "peg": 30.6,
+        "eps_growth": 3.4182,
+        "rev_growth": 25.7961,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0.5,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "国产半导体设备平台龙头，存储Fab扩产最大受益者[网络检索:凤凰网2026-06-30]；但市值大、估值高，作为板块参考锚。",
+      "risk": "eps增速骤降；估值过高；设备交付周期长。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "688012.SH",
+      "name": "中微公司",
+      "layer": "L4_fab_equipment",
+      "archetype_hits": ["single-source choke"],
+      "price": {
+        "last": 420.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 75,
+        "pct_off_6mo_high": -16.0,
+        "ret_1m_pct": 52.2,
+        "ret_3m_pct": 109.3,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 187.85,
+        "trailing_pe": 146.6273,
+        "peg": 0.74,
+        "eps_growth": 197.202,
+        "rev_growth": 34.1285,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🔴 pass",
+      "thesis": "刻蚀设备龙头，DRAM深孔刻蚀核心[网络检索:凤凰网2026-06-30]；但1月+52%，短期涨幅过大。",
+      "risk": "设备交付周期长；国际竞争；股价透支。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "688072.SH",
+      "name": "拓荆科技",
+      "layer": "L4_fab_equipment",
+      "archetype_hits": ["single-source choke"],
+      "price": {
+        "last": 832.0,
+        "last_date": "2026-06-26",
+        "range_pos_6mo_pct": 94,
+        "pct_off_6mo_high": -3.8,
+        "ret_1m_pct": 23.8,
+        "ret_3m_pct": 126.1,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 2461.54,
+        "trailing_pe": 143.0436,
+        "peg": 0.29,
+        "eps_growth": 488.2918,
+        "rev_growth": 56.9673,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "CVD/ALD薄膜沉积设备龙头，存储扩产核心[网络检索:凤凰网2026-06-30]；股价接近6月高点，估值极贵。",
+      "risk": "估值过高；客户集中；新设备验证慢。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "000021.SZ",
+      "name": "深科技",
+      "layer": "L3_advanced_packaging",
+      "archetype_hits": ["giant-dependent moat", "sold-out capacity"],
+      "price": {
+        "last": 53.3,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 69,
+        "pct_off_6mo_high": -19.5,
+        "ret_1m_pct": 40.6,
+        "ret_3m_pct": 109.0,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 186.23,
+        "trailing_pe": 69.9908,
+        "peg": 1.98,
+        "eps_growth": 35.3487,
+        "rev_growth": 10.6739,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🔴 pass",
+      "thesis": "存储封测与HBM TSV技术布局[网络检索:东方财富2025-10-27]；但1月+40%，短线过热。",
+      "risk": "业绩增速与股价不匹配；封装竞争加剧。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "600584.SH",
+      "name": "长电科技",
+      "layer": "L3_advanced_packaging",
+      "archetype_hits": ["sold-out capacity", "giant-dependent moat"],
+      "price": {
+        "last": 95.09,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 79,
+        "pct_off_6mo_high": -14.4,
+        "ret_1m_pct": 25.8,
+        "ret_3m_pct": 147.4,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 850.78,
+        "trailing_pe": 102.9905,
+        "peg": 2.41,
+        "eps_growth": 42.7359,
+        "rev_growth": -1.7579,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "全球封测龙头，4nm chiplet量产[网络检索:微信公众平台2024-06-11]；但3月+147%，市值大，作为板块参考锚。",
+      "risk": "收入下滑；估值过高；大客户依赖。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "688362.SH",
+      "name": "甬矽电子",
+      "layer": "L3_advanced_packaging",
+      "archetype_hits": ["sold-out capacity"],
+      "price": {
+        "last": 95.93,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 90,
+        "pct_off_6mo_high": -7.2,
+        "ret_1m_pct": 66.5,
+        "ret_3m_pct": 151.5,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 496.67,
+        "trailing_pe": 519.0083,
+        "peg": 63.68,
+        "eps_growth": 8.1506,
+        "rev_growth": 23.9738,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "先进封装新锐，弹性大；但1月+66.5%，估值极高，风险收益比差。",
+      "risk": "高估值；利润增速低；产能爬坡风险。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "001309.SZ",
+      "name": "德明利",
+      "layer": "L1_downstream_systems_modules",
+      "archetype_hits": ["single-source choke"],
+      "price": {
+        "last": 935.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 94,
+        "pct_off_6mo_high": -4.6,
+        "ret_1m_pct": 48.3,
+        "ret_3m_pct": 159.6,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 62.38,
+        "trailing_pe": 51.6865,
+        "peg": 0.02,
+        "eps_growth": 4943.3906,
+        "rev_growth": 502.0834,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 0.5,
+        "pre_institutional": 0,
+        "cheap_de_risked": 1
+      },
+      "rating": "🔴 pass",
+      "thesis": "SSD主控+模组一体化，业绩增速极高；但股价3月+159.6%，接近6月高点。",
+      "risk": "股价透支；主控技术迭代；存货跌价。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "300672.SZ",
+      "name": "国科微",
+      "layer": "L2_midstream_design",
+      "archetype_hits": ["single-source choke"],
+      "price": {
+        "last": 258.67,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 57,
+        "pct_off_6mo_high": -31.4,
+        "ret_1m_pct": -13.5,
+        "ret_3m_pct": 64.7,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": 6.6681,
+        "rev_growth": 107.4563,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 0.5,
+        "pre_institutional": 1,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "SSD主控+视频SoC，营收高增但估值数据缺失；股价跌破SMA50，趋势偏弱。",
+      "risk": "主控竞争加剧；估值无法验证；趋势走弱。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "300302.SZ",
+      "name": "同有科技",
+      "layer": "L1_downstream_systems_modules",
+      "archetype_hits": ["valuation arbitrage"],
+      "price": {
+        "last": 44.18,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 60,
+        "pct_off_6mo_high": -28.7,
+        "ret_1m_pct": -16.7,
+        "ret_3m_pct": 128.9,
+        "above_sma50": false,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": 347.4274,
+        "peg": 0.81,
+        "eps_growth": 431.2476,
+        "rev_growth": 156.1171,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 0,
+        "pre_institutional": 0.5,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "企业级存储系统，信创受益；但1月-16.7%跌破SMA50，forward PE缺失，业绩兑现不确定。",
+      "risk": "企业级存储竞争；股价趋势走弱；估值无法验证。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "688416.SH",
+      "name": "恒烁股份",
+      "layer": "L2_midstream_design",
+      "archetype_hits": ["off-radar/pre-institutional"],
+      "price": {
+        "last": 128.03,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 84,
+        "pct_off_6mo_high": -11.7,
+        "ret_1m_pct": 46.7,
+        "ret_3m_pct": 135.5,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": 284.7089,
+        "rev_growth": 192.0756,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 0.5,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "NOR+MCU小盘弹性标的，1月+46.7%；估值数据缺失，风险高。",
+      "risk": "估值无法验证；股价过热；小盘流动性。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "688120.SH",
+      "name": "华海清科",
+      "layer": "L4_fab_equipment",
+      "archetype_hits": ["single-source choke", "test/equipment bottleneck"],
+      "price": {
+        "last": 269.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 65,
+        "pct_off_6mo_high": -24.6,
+        "ret_1m_pct": 52.0,
+        "ret_3m_pct": 119.3,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 129.84,
+        "trailing_pe": 121.2474,
+        "peg": 20.38,
+        "eps_growth": 5.9497,
+        "rev_growth": 31.6624,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🔴 pass",
+      "thesis": "12英寸CMP设备国产龙头，长鑫核心设备商[网络检索:凤凰网2026-06-30]；但1月+52%，估值偏贵。",
+      "risk": "eps增速仅5.9%；估值偏高；股价过热。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "300604.SZ",
+      "name": "长川科技",
+      "layer": "L4_fab_equipment",
+      "archetype_hits": ["test/equipment bottleneck", "sold-out capacity"],
+      "price": {
+        "last": 304.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 78,
+        "pct_off_6mo_high": -16.4,
+        "ret_1m_pct": 47.1,
+        "ret_3m_pct": 162.6,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 203.01,
+        "trailing_pe": 122.6146,
+        "peg": 0.56,
+        "eps_growth": 217.602,
+        "rev_growth": 69.0854,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🔴 pass",
+      "thesis": "存储芯片电性能测试设备龙头，DRAM/NAND量产必备[网络检索:新浪网2026-06-30]；但3月+162.6%，短期过热。",
+      "risk": "股价透支；测试设备订单波动。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "300567.SZ",
+      "name": "精测电子",
+      "layer": "L4_fab_equipment",
+      "archetype_hits": ["test/equipment bottleneck"],
+      "price": {
+        "last": 266.57,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 73,
+        "pct_off_6mo_high": -20.5,
+        "ret_1m_pct": 40.9,
+        "ret_3m_pct": 126.5,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 877.32,
+        "trailing_pe": 855.8118,
+        "peg": 62.9,
+        "eps_growth": 13.6059,
+        "rev_growth": 7.2625,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "晶圆检测设备国产替代[网络检索:凤凰网2026-06-30]；但估值极高（PE>800），风险收益比差。",
+      "risk": "估值极高；利润增速低；股价过热。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "688082.SH",
+      "name": "盛美上海",
+      "layer": "L4_fab_equipment",
+      "archetype_hits": ["test/equipment bottleneck"],
+      "price": {
+        "last": 373.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 73,
+        "pct_off_6mo_high": -18.9,
+        "ret_1m_pct": 48.6,
+        "ret_3m_pct": 166.2,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": 143.5607,
+        "peg": null,
+        "eps_growth": -57.6636,
+        "rev_growth": 13.0622,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0
+      },
+      "rating": "🔴 pass",
+      "thesis": "清洗/电镀/炉管设备龙头，存储Fab扩产受益；但3月+166.2%，eps同比下滑。",
+      "risk": "利润下滑；股价透支；估值偏高。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    },
+    {
+      "ticker": "603650.SH",
+      "name": "彤程新材",
+      "layer": "L5_materials_chemicals",
+      "archetype_hits": ["materials/substrate monopoly"],
+      "price": {
+        "last": 83.69,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 68,
+        "pct_off_6mo_high": -18.2,
+        "ret_1m_pct": 52.7,
+        "ret_3m_pct": 73.1,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 128.58,
+        "trailing_pe": 88.1816,
+        "peg": 6.37,
+        "eps_growth": 13.8325,
+        "rev_growth": 22.5132,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": 1,
+        "pre_institutional": 0,
+        "cheap_de_risked": 0.5
+      },
+      "rating": "🔴 pass",
+      "thesis": "KrF光刻胶国产龙头，长鑫核心供应商[网络检索:凤凰网2026-06-30]；但1月+52.7%，短期过热。",
+      "risk": "股价过热；光刻胶放量慢；eps增速低。",
+      "invalidation": "N/A — 已定义为参考标的。",
+      "catalyst": "N/A",
+      "entry_price": null,
+      "target_range": null,
+      "time_frame": null
+    }
+  ]
+}

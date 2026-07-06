@@ -1,0 +1,2889 @@
+{
+  "theme_tag": "semiconductors",
+  "theme_name": "A股半导体",
+  "scope": "Broad A-share semiconductor supply chain. Focus upstream bottleneck layers: silicon wafers, specialty gases/chemicals, CMP slurries, targets, photoresist, EDA/IP, front-end equipment, advanced packaging materials/equipment, analog/power/RF discretes, MCU, foundry/IDM. Avoid duplicating pure memory/storage players.",
+  "scan_date": "2026-07-06",
+  "data_source": "Tushare via scripts/price.py (default qfq); valuation() from Tushare/akshare/yfinance fallback",
+  "capex_certainty": "美国对华半导体设备/材料管制持续收紧，中国政府大基金三期（3440亿元）及地方国资明确投向设备、材料、零部件等‘卡脖子’环节；国内晶圆厂（中芯、华虹、长存、长鑫等）扩产是确定的长期资本开支。钱必须花在上游材料与设备的国产替代上。",
+  "supply_chain_map": {
+    "cross_theme_root": [
+      "ARM",
+      "Synopsys (SNPS.US)",
+      "Cadence (CDNS.US)"
+    ],
+    "layers": [
+      {
+        "layer": "L1 上游材料",
+        "focus": "硅片、特种气体/化学品、光刻胶、CMP耗材、靶材、高纯石英、IC载板基材",
+        "bottleneck_archetypes": [
+          "① 上游材料/衬底垄断",
+          "② 单一来源卡脖子",
+          "⑦ 冷门/前机构"
+        ],
+        "tickers": [
+          "688126.SH",
+          "605358.SH",
+          "688233.SH",
+          "300655.SZ",
+          "300346.SZ",
+          "300666.SZ",
+          "300706.SZ",
+          "002409.SZ",
+          "300054.SZ",
+          "688019.SH",
+          "603688.SH",
+          "688268.SH",
+          "603650.SH",
+          "688106.SH",
+          "688519.SH"
+        ]
+      },
+      {
+        "layer": "L2 上游设备/EDA/IP",
+        "focus": "刻蚀、沉积、CMP、清洗、检测、涂胶显影、直写光刻、测试机、EDA、IP",
+        "bottleneck_archetypes": [
+          "⑥ 测试/设备瓶颈",
+          "② 单一来源卡脖子",
+          "⑧ 巨头依赖护城河"
+        ],
+        "tickers": [
+          "002371.SZ",
+          "688012.SH",
+          "688072.SH",
+          "688120.SH",
+          "688082.SH",
+          "688037.SH",
+          "688147.SH",
+          "300567.SZ",
+          "688200.SH",
+          "688630.SH",
+          "688596.SH",
+          "301269.SZ",
+          "688521.SH",
+          "688206.SH"
+        ]
+      },
+      {
+        "layer": "L3 中游制造/Foundry-IDM/OSAT",
+        "focus": "晶圆代工、功率/模拟IDM、先进封装/OSAT",
+        "bottleneck_archetypes": [
+          "③ 产能售罄/已锁定",
+          "⑧ 巨头依赖护城河",
+          "④ 进每个设计的BOM/普适"
+        ],
+        "tickers": [
+          "688981.SH",
+          "688347.SH",
+          "600460.SH",
+          "688396.SH",
+          "688172.SH",
+          "603005.SH",
+          "002156.SZ",
+          "600584.SH"
+        ]
+      },
+      {
+        "layer": "L4 中游器件/芯片",
+        "focus": "模拟、功率、MCU、射频、FPGA、安全芯片",
+        "bottleneck_archetypes": [
+          "④ 进每个设计的BOM/普适",
+          "⑧ 巨头依赖护城河",
+          "② 单一来源卡脖子"
+        ],
+        "tickers": [
+          "300661.SZ",
+          "688536.SH",
+          "688798.SH",
+          "688052.SH",
+          "300782.SZ",
+          "002049.SZ",
+          "688385.SH",
+          "603290.SH",
+          "605111.SH",
+          "300623.SZ",
+          "603986.SH"
+        ]
+      },
+      {
+        "layer": "L5 下游模块/参考",
+        "focus": "CIS、智能音频SoC、存储接口等终端/模组，仅作参照",
+        "bottleneck_archetypes": [
+          "⑨ 宏观错杀/二阶"
+        ],
+        "tickers": [
+          "603501.SH",
+          "688008.SH",
+          "688608.SH"
+        ]
+      }
+    ],
+    "key_bottleneck_layers": [
+      "L1 上游材料",
+      "L2 上游设备/EDA/IP"
+    ]
+  },
+  "player_census": [
+    {
+      "name": "沪硅产业",
+      "ticker": "688126.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "国产300mm大硅片龙头"
+    },
+    {
+      "name": "立昂微",
+      "ticker": "605358.SH",
+      "exchange": "SSE Main",
+      "status": "covered",
+      "note": "硅片+功率IDM"
+    },
+    {
+      "name": "神工股份",
+      "ticker": "688233.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "单晶硅材料/硅零部件"
+    },
+    {
+      "name": "晶瑞电材",
+      "ticker": "300655.SZ",
+      "exchange": "SZSE ChiNext",
+      "status": "covered",
+      "note": "光刻胶+高纯化学品"
+    },
+    {
+      "name": "南大光电",
+      "ticker": "300346.SZ",
+      "exchange": "SZSE ChiNext",
+      "status": "covered",
+      "note": "ArF光刻胶+电子特气"
+    },
+    {
+      "name": "江丰电子",
+      "ticker": "300666.SZ",
+      "exchange": "SZSE ChiNext",
+      "status": "covered",
+      "note": "高纯溅射靶材"
+    },
+    {
+      "name": "阿石创",
+      "ticker": "300706.SZ",
+      "exchange": "SZSE ChiNext",
+      "status": "covered",
+      "note": "溅射靶材/PVD材料"
+    },
+    {
+      "name": "雅克科技",
+      "ticker": "002409.SZ",
+      "exchange": "SZSE Main",
+      "status": "covered",
+      "note": "前驱体/电子特气"
+    },
+    {
+      "name": "鼎龙股份",
+      "ticker": "300054.SZ",
+      "exchange": "SZSE ChiNext",
+      "status": "covered",
+      "note": "CMP抛光垫+打印耗材"
+    },
+    {
+      "name": "安集科技",
+      "ticker": "688019.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "CMP抛光液"
+    },
+    {
+      "name": "北方华创",
+      "ticker": "002371.SZ",
+      "exchange": "SZSE Main",
+      "status": "covered",
+      "note": "平台型设备龙头"
+    },
+    {
+      "name": "中微公司",
+      "ticker": "688012.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "刻蚀设备"
+    },
+    {
+      "name": "拓荆科技",
+      "ticker": "688072.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "薄膜沉积设备"
+    },
+    {
+      "name": "华海清科",
+      "ticker": "688120.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "CMP设备"
+    },
+    {
+      "name": "盛美上海",
+      "ticker": "688082.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "清洗/电镀/炉管设备"
+    },
+    {
+      "name": "芯源微",
+      "ticker": "688037.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "涂胶显影设备"
+    },
+    {
+      "name": "微导纳米",
+      "ticker": "688147.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "ALD/光伏半导体设备"
+    },
+    {
+      "name": "精测电子",
+      "ticker": "300567.SZ",
+      "exchange": "SZSE ChiNext",
+      "status": "covered",
+      "note": "半导体检测设备"
+    },
+    {
+      "name": "华大九天",
+      "ticker": "301269.SZ",
+      "exchange": "SZSE ChiNext",
+      "status": "covered",
+      "note": "EDA"
+    },
+    {
+      "name": "芯原股份",
+      "ticker": "688521.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "芯片IP"
+    },
+    {
+      "name": "概伦电子",
+      "ticker": "688206.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "EDA"
+    },
+    {
+      "name": "中芯国际",
+      "ticker": "688981.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "晶圆代工"
+    },
+    {
+      "name": "华虹公司",
+      "ticker": "688347.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "特色工艺代工"
+    },
+    {
+      "name": "士兰微",
+      "ticker": "600460.SH",
+      "exchange": "SSE Main",
+      "status": "covered",
+      "note": "功率IDM"
+    },
+    {
+      "name": "华润微",
+      "ticker": "688396.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "功率IDM"
+    },
+    {
+      "name": "圣邦股份",
+      "ticker": "300661.SZ",
+      "exchange": "SZSE ChiNext",
+      "status": "covered",
+      "note": "模拟IC"
+    },
+    {
+      "name": "思瑞浦",
+      "ticker": "688536.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "模拟/信号链"
+    },
+    {
+      "name": "艾为电子",
+      "ticker": "688798.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "数模混合/音频/电源"
+    },
+    {
+      "name": "纳芯微",
+      "ticker": "688052.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "模拟/隔离/接口"
+    },
+    {
+      "name": "卓胜微",
+      "ticker": "300782.SZ",
+      "exchange": "SZSE ChiNext",
+      "status": "covered",
+      "note": "射频前端"
+    },
+    {
+      "name": "紫光国微",
+      "ticker": "002049.SZ",
+      "exchange": "SZSE Main",
+      "status": "covered",
+      "note": "FPGA/安全芯片"
+    },
+    {
+      "name": "复旦微电",
+      "ticker": "688385.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "FPGA/安全芯片"
+    },
+    {
+      "name": "豪威集团(韦尔)",
+      "ticker": "603501.SH",
+      "exchange": "SSE Main",
+      "status": "covered",
+      "note": "CIS，下游参考"
+    },
+    {
+      "name": "兆易创新",
+      "ticker": "603986.SH",
+      "exchange": "SSE Main",
+      "status": "covered",
+      "note": "NOR Flash/MCU，记忆体主题单独覆盖"
+    },
+    {
+      "name": "澜起科技",
+      "ticker": "688008.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "内存接口，记忆体主题单独覆盖"
+    },
+    {
+      "name": "恒玄科技",
+      "ticker": "688608.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "智能音频SoC，下游参考"
+    },
+    {
+      "name": "石英股份",
+      "ticker": "603688.SH",
+      "exchange": "SSE Main",
+      "status": "covered",
+      "note": "高纯石英材料"
+    },
+    {
+      "name": "华特气体",
+      "ticker": "688268.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "电子特气"
+    },
+    {
+      "name": "彤程新材",
+      "ticker": "603650.SH",
+      "exchange": "SSE Main",
+      "status": "covered",
+      "note": "半导体光刻胶"
+    },
+    {
+      "name": "金宏气体",
+      "ticker": "688106.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "电子特气+工业气体"
+    },
+    {
+      "name": "华峰测控",
+      "ticker": "688200.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "半导体测试机"
+    },
+    {
+      "name": "芯碁微装",
+      "ticker": "688630.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "直写光刻设备"
+    },
+    {
+      "name": "晶方科技",
+      "ticker": "603005.SH",
+      "exchange": "SSE Main",
+      "status": "covered",
+      "note": "先进封装"
+    },
+    {
+      "name": "通富微电",
+      "ticker": "002156.SZ",
+      "exchange": "SZSE Main",
+      "status": "covered",
+      "note": "封测/先进封装"
+    },
+    {
+      "name": "南亚新材",
+      "ticker": "688519.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "覆铜板/IC载板基材"
+    },
+    {
+      "name": "新洁能",
+      "ticker": "605111.SH",
+      "exchange": "SSE Main",
+      "status": "covered",
+      "note": "MOSFET/功率器件"
+    },
+    {
+      "name": "斯达半导",
+      "ticker": "603290.SH",
+      "exchange": "SSE Main",
+      "status": "covered",
+      "note": "IGBT模块"
+    },
+    {
+      "name": "燕东微",
+      "ticker": "688172.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "模拟/功率IDM"
+    },
+    {
+      "name": "正帆科技",
+      "ticker": "688596.SH",
+      "exchange": "SSE STAR",
+      "status": "covered",
+      "note": "工艺介质系统+电子特气"
+    },
+    {
+      "name": "捷捷微电",
+      "ticker": "300623.SZ",
+      "exchange": "SZSE ChiNext",
+      "status": "covered",
+      "note": "晶闸管/防护器件"
+    },
+    {
+      "name": "长电科技",
+      "ticker": "600584.SH",
+      "exchange": "SSE Main",
+      "status": "covered",
+      "note": "封测龙头"
+    },
+    {
+      "name": "Shin-Etsu",
+      "ticker": "4063.T",
+      "exchange": "TSE",
+      "status": "global",
+      "note": "全球硅片寡头"
+    },
+    {
+      "name": "SUMCO",
+      "ticker": "3436.T",
+      "exchange": "TSE",
+      "status": "global",
+      "note": "全球硅片寡头"
+    },
+    {
+      "name": "Siltronic",
+      "ticker": "GlobalWafers收购",
+      "exchange": "-",
+      "status": "acquired",
+      "note": "2022年被环球晶圆收购"
+    },
+    {
+      "name": "JSR/Tokyo Ohka Kogyo",
+      "ticker": "-",
+      "exchange": "TSE",
+      "status": "global",
+      "note": "光刻胶全球龙头"
+    },
+    {
+      "name": "Entegris",
+      "ticker": "ENTG.US",
+      "exchange": "NASDAQ",
+      "status": "global",
+      "note": "CMP/化学品/材料"
+    },
+    {
+      "name": "Cabot Microelectronics",
+      "ticker": "CCMP.US->ENTG",
+      "exchange": "NASDAQ",
+      "status": "acquired",
+      "note": "CMP材料，被Entegris收购"
+    },
+    {
+      "name": "Applied Materials/Lam/TEL/KLA",
+      "ticker": "-",
+      "exchange": "US/JP",
+      "status": "global",
+      "note": "前道设备全球寡头"
+    },
+    {
+      "name": "ASML",
+      "ticker": "ASML.US/ASML.NA",
+      "exchange": "US/Europe",
+      "status": "global",
+      "note": "EUV光刻机单源"
+    },
+    {
+      "name": "Synopsys/Cadence/Siemens EDA",
+      "ticker": "SNPS.US/CDNS.US",
+      "exchange": "NASDAQ",
+      "status": "global",
+      "note": "EDA跨主题root节点"
+    },
+    {
+      "name": "Tower Semiconductor",
+      "ticker": "TSEM.US",
+      "exchange": "NASDAQ",
+      "status": "global",
+      "note": "特色工艺代工"
+    },
+    {
+      "name": "昂瑞微/芯驰/兆易旗下思立微等",
+      "ticker": "-",
+      "exchange": "private/subsidiary",
+      "status": "private",
+      "note": "部分射频/模拟/汽车芯片仍处非上市或部门状态，缺乏干净纯play"
+    }
+  ],
+  "candidates": [
+    {
+      "ticker": "688126.SH",
+      "name": "沪硅产业",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "⑦ 冷门/前机构",
+        "③ 产能售罄/已锁定"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "688126.SH",
+        "provider": "tushare",
+        "last": 34.61,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 66,
+        "pct_off_6mo_high": -21.1,
+        "ret_1m_pct": 21.5,
+        "ret_3m_pct": 104.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 43.87,
+        "low_6mo": 16.61,
+        "cur_div_high_pct": 78.9
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": -131.6663,
+        "rev_growth": 35.2168,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（盈利仍在恶化）"
+      },
+      "thesis": "国产300mm大硅片龙头，上海+太原产能向85万片/月爬坡，目标120万片/月；晶圆厂扩产+供应链本土化双重锁定，是最上游衬底垄断型瓶颈。",
+      "risk": "扩产折旧压制毛利率，12寸正片客户认证进度若慢于预期，库存减值风险；当前PE因亏损无法计算，估值靠PS/政策预期支撑。",
+      "invalidation": "跌破6个月区间中位（约¥30）且1月动量转负；或公司公告12寸正片大客户认证显著推迟。",
+      "catalyst": "大基金三期/地方国资落地、12寸硅片批量出货、中芯/华虹等晶圆厂扩产招标。",
+      "target_range": "¥36.34–¥43.87",
+      "time_frame": "3–6个月",
+      "notes": "300mm半导体硅片国产龙头 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-21.1%"
+    },
+    {
+      "ticker": "605358.SH",
+      "name": "立昂微",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "④ 进每个设计的BOM/普适",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "605358.SH",
+        "provider": "tushare",
+        "last": 59.49,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 54,
+        "pct_off_6mo_high": -28.6,
+        "ret_1m_pct": -10.9,
+        "ret_3m_pct": 84.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 83.29,
+        "low_6mo": 32.0,
+        "cur_div_high_pct": 71.4
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": 108.9153,
+        "rev_growth": 21.8105,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "8/12寸硅片+功率器件双轮驱动，硅片业务进入一线晶圆厂供应链；相较沪硅估值更下沉，是上游材料中市值更小的替代标的。",
+      "risk": "硅片价格周期触底回升但产能过剩隐忧仍存，功率半导体业务景气波动；资产负债率偏高，扩产资本开支大。",
+      "invalidation": "跌破¥50且3月动量回落至0以下；或功率器件订单连续两季度下滑。",
+      "catalyst": "硅片提价、功率IDM产能利用率回升、12寸客户认证通过。",
+      "target_range": "¥62.46–¥83.29",
+      "time_frame": "3–6个月",
+      "notes": "硅片+功率器件双主业 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-28.6%"
+    },
+    {
+      "ticker": "688233.SH",
+      "name": "神工股份",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688233.SH",
+        "provider": "tushare",
+        "last": 180.55,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 63,
+        "pct_off_6mo_high": -26.9,
+        "ret_1m_pct": 107.3,
+        "ret_3m_pct": 170.0,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 247.0,
+        "low_6mo": 66.56,
+        "cur_div_high_pct": 73.1
+      },
+      "valuation": {
+        "forward_pe": 307.49,
+        "trailing_pe": 310.8703,
+        "peg": null,
+        "eps_growth": -10.9623,
+        "rev_growth": 6.2152,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "神工股份主营单晶硅材料/硅零部件，位于L1 上游材料，属于半导体供应链中的国产替代/瓶颈环节；晶圆厂扩产+耗材本土化是确定性的资本开支方向，认证通过后订单粘性强。",
+      "risk": "[单晶硅材料/硅零部件]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 310.9x，估值对周期恢复预期较敏感。股价处于6月区间高位（63%），近3月涨幅170.0%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥162.5且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂扩产招标、国产材料认证通过、大基金三期投向材料/设备。",
+      "target_range": "¥189.58–¥247.0",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "单晶硅材料/硅零部件 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-26.9%"
+    },
+    {
+      "ticker": "300655.SZ",
+      "name": "晶瑞电材",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "300655.SZ",
+        "provider": "tushare",
+        "last": 18.27,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 51,
+        "pct_off_6mo_high": -21.3,
+        "ret_1m_pct": 26.2,
+        "ret_3m_pct": 36.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 23.22,
+        "low_6mo": 13.11,
+        "cur_div_high_pct": 78.7
+      },
+      "valuation": {
+        "forward_pe": 147.02,
+        "trailing_pe": 182.8944,
+        "peg": null,
+        "eps_growth": -84.6175,
+        "rev_growth": 13.3883,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（盈利仍在恶化）"
+      },
+      "thesis": "国内半导体光刻胶+高纯湿电子化学品龙头，G5级双氧水/硫酸本土唯一量产，直接受益于晶圆厂耗材国产替代。",
+      "risk": "KrF/ArF光刻胶量产进度若慢于日韩对手，高纯化学品价格战拖累毛利；锂电材料等非半导体业务稀释纯度。",
+      "invalidation": "跌破¥16且1月动量转负；或光刻胶收入占比连续两个季度下降。",
+      "catalyst": "KrF光刻胶批量导入、高纯化学品订单放量、大基金三期材料子基金落地。",
+      "target_range": "¥19.18–¥23.22",
+      "time_frame": "3–6个月",
+      "notes": "光刻胶+高纯湿电子化学品 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-21.3%"
+    },
+    {
+      "ticker": "300346.SZ",
+      "name": "南大光电",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "300346.SZ",
+        "provider": "tushare",
+        "last": 77.74,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 63,
+        "pct_off_6mo_high": -21.3,
+        "ret_1m_pct": 36.3,
+        "ret_3m_pct": 75.5,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 98.82,
+        "low_6mo": 42.41,
+        "cur_div_high_pct": 78.7
+      },
+      "valuation": {
+        "forward_pe": 307.03,
+        "trailing_pe": 154.2226,
+        "peg": 5.15,
+        "eps_growth": 29.971,
+        "rev_growth": 5.4544,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "国内少数实现ArF光刻胶量产并导入中芯国际/长江存储的企业，同时是特种气体（磷烷/砷烷）龙头，双重卡脖子环节。",
+      "risk": "ArF光刻胶仍处客户验证阶段，放量时点不确定；MO源业务增速放缓，估值（forward PE 307x）已透支乐观预期。",
+      "invalidation": "跌破¥65且1月动量转负；或ArF光刻胶验证进度公告延后。",
+      "catalyst": "ArF光刻胶通过更多客户验证、特气新产能投产。",
+      "target_range": "¥81.63–¥98.82",
+      "time_frame": "3–6个月",
+      "notes": "ArF光刻胶+MO源/电子特气 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-21.3%"
+    },
+    {
+      "ticker": "300666.SZ",
+      "name": "江丰电子",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "300666.SZ",
+        "provider": "tushare",
+        "last": 326.86,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 72,
+        "pct_off_6mo_high": -22.0,
+        "ret_1m_pct": 62.5,
+        "ret_3m_pct": 141.7,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 418.99,
+        "low_6mo": 87.34,
+        "cur_div_high_pct": 78.0
+      },
+      "valuation": {
+        "forward_pe": 191.66,
+        "trailing_pe": 163.4018,
+        "peg": 4.89,
+        "eps_growth": 33.4161,
+        "rev_growth": 30.4917,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "江丰电子主营高纯金属溅射靶材，位于L1 上游材料，属于半导体供应链中的国产替代/瓶颈环节；晶圆厂扩产+耗材本土化是确定性的资本开支方向，认证通过后订单粘性强。",
+      "risk": "[高纯金属溅射靶材]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 163.4x，估值对周期恢复预期较敏感。股价处于6月区间高位（72%），近3月涨幅141.7%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥294.2且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂扩产招标、国产材料认证通过、大基金三期投向材料/设备。",
+      "target_range": "¥343.2–¥418.99",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "高纯金属溅射靶材 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-22.0%"
+    },
+    {
+      "ticker": "300706.SZ",
+      "name": "阿石创",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "300706.SZ",
+        "provider": "tushare",
+        "last": 69.43,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 61,
+        "pct_off_6mo_high": -26.1,
+        "ret_1m_pct": 34.8,
+        "ret_3m_pct": 117.9,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 93.9,
+        "low_6mo": 30.55,
+        "cur_div_high_pct": 73.9
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": 572.3871,
+        "rev_growth": 41.6122,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "国产溅射靶材小龙头，半导体靶材逐步导入，市值小、覆盖少，是上游材料中典型冷门标的。",
+      "risk": "公司规模小、产品以PVD靶材为主，溅射靶材认证壁垒高，若下游面板/光伏需求走弱将拖累收入。",
+      "invalidation": "跌破¥55且1月动量转负；或半导体靶材收入占比未见提升。",
+      "catalyst": "半导体靶材通过头部晶圆厂认证、面板/光伏订单回暖。",
+      "target_range": "¥72.9–¥93.9",
+      "time_frame": "3–6个月",
+      "notes": "PVD镀膜材料/溅射靶材 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-26.1%"
+    },
+    {
+      "ticker": "002409.SZ",
+      "name": "雅克科技",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "② 单一来源卡脖子",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "002409.SZ",
+        "provider": "tushare",
+        "last": 186.45,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 66,
+        "pct_off_6mo_high": -24.3,
+        "ret_1m_pct": 62.1,
+        "ret_3m_pct": 142.1,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 246.44,
+        "low_6mo": 72.09,
+        "cur_div_high_pct": 75.7
+      },
+      "valuation": {
+        "forward_pe": 99.7,
+        "trailing_pe": 88.1431,
+        "peg": 35.74,
+        "eps_growth": 2.466,
+        "rev_growth": -6.8504,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "雅克科技主营半导体前驱体/电子特气/LDS材料，位于L1 上游材料，属于半导体供应链中的国产替代/瓶颈环节；晶圆厂扩产+耗材本土化是确定性的资本开支方向，认证通过后订单粘性强。",
+      "risk": "[半导体前驱体/电子特气/LDS材料]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 88.1x，估值对周期恢复预期较敏感。股价处于6月区间高位（66%），近3月涨幅142.1%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥167.8且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂扩产招标、国产材料认证通过、大基金三期投向材料/设备。",
+      "target_range": "¥195.77–¥246.44",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "半导体前驱体/电子特气/LDS材料 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-24.3%"
+    },
+    {
+      "ticker": "300054.SZ",
+      "name": "鼎龙股份",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "④ 进每个设计的BOM/普适",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "300054.SZ",
+        "provider": "tushare",
+        "last": 90.56,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 72,
+        "pct_off_6mo_high": -18.4,
+        "ret_1m_pct": 30.0,
+        "ret_3m_pct": 90.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 111.03,
+        "low_6mo": 37.27,
+        "cur_div_high_pct": 81.6
+      },
+      "valuation": {
+        "forward_pe": 345.31,
+        "trailing_pe": 103.9877,
+        "peg": 1.33,
+        "eps_growth": 77.9914,
+        "rev_growth": 23.8179,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "鼎龙股份主营CMP抛光垫+打印复印耗材，位于L1 上游材料，属于半导体供应链中的国产替代/瓶颈环节；晶圆厂扩产+耗材本土化是确定性的资本开支方向，认证通过后订单粘性强。",
+      "risk": "[CMP抛光垫+打印复印耗材]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 104.0x，估值对周期恢复预期较敏感。股价处于6月区间高位（72%），近3月涨幅90.8%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥81.5且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂扩产招标、国产材料认证通过、大基金三期投向材料/设备。",
+      "target_range": "¥95.09–¥111.03",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "CMP抛光垫+打印复印耗材 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-18.4%"
+    },
+    {
+      "ticker": "688019.SH",
+      "name": "安集科技",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "⑥ 测试/设备瓶颈",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "688019.SH",
+        "provider": "tushare",
+        "last": 289.35,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 62,
+        "pct_off_6mo_high": -20.9,
+        "ret_1m_pct": 38.0,
+        "ret_3m_pct": 50.6,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 366.0,
+        "low_6mo": 162.25,
+        "cur_div_high_pct": 79.1
+      },
+      "valuation": {
+        "forward_pe": 82.8,
+        "trailing_pe": 80.0313,
+        "peg": 3.48,
+        "eps_growth": 23.0072,
+        "rev_growth": 32.7618,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "国产CMP抛光液龙头，中国大陆市占率本土第一，晶圆厂 steps 增加+耗材复购使收入可预测；是前道材料中壁垒最深的环节之一。",
+      "risk": "海外Cabot/日立等降价保份额，先进制程抛光液验证周期长；当前估值（PE ~80x）已反映较高预期。",
+      "invalidation": "跌破¥240且1月动量转负；或连续两季度毛利率下滑。",
+      "catalyst": "12寸逻辑/存储客户份额提升、抛光垫等新耗材放量。",
+      "target_range": "¥303.82–¥366.0",
+      "time_frame": "3–6个月",
+      "notes": "CMP抛光液/清洗液 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-20.9%"
+    },
+    {
+      "ticker": "002371.SZ",
+      "name": "北方华创",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑥ 测试/设备瓶颈",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "002371.SZ",
+        "provider": "tushare",
+        "last": 803.6,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 70,
+        "pct_off_6mo_high": -16.9,
+        "ret_1m_pct": 33.3,
+        "ret_3m_pct": 83.6,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 967.13,
+        "low_6mo": 421.87,
+        "cur_div_high_pct": 83.1
+      },
+      "valuation": {
+        "forward_pe": 369.09,
+        "trailing_pe": 104.5842,
+        "peg": 30.6,
+        "eps_growth": 3.4182,
+        "rev_growth": 25.7961,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "HALF-PASS（机构覆盖度高）",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "北方华创主营平台型半导体设备龙头，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[平台型半导体设备龙头]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 104.6x，估值对周期恢复预期较敏感。股价处于6月区间高位（70%），近3月涨幅83.6%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥723.2且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥843.78–¥967.13",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "平台型半导体设备龙头 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-16.9%"
+    },
+    {
+      "ticker": "688012.SH",
+      "name": "中微公司",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "② 单一来源卡脖子",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688012.SH",
+        "provider": "tushare",
+        "last": 420.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 75,
+        "pct_off_6mo_high": -16.0,
+        "ret_1m_pct": 52.2,
+        "ret_3m_pct": 109.3,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 500.0,
+        "low_6mo": 175.49,
+        "cur_div_high_pct": 84.0
+      },
+      "valuation": {
+        "forward_pe": 187.85,
+        "trailing_pe": 146.6273,
+        "peg": 0.74,
+        "eps_growth": 197.202,
+        "rev_growth": 34.1285,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "HALF-PASS（机构覆盖度高）",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "中微公司主营等离子体刻蚀设备，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[等离子体刻蚀设备]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 146.6x，估值对周期恢复预期较敏感。股价处于6月区间高位（75%），近3月涨幅109.3%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥378.0且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥441.0–¥500.0",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "等离子体刻蚀设备 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-16.0%"
+    },
+    {
+      "ticker": "688072.SH",
+      "name": "拓荆科技",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "② 单一来源卡脖子",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688072.SH",
+        "provider": "tushare",
+        "last": 832.0,
+        "last_date": "2026-06-26",
+        "range_pos_6mo_pct": 94,
+        "pct_off_6mo_high": -3.8,
+        "ret_1m_pct": 23.8,
+        "ret_3m_pct": 126.1,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 865.0,
+        "low_6mo": 314.83,
+        "cur_div_high_pct": 96.2
+      },
+      "valuation": {
+        "forward_pe": 2461.54,
+        "trailing_pe": 143.0436,
+        "peg": 0.29,
+        "eps_growth": 488.2918,
+        "rev_growth": 56.9673,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "拓荆科技主营薄膜沉积设备（PECVD/SACVD/ALD），位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[薄膜沉积设备（PECVD/SACVD/ALD）]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 143.0x，估值对周期恢复预期较敏感。股价处于6月区间高位（94%），近3月涨幅126.1%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥748.8且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥873.6–¥931.84",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "薄膜沉积设备（PECVD/SACVD/ALD） | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-3.8%"
+    },
+    {
+      "ticker": "688120.SH",
+      "name": "华海清科",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "② 单一来源卡脖子",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688120.SH",
+        "provider": "tushare",
+        "last": 269.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 65,
+        "pct_off_6mo_high": -24.6,
+        "ret_1m_pct": 52.0,
+        "ret_3m_pct": 119.3,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 356.64,
+        "low_6mo": 106.71,
+        "cur_div_high_pct": 75.4
+      },
+      "valuation": {
+        "forward_pe": 129.84,
+        "trailing_pe": 121.2474,
+        "peg": 20.38,
+        "eps_growth": 5.9497,
+        "rev_growth": 31.6624,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "华海清科主营CMP设备，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[CMP设备]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 121.2x，估值对周期恢复预期较敏感。股价处于6月区间高位（65%），近3月涨幅119.3%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥242.1且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥282.45–¥356.64",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "CMP设备 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-24.6%"
+    },
+    {
+      "ticker": "688082.SH",
+      "name": "盛美上海",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "② 单一来源卡脖子",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688082.SH",
+        "provider": "tushare",
+        "last": 373.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 73,
+        "pct_off_6mo_high": -18.9,
+        "ret_1m_pct": 48.6,
+        "ret_3m_pct": 166.2,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 459.99,
+        "low_6mo": 138.56,
+        "cur_div_high_pct": 81.1
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": 143.5607,
+        "peg": null,
+        "eps_growth": -57.6636,
+        "rev_growth": 13.0622,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "盛美上海主营清洗/电镀/炉管设备，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[清洗/电镀/炉管设备]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 143.6x，估值对周期恢复预期较敏感。股价处于6月区间高位（73%），近3月涨幅166.2%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥335.7且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥391.65–¥459.99",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "清洗/电镀/炉管设备 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-18.9%"
+    },
+    {
+      "ticker": "688037.SH",
+      "name": "芯源微",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688037.SH",
+        "provider": "tushare",
+        "last": 370.76,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 72,
+        "pct_off_6mo_high": -19.4,
+        "ret_1m_pct": 50.0,
+        "ret_3m_pct": 122.7,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 459.88,
+        "low_6mo": 140.29,
+        "cur_div_high_pct": 80.6
+      },
+      "valuation": {
+        "forward_pe": 1168.05,
+        "trailing_pe": 1059.5474,
+        "peg": null,
+        "eps_growth": -24.7021,
+        "rev_growth": 20.0751,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "芯源微主营涂胶显影设备，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[涂胶显影设备]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 1059.5x，估值对周期恢复预期较敏感。股价处于6月区间高位（72%），近3月涨幅122.7%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥333.7且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥389.3–¥459.88",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "涂胶显影设备 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-19.4%"
+    },
+    {
+      "ticker": "688147.SH",
+      "name": "微导纳米",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688147.SH",
+        "provider": "tushare",
+        "last": 135.1,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 67,
+        "pct_off_6mo_high": -21.4,
+        "ret_1m_pct": 60.0,
+        "ret_3m_pct": 118.7,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 171.9,
+        "low_6mo": 60.54,
+        "cur_div_high_pct": 78.6
+      },
+      "valuation": {
+        "forward_pe": 224.1,
+        "trailing_pe": 401.493,
+        "peg": null,
+        "eps_growth": -75.0095,
+        "rev_growth": -5.5407,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（盈利仍在恶化）"
+      },
+      "thesis": "微导纳米主营ALD/光伏/半导体设备，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[ALD/光伏/半导体设备]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 401.5x，估值对周期恢复预期较敏感。股价处于6月区间高位（67%），近3月涨幅118.7%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥121.6且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥141.85–¥171.9",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "ALD/光伏/半导体设备 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-21.4%"
+    },
+    {
+      "ticker": "300567.SZ",
+      "name": "精测电子",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "300567.SZ",
+        "provider": "tushare",
+        "last": 266.57,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 73,
+        "pct_off_6mo_high": -20.5,
+        "ret_1m_pct": 40.9,
+        "ret_3m_pct": 126.5,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 335.12,
+        "low_6mo": 82.43,
+        "cur_div_high_pct": 79.5
+      },
+      "valuation": {
+        "forward_pe": 877.32,
+        "trailing_pe": 855.8118,
+        "peg": 62.9,
+        "eps_growth": 13.6059,
+        "rev_growth": 7.2625,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "精测电子主营半导体检测设备，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[半导体检测设备]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 855.8x，估值对周期恢复预期较敏感。股价处于6月区间高位（73%），近3月涨幅126.5%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥239.9且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥279.9–¥335.12",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "半导体检测设备 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-20.5%"
+    },
+    {
+      "ticker": "301269.SZ",
+      "name": "华大九天",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构",
+        "① 上游材料/衬底垄断"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "301269.SZ",
+        "provider": "tushare",
+        "last": 117.21,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 65,
+        "pct_off_6mo_high": -14.7,
+        "ret_1m_pct": 18.7,
+        "ret_3m_pct": 44.6,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 137.38,
+        "low_6mo": 80.1,
+        "cur_div_high_pct": 85.3
+      },
+      "valuation": {
+        "forward_pe": 591.95,
+        "trailing_pe": 1048.3281,
+        "peg": null,
+        "eps_growth": -851.5376,
+        "rev_growth": 9.649,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（盈利仍在恶化）"
+      },
+      "thesis": "华大九天主营EDA工具，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[EDA工具]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 1048.3x，估值对周期恢复预期较敏感。股价处于6月区间高位（65%），近3月涨幅44.6%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥105.5且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥123.07–¥137.38",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "EDA工具 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-14.7%"
+    },
+    {
+      "ticker": "688521.SH",
+      "name": "芯原股份",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构",
+        "① 上游材料/衬底垄断"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "688521.SH",
+        "provider": "tushare",
+        "last": 299.39,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 70,
+        "pct_off_6mo_high": -20.3,
+        "ret_1m_pct": 32.9,
+        "ret_3m_pct": 36.7,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 375.67,
+        "low_6mo": 124.0,
+        "cur_div_high_pct": 79.7
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": -54.6871,
+        "rev_growth": 114.4735,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（盈利仍在恶化）"
+      },
+      "thesis": "国内领先的芯片IP与一站式定制平台，Chiplet/AI推理芯片IP需求上升；在A股稀缺的IP资产，具备单源卡脖子属性。",
+      "risk": "IP授权收入波动大，毛利率虽高但客户流片的不确定性大；亏损状态，估值缺乏PE锚。",
+      "invalidation": "跌破¥240且1月动量转负；或季度授权收入同比转负。",
+      "catalyst": "Chiplet客户授权落地、AI芯片设计服务订单增长。",
+      "target_range": "¥314.36–¥375.67",
+      "time_frame": "3–6个月",
+      "notes": "芯片IP/一站式芯片定制 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-20.3%"
+    },
+    {
+      "ticker": "688206.SH",
+      "name": "概伦电子",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构",
+        "① 上游材料/衬底垄断"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688206.SH",
+        "provider": "tushare",
+        "last": 48.76,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 96,
+        "pct_off_6mo_high": -1.7,
+        "ret_1m_pct": 25.8,
+        "ret_3m_pct": 61.2,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 49.59,
+        "low_6mo": 29.13,
+        "cur_div_high_pct": 98.3
+      },
+      "valuation": {
+        "forward_pe": 591.32,
+        "trailing_pe": 1041.0764,
+        "peg": null,
+        "eps_growth": -917.2131,
+        "rev_growth": 10.0912,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "概伦电子主营EDA/IP与设计服务，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[EDA/IP与设计服务]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 1041.1x，估值对周期恢复预期较敏感。股价处于6月区间高位（96%），近3月涨幅61.2%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥43.9且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥51.2–¥54.61",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "EDA/IP与设计服务 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-1.7%"
+    },
+    {
+      "ticker": "688981.SH",
+      "name": "中芯国际",
+      "layer": "L3 中游制造/Foundry-IDM",
+      "archetype_hits": [
+        "⑧ 巨头依赖护城河",
+        "③ 产能售罄/已锁定",
+        "④ 进每个设计的BOM/普适"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688981.SH",
+        "provider": "tushare",
+        "last": 143.99,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 70,
+        "pct_off_6mo_high": -13.7,
+        "ret_1m_pct": 13.0,
+        "ret_3m_pct": 54.5,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 166.88,
+        "low_6mo": 91.2,
+        "cur_div_high_pct": 86.3
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": 244.3075,
+        "peg": 685.29,
+        "eps_growth": 0.3565,
+        "rev_growth": 8.0739,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（制造端壁垒高但巨头集中）",
+        "pre_institutional": "HALF-PASS（机构覆盖度高）",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "中芯国际主营晶圆代工龙头，位于L3 中游制造/Foundry-IDM，属于半导体供应链中的国产替代/瓶颈环节；晶圆制造/封测是产能瓶颈本身，扩产周期长、政府与产业资本必须持续投入。",
+      "risk": "[晶圆代工龙头]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 244.3x，估值对周期恢复预期较敏感。股价处于6月区间高位（70%），近3月涨幅54.5%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥129.6且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂产能利用率回升、封测景气拐点、政府产业基金落地。",
+      "target_range": "¥151.19–¥166.88",
+      "time_frame": "6–12个月",
+      "notes": "晶圆代工龙头 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-13.7%"
+    },
+    {
+      "ticker": "688347.SH",
+      "name": "华虹公司",
+      "layer": "L3 中游制造/Foundry-IDM",
+      "archetype_hits": [
+        "⑧ 巨头依赖护城河",
+        "③ 产能售罄/已锁定",
+        "④ 进每个设计的BOM/普适"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688347.SH",
+        "provider": "tushare",
+        "last": 309.68,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 84,
+        "pct_off_6mo_high": -11.0,
+        "ret_1m_pct": 36.4,
+        "ret_3m_pct": 184.1,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 347.8,
+        "low_6mo": 105.55,
+        "cur_div_high_pct": 89.0
+      },
+      "valuation": {
+        "forward_pe": 358.75,
+        "trailing_pe": 1090.6216,
+        "peg": 2.13,
+        "eps_growth": 513.1019,
+        "rev_growth": 18.2192,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（制造端壁垒高但巨头集中）",
+        "pre_institutional": "HALF-PASS（机构覆盖度高）",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "华虹公司主营特色工艺晶圆代工，位于L3 中游制造/Foundry-IDM，属于半导体供应链中的国产替代/瓶颈环节；晶圆制造/封测是产能瓶颈本身，扩产周期长、政府与产业资本必须持续投入。",
+      "risk": "[特色工艺晶圆代工]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 1090.6x，估值对周期恢复预期较敏感。股价处于6月区间高位（84%），近3月涨幅184.1%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥278.7且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂产能利用率回升、封测景气拐点、政府产业基金落地。",
+      "target_range": "¥325.16–¥347.8",
+      "time_frame": "6–12个月",
+      "notes": "特色工艺晶圆代工 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-11.0%"
+    },
+    {
+      "ticker": "600460.SH",
+      "name": "士兰微",
+      "layer": "L3 中游制造/Foundry-IDM",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "600460.SH",
+        "provider": "tushare",
+        "last": 46.62,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 68,
+        "pct_off_6mo_high": -18.4,
+        "ret_1m_pct": 37.3,
+        "ret_3m_pct": 85.1,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 57.1,
+        "low_6mo": 24.7,
+        "cur_div_high_pct": 81.6
+      },
+      "valuation": {
+        "forward_pe": 213.85,
+        "trailing_pe": 169.083,
+        "peg": 4.17,
+        "eps_growth": 40.5689,
+        "rev_growth": 17.3123,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（制造端壁垒高但巨头集中）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "士兰微主营功率IDM，位于L3 中游制造/Foundry-IDM，属于半导体供应链中的国产替代/瓶颈环节；晶圆制造/封测是产能瓶颈本身，扩产周期长、政府与产业资本必须持续投入。",
+      "risk": "[功率IDM]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 169.1x，估值对周期恢复预期较敏感。股价处于6月区间高位（68%），近3月涨幅85.1%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥42.0且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂产能利用率回升、封测景气拐点、政府产业基金落地。",
+      "target_range": "¥48.95–¥57.1",
+      "time_frame": "6–12个月",
+      "notes": "功率IDM | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-18.4%"
+    },
+    {
+      "ticker": "688396.SH",
+      "name": "华润微",
+      "layer": "L3 中游制造/Foundry-IDM",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688396.SH",
+        "provider": "tushare",
+        "last": 86.03,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 73,
+        "pct_off_6mo_high": -15.6,
+        "ret_1m_pct": 29.3,
+        "ret_3m_pct": 93.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 101.99,
+        "low_6mo": 43.68,
+        "cur_div_high_pct": 84.4
+      },
+      "valuation": {
+        "forward_pe": 51.45,
+        "trailing_pe": 125.9366,
+        "peg": 0.42,
+        "eps_growth": 296.5589,
+        "rev_growth": 21.3401,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（制造端壁垒高但巨头集中）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "华润微主营功率半导体IDM，位于L3 中游制造/Foundry-IDM，属于半导体供应链中的国产替代/瓶颈环节；晶圆制造/封测是产能瓶颈本身，扩产周期长、政府与产业资本必须持续投入。",
+      "risk": "[功率半导体IDM]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 125.9x，估值对周期恢复预期较敏感。股价处于6月区间高位（73%），近3月涨幅93.8%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥77.4且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂产能利用率回升、封测景气拐点、政府产业基金落地。",
+      "target_range": "¥90.33–¥101.99",
+      "time_frame": "6–12个月",
+      "notes": "功率半导体IDM | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-15.6%"
+    },
+    {
+      "ticker": "300661.SZ",
+      "name": "圣邦股份",
+      "layer": "L4 中游器件/芯片",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "300661.SZ",
+        "provider": "tushare",
+        "last": 135.97,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 82,
+        "pct_off_6mo_high": -10.5,
+        "ret_1m_pct": 26.2,
+        "ret_3m_pct": 102.0,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 151.9,
+        "low_6mo": 61.84,
+        "cur_div_high_pct": 89.5
+      },
+      "valuation": {
+        "forward_pe": 187.25,
+        "trailing_pe": 150.5801,
+        "peg": 1.41,
+        "eps_growth": 106.9594,
+        "rev_growth": 39.0812,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（器件竞争较充分，靠BOM普适）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "圣邦股份主营模拟IC，位于L4 中游器件/芯片，属于半导体供应链中的国产替代/瓶颈环节；模拟/功率/射频器件BOM普适，国产替代与下游新能源/汽车电子化提供长期需求。",
+      "risk": "[模拟IC]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 150.6x，估值对周期恢复预期较敏感。股价处于6月区间高位（82%），近3月涨幅102.0%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥122.4且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "下游新能源/汽车电子需求回暖、产品线涨价/订单公告。",
+      "target_range": "¥142.77–¥151.9",
+      "time_frame": "6–12个月",
+      "notes": "模拟IC | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-10.5%"
+    },
+    {
+      "ticker": "688536.SH",
+      "name": "思瑞浦",
+      "layer": "L4 中游器件/芯片",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688536.SH",
+        "provider": "tushare",
+        "last": 339.9,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 85,
+        "pct_off_6mo_high": -9.5,
+        "ret_1m_pct": 16.1,
+        "ret_3m_pct": 106.0,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 375.76,
+        "low_6mo": 143.04,
+        "cur_div_high_pct": 90.5
+      },
+      "valuation": {
+        "forward_pe": 268.95,
+        "trailing_pe": 178.564,
+        "peg": 0.31,
+        "eps_growth": 577.2524,
+        "rev_growth": 66.504,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（器件竞争较充分，靠BOM普适）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "思瑞浦主营模拟/信号链IC，位于L4 中游器件/芯片，属于半导体供应链中的国产替代/瓶颈环节；模拟/功率/射频器件BOM普适，国产替代与下游新能源/汽车电子化提供长期需求。",
+      "risk": "[模拟/信号链IC]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 178.6x，估值对周期恢复预期较敏感。股价处于6月区间高位（85%），近3月涨幅106.0%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥305.9且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "下游新能源/汽车电子需求回暖、产品线涨价/订单公告。",
+      "target_range": "¥356.89–¥375.76",
+      "time_frame": "6–12个月",
+      "notes": "模拟/信号链IC | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-9.5%"
+    },
+    {
+      "ticker": "688798.SH",
+      "name": "艾为电子",
+      "layer": "L4 中游器件/芯片",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688798.SH",
+        "provider": "tushare",
+        "last": 69.6,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 29,
+        "pct_off_6mo_high": -18.5,
+        "ret_1m_pct": 0.2,
+        "ret_3m_pct": 7.5,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 85.35,
+        "low_6mo": 63.17,
+        "cur_div_high_pct": 81.5
+      },
+      "valuation": {
+        "forward_pe": 51.51,
+        "trailing_pe": 53.3756,
+        "peg": null,
+        "eps_growth": -20.3175,
+        "rev_growth": 1.0225,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（器件竞争较充分，靠BOM普适）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "PASS（估值相对可控）"
+      },
+      "thesis": "艾为电子主营数模混合/音频/电源管理IC，位于L4 中游器件/芯片，属于半导体供应链中的国产替代/瓶颈环节；模拟/功率/射频器件BOM普适，国产替代与下游新能源/汽车电子化提供长期需求。",
+      "risk": "[数模混合/音频/电源管理IC]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 53.4x，估值对周期恢复预期较敏感。股价动能偏弱（近3月7.5%），若行业订单无改善可能继续跑输板块。",
+      "invalidation": "跌破¥62.6且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "下游新能源/汽车电子需求回暖、产品线涨价/订单公告。",
+      "target_range": "¥73.08–¥85.35",
+      "time_frame": "6–12个月",
+      "notes": "数模混合/音频/电源管理IC | stage=range/neutral | 距6月高点-18.5%"
+    },
+    {
+      "ticker": "688052.SH",
+      "name": "纳芯微",
+      "layer": "L4 中游器件/芯片",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688052.SH",
+        "provider": "tushare",
+        "last": 262.68,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 72,
+        "pct_off_6mo_high": -14.5,
+        "ret_1m_pct": 12.0,
+        "ret_3m_pct": 73.9,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 307.29,
+        "low_6mo": 145.87,
+        "cur_div_high_pct": 85.5
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": 30.3901,
+        "rev_growth": 59.1716,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（器件竞争较充分，靠BOM普适）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "纳芯微主营模拟/隔离/接口IC，位于L4 中游器件/芯片，属于半导体供应链中的国产替代/瓶颈环节；模拟/功率/射频器件BOM普适，国产替代与下游新能源/汽车电子化提供长期需求。",
+      "risk": "[模拟/隔离/接口IC]面临下游景气波动、技术迭代及海外巨头降价竞争；PE缺失/亏损，估值对周期恢复预期较敏感。股价处于6月区间高位（72%），近3月涨幅73.9%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥236.4且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "下游新能源/汽车电子需求回暖、产品线涨价/订单公告。",
+      "target_range": "¥275.81–¥307.29",
+      "time_frame": "6–12个月",
+      "notes": "模拟/隔离/接口IC | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-14.5%"
+    },
+    {
+      "ticker": "300782.SZ",
+      "name": "卓胜微",
+      "layer": "L4 中游器件/芯片",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑨ 宏观错杀/二阶"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "300782.SZ",
+        "provider": "tushare",
+        "last": 95.82,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 32,
+        "pct_off_6mo_high": -33.9,
+        "ret_1m_pct": -8.5,
+        "ret_3m_pct": 13.3,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 144.9,
+        "low_6mo": 73.18,
+        "cur_div_high_pct": 66.1
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": -209.528,
+        "rev_growth": 9.4943,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（器件竞争较充分，靠BOM普适）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（盈利仍在恶化）"
+      },
+      "thesis": "卓胜微主营射频前端芯片，位于L4 中游器件/芯片，属于半导体供应链中的国产替代/瓶颈环节；模拟/功率/射频器件BOM普适，国产替代与下游新能源/汽车电子化提供长期需求。",
+      "risk": "[射频前端芯片]面临下游景气波动、技术迭代及海外巨头降价竞争；PE缺失/亏损，估值对周期恢复预期较敏感。股价动能偏弱（近3月13.3%），若行业订单无改善可能继续跑输板块。",
+      "invalidation": "跌破¥86.2且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "下游新能源/汽车电子需求回暖、产品线涨价/订单公告。",
+      "target_range": "¥100.61–¥144.9",
+      "time_frame": "6–12个月",
+      "notes": "射频前端芯片 | stage=range/neutral | 距6月高点-33.9%"
+    },
+    {
+      "ticker": "002049.SZ",
+      "name": "紫光国微",
+      "layer": "L4 中游器件/芯片",
+      "archetype_hits": [
+        "② 单一来源卡脖子",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "002049.SZ",
+        "provider": "tushare",
+        "last": 83.2,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 68,
+        "pct_off_6mo_high": -9.4,
+        "ret_1m_pct": 11.1,
+        "ret_3m_pct": 26.7,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 91.79,
+        "low_6mo": 64.56,
+        "cur_div_high_pct": 90.6
+      },
+      "valuation": {
+        "forward_pe": 133.38,
+        "trailing_pe": 42.7862,
+        "peg": 0.24,
+        "eps_growth": 180.271,
+        "rev_growth": 46.1071,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（器件竞争较充分，靠BOM普适）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "PASS（估值相对可控）"
+      },
+      "thesis": "紫光国微主营FPGA/安全芯片，位于L4 中游器件/芯片，属于半导体供应链中的国产替代/瓶颈环节；模拟/功率/射频器件BOM普适，国产替代与下游新能源/汽车电子化提供长期需求。",
+      "risk": "[FPGA/安全芯片]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 42.8x，估值对周期恢复预期较敏感。股价处于6月区间高位（68%），近3月涨幅26.7%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥74.9且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "下游新能源/汽车电子需求回暖、产品线涨价/订单公告。",
+      "target_range": "¥87.36–¥91.79",
+      "time_frame": "6–12个月",
+      "notes": "FPGA/安全芯片 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-9.4%"
+    },
+    {
+      "ticker": "688385.SH",
+      "name": "复旦微电",
+      "layer": "L4 中游器件/芯片",
+      "archetype_hits": [
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "688385.SH",
+        "provider": "tushare",
+        "last": 66.9,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 32,
+        "pct_off_6mo_high": -33.0,
+        "ret_1m_pct": 20.4,
+        "ret_3m_pct": 7.0,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 99.88,
+        "low_6mo": 51.15,
+        "cur_div_high_pct": 67.0
+      },
+      "valuation": {
+        "forward_pe": 233.01,
+        "trailing_pe": 225.4146,
+        "peg": 25.3,
+        "eps_growth": 8.9083,
+        "rev_growth": 16.2287,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（器件竞争较充分，靠BOM普适）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "国产FPGA/安全芯片龙头，高可靠领域市占率领先，是数字芯片中少数具备单源卡脖子属性的标的。",
+      "risk": "FPGA研发周期长、生态壁垒高，高端产品仍落后赛灵思/Altera；军工需求波动影响高可靠FPGA订单。",
+      "invalidation": "跌破¥55且1月动量转负；或FPGA新品发布不及预期。",
+      "catalyst": "高端FPGA量产、安全芯片订单放量。",
+      "target_range": "¥70.25–¥99.88",
+      "time_frame": "3–6个月",
+      "notes": "FPGA/安全芯片 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-33.0%"
+    },
+    {
+      "ticker": "603501.SH",
+      "name": "豪威集团",
+      "layer": "L5 下游模块/参考",
+      "archetype_hits": [
+        "⑧ 巨头依赖护城河",
+        "⑨ 宏观错杀/二阶"
+      ],
+      "rating": "🔴",
+      "price": {
+        "ticker": "603501.SH",
+        "provider": "tushare",
+        "last": 97.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 24,
+        "pct_off_6mo_high": -28.2,
+        "ret_1m_pct": 1.7,
+        "ret_3m_pct": 6.3,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 135.19,
+        "low_6mo": 84.63,
+        "cur_div_high_pct": 71.8
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": 33.1246,
+        "peg": null,
+        "eps_growth": -41.9207,
+        "rev_growth": -0.8972,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "FAIL（下游/参考标）",
+        "pre_institutional": "HALF-PASS（机构覆盖度高）",
+        "cheap_derisked": "FAIL（非主攻方向/估值透支）"
+      },
+      "thesis": "豪威集团主营CIS图像传感器，位于L5 下游模块/参考，属于半导体供应链中的国产替代/瓶颈环节；作为下游参照，验证终端需求强度，非本次主攻标的。",
+      "risk": "[CIS图像传感器]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 33.1x，估值对周期恢复预期较敏感。股价处于6月区间高位（24%），近3月涨幅6.3%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥87.3且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "终端新品周期、下游去库存结束。",
+      "target_range": "¥101.85–¥135.19",
+      "time_frame": "6–12个月",
+      "notes": "CIS图像传感器 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-28.2%"
+    },
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "layer": "L4 中游器件/芯片",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🔴",
+      "price": {
+        "ticker": "603986.SH",
+        "provider": "tushare",
+        "last": 654.29,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 70,
+        "pct_off_6mo_high": -22.7,
+        "ret_1m_pct": 34.1,
+        "ret_3m_pct": 165.3,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 846.66,
+        "low_6mo": 212.27,
+        "cur_div_high_pct": 77.3
+      },
+      "valuation": {
+        "forward_pe": 285.18,
+        "trailing_pe": 159.7235,
+        "peg": 0.31,
+        "eps_growth": 522.7881,
+        "rev_growth": 119.3787,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（器件竞争较充分，靠BOM普适）",
+        "pre_institutional": "HALF-PASS（机构覆盖度高）",
+        "cheap_derisked": "FAIL（非主攻方向/估值透支）"
+      },
+      "thesis": "兆易创新主营NOR Flash/MCU，位于L4 中游器件/芯片，属于半导体供应链中的国产替代/瓶颈环节；模拟/功率/射频器件BOM普适，国产替代与下游新能源/汽车电子化提供长期需求。",
+      "risk": "[NOR Flash/MCU]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 159.7x，估值对周期恢复预期较敏感。股价处于6月区间高位（70%），近3月涨幅165.3%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥588.9且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "下游新能源/汽车电子需求回暖、产品线涨价/订单公告。",
+      "target_range": "¥687.0–¥846.66",
+      "time_frame": "6–12个月",
+      "notes": "NOR Flash/MCU | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-22.7%"
+    },
+    {
+      "ticker": "688008.SH",
+      "name": "澜起科技",
+      "layer": "L5 下游模块/参考",
+      "archetype_hits": [
+        "⑧ 巨头依赖护城河",
+        "⑨ 宏观错杀/二阶"
+      ],
+      "rating": "🔴",
+      "price": {
+        "ticker": "688008.SH",
+        "provider": "tushare",
+        "last": 268.68,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 70,
+        "pct_off_6mo_high": -19.3,
+        "ret_1m_pct": 12.2,
+        "ret_3m_pct": 108.3,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 332.9,
+        "low_6mo": 117.72,
+        "cur_div_high_pct": 80.7
+      },
+      "valuation": {
+        "forward_pe": 145.95,
+        "trailing_pe": 128.3931,
+        "peg": 2.09,
+        "eps_growth": 61.3046,
+        "rev_growth": 19.5146,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "FAIL（下游/参考标）",
+        "pre_institutional": "HALF-PASS（机构覆盖度高）",
+        "cheap_derisked": "FAIL（非主攻方向/估值透支）"
+      },
+      "thesis": "澜起科技主营内存接口芯片，位于L5 下游模块/参考，属于半导体供应链中的国产替代/瓶颈环节；作为下游参照，验证终端需求强度，非本次主攻标的。",
+      "risk": "[内存接口芯片]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 128.4x，估值对周期恢复预期较敏感。股价处于6月区间高位（70%），近3月涨幅108.3%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥241.8且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "终端新品周期、下游去库存结束。",
+      "target_range": "¥282.11–¥332.9",
+      "time_frame": "6–12个月",
+      "notes": "内存接口芯片 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-19.3%"
+    },
+    {
+      "ticker": "688608.SH",
+      "name": "恒玄科技",
+      "layer": "L5 下游模块/参考",
+      "archetype_hits": [
+        "⑧ 巨头依赖护城河",
+        "⑨ 宏观错杀/二阶"
+      ],
+      "rating": "🔴",
+      "price": {
+        "ticker": "688608.SH",
+        "provider": "tushare",
+        "last": 110.6,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 12,
+        "pct_off_6mo_high": -39.3,
+        "ret_1m_pct": -3.8,
+        "ret_3m_pct": -6.1,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 182.16,
+        "low_6mo": 100.99,
+        "cur_div_high_pct": 60.7
+      },
+      "valuation": {
+        "forward_pe": 85.9,
+        "trailing_pe": 53.1949,
+        "peg": null,
+        "eps_growth": -53.263,
+        "rev_growth": -32.7215,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "FAIL（下游/参考标）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（非主攻方向/估值透支）"
+      },
+      "thesis": "恒玄科技主营智能音频SoC，位于L5 下游模块/参考，属于半导体供应链中的国产替代/瓶颈环节；作为下游参照，验证终端需求强度，非本次主攻标的。",
+      "risk": "[智能音频SoC]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 53.2x，估值对周期恢复预期较敏感。股价动能偏弱（近3月-6.1%），若行业订单无改善可能继续跑输板块。",
+      "invalidation": "跌破¥99.5且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "终端新品周期、下游去库存结束。",
+      "target_range": "¥116.13–¥182.16",
+      "time_frame": "6–12个月",
+      "notes": "智能音频SoC | stage=range/neutral | 距6月高点-39.3%"
+    },
+    {
+      "ticker": "603688.SH",
+      "name": "石英股份",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "603688.SH",
+        "provider": "tushare",
+        "last": 66.04,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 56,
+        "pct_off_6mo_high": -26.2,
+        "ret_1m_pct": -4.9,
+        "ret_3m_pct": 55.9,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 89.5,
+        "low_6mo": 36.51,
+        "cur_div_high_pct": 73.8
+      },
+      "valuation": {
+        "forward_pe": 233.05,
+        "trailing_pe": 260.4387,
+        "peg": null,
+        "eps_growth": -30.2908,
+        "rev_growth": 1.0282,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "石英股份主营高纯石英材料（坩埚/光纤），位于L1 上游材料，属于半导体供应链中的国产替代/瓶颈环节；晶圆厂扩产+耗材本土化是确定性的资本开支方向，认证通过后订单粘性强。",
+      "risk": "[高纯石英材料（坩埚/光纤）]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 260.4x，估值对周期恢复预期较敏感。股价动能偏弱（近3月55.9%），若行业订单无改善可能继续跑输板块。",
+      "invalidation": "跌破¥59.4且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂扩产招标、国产材料认证通过、大基金三期投向材料/设备。",
+      "target_range": "¥69.34–¥89.5",
+      "time_frame": "3–6个月",
+      "notes": "高纯石英材料（坩埚/光纤） | stage=range/neutral | 距6月高点-26.2%"
+    },
+    {
+      "ticker": "688268.SH",
+      "name": "华特气体",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688268.SH",
+        "provider": "tushare",
+        "last": 212.2,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 67,
+        "pct_off_6mo_high": -26.8,
+        "ret_1m_pct": 7.9,
+        "ret_3m_pct": 122.2,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 290.0,
+        "low_6mo": 57.3,
+        "cur_div_high_pct": 73.2
+      },
+      "valuation": {
+        "forward_pe": 136.94,
+        "trailing_pe": 217.0425,
+        "peg": null,
+        "eps_growth": -23.6953,
+        "rev_growth": 13.7042,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "华特气体主营电子特种气体，位于L1 上游材料，属于半导体供应链中的国产替代/瓶颈环节；晶圆厂扩产+耗材本土化是确定性的资本开支方向，认证通过后订单粘性强。",
+      "risk": "[电子特种气体]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 217.0x，估值对周期恢复预期较敏感。股价处于6月区间高位（67%），近3月涨幅122.2%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥191.0且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂扩产招标、国产材料认证通过、大基金三期投向材料/设备。",
+      "target_range": "¥222.81–¥290.0",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "电子特种气体 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-26.8%"
+    },
+    {
+      "ticker": "603650.SH",
+      "name": "彤程新材",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "603650.SH",
+        "provider": "tushare",
+        "last": 83.69,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 68,
+        "pct_off_6mo_high": -18.2,
+        "ret_1m_pct": 52.7,
+        "ret_3m_pct": 73.1,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 102.28,
+        "low_6mo": 43.59,
+        "cur_div_high_pct": 81.8
+      },
+      "valuation": {
+        "forward_pe": 128.58,
+        "trailing_pe": 88.1816,
+        "peg": 6.37,
+        "eps_growth": 13.8325,
+        "rev_growth": 22.5132,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "彤程新材主营半导体光刻胶+酚醛树脂，位于L1 上游材料，属于半导体供应链中的国产替代/瓶颈环节；晶圆厂扩产+耗材本土化是确定性的资本开支方向，认证通过后订单粘性强。",
+      "risk": "[半导体光刻胶+酚醛树脂]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 88.2x，估值对周期恢复预期较敏感。股价处于6月区间高位（68%），近3月涨幅73.1%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥75.3且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂扩产招标、国产材料认证通过、大基金三期投向材料/设备。",
+      "target_range": "¥87.87–¥102.28",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "半导体光刻胶+酚醛树脂 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-18.2%"
+    },
+    {
+      "ticker": "688106.SH",
+      "name": "金宏气体",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "688106.SH",
+        "provider": "tushare",
+        "last": 36.89,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 54,
+        "pct_off_6mo_high": -28.9,
+        "ret_1m_pct": 36.5,
+        "ret_3m_pct": 41.1,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 51.91,
+        "low_6mo": 19.3,
+        "cur_div_high_pct": 71.1
+      },
+      "valuation": {
+        "forward_pe": 4014.3,
+        "trailing_pe": 212.8487,
+        "peg": null,
+        "eps_growth": -88.9347,
+        "rev_growth": 6.526,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（盈利仍在恶化）"
+      },
+      "thesis": "本土综合气体供应商，电子特气（超纯氨、硅烷等）进入半导体产线，受益于晶圆厂耗材本土化与现场制气模式。",
+      "risk": "电子特气业务占比仍有限，工业气体价格竞争激烈；大客户集中度高，新产能爬坡若慢将压制利润。",
+      "invalidation": "跌破¥30且1月动量转负；或电子特气收入连续两季度负增长。",
+      "catalyst": "电子特气新签长单、现场制气项目投产。",
+      "target_range": "¥38.73–¥51.91",
+      "time_frame": "3–6个月",
+      "notes": "电子特气+工业气体 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-28.9%"
+    },
+    {
+      "ticker": "688200.SH",
+      "name": "华峰测控",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688200.SH",
+        "provider": "tushare",
+        "last": 443.4,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 72,
+        "pct_off_6mo_high": -22.2,
+        "ret_1m_pct": 53.7,
+        "ret_3m_pct": 147.3,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 570.0,
+        "low_6mo": 123.73,
+        "cur_div_high_pct": 77.8
+      },
+      "valuation": {
+        "forward_pe": 164.27,
+        "trailing_pe": 156.4732,
+        "peg": 3.0,
+        "eps_growth": 52.116,
+        "rev_growth": 37.5183,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "华峰测控主营模拟/混合信号测试机，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[模拟/混合信号测试机]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 156.5x，估值对周期恢复预期较敏感。股价处于6月区间高位（72%），近3月涨幅147.3%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥399.1且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥465.57–¥570.0",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "模拟/混合信号测试机 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-22.2%"
+    },
+    {
+      "ticker": "688630.SH",
+      "name": "芯碁微装",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "② 单一来源卡脖子",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688630.SH",
+        "provider": "tushare",
+        "last": 470.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 76,
+        "pct_off_6mo_high": -18.6,
+        "ret_1m_pct": 24.0,
+        "ret_3m_pct": 151.1,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 577.66,
+        "low_6mo": 132.63,
+        "cur_div_high_pct": 81.4
+      },
+      "valuation": {
+        "forward_pe": 591.51,
+        "trailing_pe": 196.1339,
+        "peg": 1.8,
+        "eps_growth": 108.9826,
+        "rev_growth": 112.4815,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "芯碁微装主营直写光刻设备，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[直写光刻设备]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 196.1x，估值对周期恢复预期较敏感。股价处于6月区间高位（76%），近3月涨幅151.1%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥423.0且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥493.5–¥577.66",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "直写光刻设备 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-18.6%"
+    },
+    {
+      "ticker": "603005.SH",
+      "name": "晶方科技",
+      "layer": "L3 中游制造/Foundry-IDM",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "③ 产能售罄/已锁定",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "603005.SH",
+        "provider": "tushare",
+        "last": 42.59,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 57,
+        "pct_off_6mo_high": -22.9,
+        "ret_1m_pct": -7.0,
+        "ret_3m_pct": 63.9,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 55.26,
+        "low_6mo": 25.83,
+        "cur_div_high_pct": 77.1
+      },
+      "valuation": {
+        "forward_pe": 74.07,
+        "trailing_pe": 75.1317,
+        "peg": 615.33,
+        "eps_growth": 0.1221,
+        "rev_growth": 14.8624,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "FAIL（下游/参考标）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "WLCSP/TSV先进封装小龙头，受益于AI手机/汽车传感器封装需求，是后道设备-工艺瓶颈中的冷门标的。",
+      "risk": "封测行业产能过剩、价格竞争激烈，先进封装收入占比仍低；市值小但流动性一般。",
+      "invalidation": "跌破¥36且1月动量转负；或先进封装收入占比下滑。",
+      "catalyst": "CIS/滤波器封装订单放量、先进封装产能爬坡。",
+      "target_range": "¥44.72–¥55.26",
+      "time_frame": "3–6个月",
+      "notes": "WLCSP先进封装 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-22.9%"
+    },
+    {
+      "ticker": "002156.SZ",
+      "name": "通富微电",
+      "layer": "L3 中游制造/Foundry-IDM",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "002156.SZ",
+        "provider": "tushare",
+        "last": 66.18,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 69,
+        "pct_off_6mo_high": -16.6,
+        "ret_1m_pct": -1.0,
+        "ret_3m_pct": 62.5,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 79.38,
+        "low_6mo": 37.23,
+        "cur_div_high_pct": 83.4
+      },
+      "valuation": {
+        "forward_pe": 81.99,
+        "trailing_pe": 69.4387,
+        "peg": 0.31,
+        "eps_growth": 224.5487,
+        "rev_growth": 22.8027,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "FAIL（下游/参考标）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "通富微电主营封测/先进封装，位于L3 中游制造/Foundry-IDM，属于半导体供应链中的国产替代/瓶颈环节；晶圆制造/封测是产能瓶颈本身，扩产周期长、政府与产业资本必须持续投入。",
+      "risk": "[封测/先进封装]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 69.4x，估值对周期恢复预期较敏感。股价处于6月区间高位（69%），近3月涨幅62.5%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥59.6且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂产能利用率回升、封测景气拐点、政府产业基金落地。",
+      "target_range": "¥69.49–¥79.38",
+      "time_frame": "6–12个月",
+      "notes": "封测/先进封装 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-16.6%"
+    },
+    {
+      "ticker": "688519.SH",
+      "name": "南亚新材",
+      "layer": "L1 上游材料",
+      "archetype_hits": [
+        "① 上游材料/衬底垄断",
+        "④ 进每个设计的BOM/普适",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688519.SH",
+        "provider": "tushare",
+        "last": 340.12,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 73,
+        "pct_off_6mo_high": -22.7,
+        "ret_1m_pct": 44.1,
+        "ret_3m_pct": 185.9,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 439.82,
+        "low_6mo": 66.92,
+        "cur_div_high_pct": 77.3
+      },
+      "valuation": {
+        "forward_pe": 333.29,
+        "trailing_pe": 216.5746,
+        "peg": 0.35,
+        "eps_growth": 610.8314,
+        "rev_growth": 92.3628,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "南亚新材主营覆铜板/IC载板基材，位于L1 上游材料，属于半导体供应链中的国产替代/瓶颈环节；晶圆厂扩产+耗材本土化是确定性的资本开支方向，认证通过后订单粘性强。",
+      "risk": "[覆铜板/IC载板基材]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 216.6x，估值对周期恢复预期较敏感。股价处于6月区间高位（73%），近3月涨幅185.9%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥306.1且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂扩产招标、国产材料认证通过、大基金三期投向材料/设备。",
+      "target_range": "¥357.13–¥439.82",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "覆铜板/IC载板基材 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-22.7%"
+    },
+    {
+      "ticker": "605111.SH",
+      "name": "新洁能",
+      "layer": "L4 中游器件/芯片",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "605111.SH",
+        "provider": "tushare",
+        "last": 80.36,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 66,
+        "pct_off_6mo_high": -23.0,
+        "ret_1m_pct": 34.1,
+        "ret_3m_pct": 116.5,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 104.43,
+        "low_6mo": 33.56,
+        "cur_div_high_pct": 77.0
+      },
+      "valuation": {
+        "forward_pe": 317.87,
+        "trailing_pe": 87.8539,
+        "peg": null,
+        "eps_growth": -12.6783,
+        "rev_growth": 15.1441,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（器件竞争较充分，靠BOM普适）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "新洁能主营MOSFET/功率器件，位于L4 中游器件/芯片，属于半导体供应链中的国产替代/瓶颈环节；模拟/功率/射频器件BOM普适，国产替代与下游新能源/汽车电子化提供长期需求。",
+      "risk": "[MOSFET/功率器件]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 87.9x，估值对周期恢复预期较敏感。股价处于6月区间高位（66%），近3月涨幅116.5%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥72.3且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "下游新能源/汽车电子需求回暖、产品线涨价/订单公告。",
+      "target_range": "¥84.38–¥104.43",
+      "time_frame": "6–12个月",
+      "notes": "MOSFET/功率器件 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-23.0%"
+    },
+    {
+      "ticker": "603290.SH",
+      "name": "斯达半导",
+      "layer": "L4 中游器件/芯片",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "603290.SH",
+        "provider": "tushare",
+        "last": 126.71,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 50,
+        "pct_off_6mo_high": -20.7,
+        "ret_1m_pct": 12.4,
+        "ret_3m_pct": 30.9,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 159.69,
+        "low_6mo": 93.87,
+        "cur_div_high_pct": 79.3
+      },
+      "valuation": {
+        "forward_pe": 37.07,
+        "trailing_pe": 92.4673,
+        "peg": null,
+        "eps_growth": -74.3244,
+        "rev_growth": -5.996,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（器件竞争较充分，靠BOM普适）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（盈利仍在恶化）"
+      },
+      "thesis": "国内IGBT模块龙头，新能源车主驱/光伏逆变器核心供应商，国产替代空间大，BOM普适性高。",
+      "risk": "IGBT模块价格下行，新能源汽车需求增速放缓；海外英飞凌/安森美降价竞争。",
+      "invalidation": "跌破¥110且1月动量转负；或新能源车用IGBT订单连续下滑。",
+      "catalyst": "800V高压平台IGBT/SiC模块放量、海外客户突破。",
+      "target_range": "¥133.05–¥159.69",
+      "time_frame": "3–6个月",
+      "notes": "IGBT模块 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-20.7%"
+    },
+    {
+      "ticker": "688172.SH",
+      "name": "燕东微",
+      "layer": "L3 中游制造/Foundry-IDM",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688172.SH",
+        "provider": "tushare",
+        "last": 76.4,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 79,
+        "pct_off_6mo_high": -15.1,
+        "ret_1m_pct": 11.5,
+        "ret_3m_pct": 106.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 90.0,
+        "low_6mo": 26.69,
+        "cur_div_high_pct": 84.9
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": -22.9934,
+        "rev_growth": 75.8396,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（制造端壁垒高但巨头集中）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "燕东微主营模拟IC/功率IDM，位于L3 中游制造/Foundry-IDM，属于半导体供应链中的国产替代/瓶颈环节；晶圆制造/封测是产能瓶颈本身，扩产周期长、政府与产业资本必须持续投入。",
+      "risk": "[模拟IC/功率IDM]面临下游景气波动、技术迭代及海外巨头降价竞争；PE缺失/亏损，估值对周期恢复预期较敏感。股价处于6月区间高位（79%），近3月涨幅106.8%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥68.8且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂产能利用率回升、封测景气拐点、政府产业基金落地。",
+      "target_range": "¥80.22–¥90.0",
+      "time_frame": "6–12个月",
+      "notes": "模拟IC/功率IDM | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-15.1%"
+    },
+    {
+      "ticker": "688596.SH",
+      "name": "正帆科技",
+      "layer": "L2 上游设备/EDA/IP",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "④ 进每个设计的BOM/普适",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "688596.SH",
+        "provider": "tushare",
+        "last": 71.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 71,
+        "pct_off_6mo_high": -19.9,
+        "ret_1m_pct": 73.6,
+        "ret_3m_pct": 157.3,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 88.66,
+        "low_6mo": 27.45,
+        "cur_div_high_pct": 80.1
+      },
+      "valuation": {
+        "forward_pe": 160.64,
+        "trailing_pe": 273.7695,
+        "peg": null,
+        "eps_growth": -174.3588,
+        "rev_growth": 43.3547,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "PASS",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "正帆科技主营工艺介质供应系统+电子特气，位于L2 上游设备/EDA/IP，属于半导体供应链中的国产替代/瓶颈环节；设备国产替代率低、海外供应受限，本土设备商订单可见度高。",
+      "risk": "[工艺介质供应系统+电子特气]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 273.8x，估值对周期恢复预期较敏感。股价处于6月区间高位（71%），近3月涨幅157.3%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥63.9且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂设备招标、海外设备禁令升级、国产替代订单公告。",
+      "target_range": "¥74.55–¥88.66",
+      "time_frame": "3–6个月（等回调或催化剂落地）",
+      "notes": "工艺介质供应系统+电子特气 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-19.9%"
+    },
+    {
+      "ticker": "300623.SZ",
+      "name": "捷捷微电",
+      "layer": "L4 中游器件/芯片",
+      "archetype_hits": [
+        "④ 进每个设计的BOM/普适",
+        "⑦ 冷门/前机构"
+      ],
+      "rating": "🟢",
+      "price": {
+        "ticker": "300623.SZ",
+        "provider": "tushare",
+        "last": 38.22,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 62,
+        "pct_off_6mo_high": -16.1,
+        "ret_1m_pct": 15.3,
+        "ret_3m_pct": 43.7,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 45.57,
+        "low_6mo": 26.28,
+        "cur_div_high_pct": 83.9
+      },
+      "valuation": {
+        "forward_pe": 282.33,
+        "trailing_pe": 68.368,
+        "peg": null,
+        "eps_growth": -10.3153,
+        "rev_growth": 31.4098,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "HALF-PASS（器件竞争较充分，靠BOM普适）",
+        "pre_institutional": "PASS",
+        "cheap_derisked": "HALF-PASS"
+      },
+      "thesis": "国产晶闸管/防护器件龙头，汽车/光伏/工控BOM普适性强，估值相对可控，是功率半导体中的小而美标的。",
+      "risk": "功率分立器件行业价格战，IGBT/碳化硅替代传统晶闸管；公司规模较小，研发追赶压力大。",
+      "invalidation": "跌破¥32且1月动量转负；或功率器件毛利率连续两季度下滑。",
+      "catalyst": "汽车电子订单增长、功率器件提价。",
+      "target_range": "¥40.13–¥45.57",
+      "time_frame": "3–6个月",
+      "notes": "晶闸管/防护器件 | stage=early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended) | 距6月高点-16.1%"
+    },
+    {
+      "ticker": "600584.SH",
+      "name": "长电科技",
+      "layer": "L3 中游制造/Foundry-IDM",
+      "archetype_hits": [
+        "⑥ 测试/设备瓶颈",
+        "⑧ 巨头依赖护城河"
+      ],
+      "rating": "🟡",
+      "price": {
+        "ticker": "600584.SH",
+        "provider": "tushare",
+        "last": 95.09,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 79,
+        "pct_off_6mo_high": -14.4,
+        "ret_1m_pct": 25.8,
+        "ret_3m_pct": 147.4,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)",
+        "high_6mo": 111.11,
+        "low_6mo": 36.47,
+        "cur_div_high_pct": 85.6
+      },
+      "valuation": {
+        "forward_pe": 850.78,
+        "trailing_pe": 102.9905,
+        "peg": 2.41,
+        "eps_growth": 42.7359,
+        "rev_growth": -1.7579,
+        "src": "tushare"
+      },
+      "gates": {
+        "true_bottleneck": "FAIL（下游/参考标）",
+        "pre_institutional": "HALF-PASS（机构覆盖度高）",
+        "cheap_derisked": "FAIL（价格已大幅透支）"
+      },
+      "thesis": "长电科技主营封测龙头，位于L3 中游制造/Foundry-IDM，属于半导体供应链中的国产替代/瓶颈环节；晶圆制造/封测是产能瓶颈本身，扩产周期长、政府与产业资本必须持续投入。",
+      "risk": "[封测龙头]面临下游景气波动、技术迭代及海外巨头降价竞争；PE(TTM/forward) 103.0x，估值对周期恢复预期较敏感。股价处于6月区间高位（79%），近3月涨幅147.4%已透支部分乐观预期，追高风险大。",
+      "invalidation": "跌破¥85.6且1月动量转负；或行业订单/毛利率连续两季度低于预期。",
+      "catalyst": "晶圆厂产能利用率回升、封测景气拐点、政府产业基金落地。",
+      "target_range": "¥99.84–¥111.11",
+      "time_frame": "6–12个月",
+      "notes": "封测龙头 | stage=extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback) | 距6月高点-14.4%"
+    }
+  ]
+}

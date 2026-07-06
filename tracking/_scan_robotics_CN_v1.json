@@ -1,0 +1,1820 @@
+{
+  "theme_tag": "robotics",
+  "theme_name": "A股机器人",
+  "scope": "Robotics supply chain in A-shares, especially humanoid/industrial robot upstream components. Focus bottleneck layers: harmonic/planetary/RV gearboxes, precision reducers, servo motors, stepper motors, ball/lead screws, bearings, force/torque sensors, encoders, vision systems, robot controllers, lightweight structural parts, end-effectors.",
+  "scan_date": "2026-07-06",
+  "data_source": "Tushare (price.py default qfq) + valuation() multi-source fallback",
+  "known_player_census": {
+    "global_reducer": [
+      "Harmonic Drive (JP)",
+      "Nabtesco (JP)",
+      "Sumitomo Heavy (JP)",
+      "SEW-Eurodrive (DE)",
+      "ZF (DE)"
+    ],
+    "private_chinese_bot_makers": [
+      "宇树科技(Unitree, 科创板IPO注册)",
+      "智元机器人",
+      "傅利叶智能",
+      "达闼科技",
+      "优必选(0980.HK listed)",
+      "小鹏汽车(人形)",
+      "小米集团(人形)"
+    ],
+    "private_reducer_sensor": [
+      "环动科技(双环子公司,IPO排队)",
+      "来福谐波",
+      "同川科技",
+      "大族精密",
+      "坤维科技",
+      "宇立仪器",
+      "鑫精诚"
+    ],
+    "global_motor": [
+      "Maxon (CH)",
+      "Faulhaber (DE)",
+      "Nidec (JP)",
+      "Moog (US)",
+      "Oriental Motor (JP)"
+    ],
+    "global_vision": [
+      "Basler (DE)",
+      "Cognex (US)",
+      "Keyence (JP)",
+      "Omron (JP)"
+    ],
+    "notes": "A-share L4上游设备/测试层缺乏纯机器人专用设备标的，主要由跨主题半导体/机床设备商覆盖，故未强制纳入。"
+  },
+  "supply_chain_map": {
+    "L1 下游整机/系统集成": "埃斯顿、机器人、华中数控、拓斯达、埃夫特 — 本体厂与系统集成商，竞争红海，仅作参照。",
+    "L2 中游系统/执行器": "汇川技术、三花智控、拓普集团、雷赛智能、禾川科技、震裕科技 — 执行器、运动控制、线性模组。巨头占主导，弹性有限。",
+    "L3 中游核心器件": "绿的谐波、双环传动、中大力德、鸣志电器、步科股份、江苏雷利、伟创电气、五洲新春、北特科技、斯菱股份、兆威机电、奥比中光、柯力传感、汉威科技、奥普特、凌云光、丰立智能、长盛轴承、双林股份、豪能股份、福达股份、方正电机、国茂股份 — 减速器、电机、丝杠、轴承、传感器、视觉，真正的瓶颈猎区。",
+    "L4 上游设备/测试": "(无A股纯play) 机器人精密加工/测试设备主要由北方华创、中微、拓荆等跨主题半导体设备商及科德数控、海天精工等机床商覆盖，本期不单独列候选。",
+    "L5 上游材料": "正海磁材、宁波韵升、云路股份、铂科新材、阿石创 — 稀土永磁、软磁、非晶/纳米晶、溅射靶材。材料垄断型瓶颈。"
+  },
+  "bottleneck_layers": [
+    "L3 中游核心器件（减速器/丝杠/力传感器）是真瓶颈：技术壁垒高、验证周期长、国产替代空间大的环节同时命中原型②④。",
+    "L5 上游材料（稀土永磁/软磁/非晶）是隐藏瓶颈：电机BOM必需、中国具备资源优势、市场关注远低于器件层，命中原型①④⑦。"
+  ],
+  "candidates": [
+    {
+      "ticker": "300224.SZ",
+      "name": "正海磁材",
+      "layer": "L5 上游材料",
+      "archetypes": [
+        1,
+        4,
+        5,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300224.SZ",
+        "provider": "tushare",
+        "last": 13.38,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 20,
+        "pct_off_6mo_high": -31.5,
+        "ret_1m_pct": 6.8,
+        "ret_3m_pct": -3.5,
+        "above_sma50": true,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 36.09,
+        "trailing_pe": 43.7062,
+        "peg": null,
+        "eps_growth": -32.2906,
+        "rev_growth": -6.4538,
+        "src": "tushare"
+      },
+      "rating": "🟢",
+      "thesis": "稀土永磁材料龙头，电机BOM必需；forward PE 36，股价低位，稀土价格回暖+机器人电机需求双重催化。",
+      "risk": "稀土价格波动，新能源汽车磁材需求放缓；机器人业务占比待提升。",
+      "invalidation": "跌破¥11.5且1个月动量转负；或稀土价格继续下跌/机器人磁材订单无增长。"
+    },
+    {
+      "ticker": "688190.SH",
+      "name": "云路股份",
+      "layer": "L5 上游材料",
+      "archetypes": [
+        1,
+        4,
+        5,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "688190.SH",
+        "provider": "tushare",
+        "last": 85.59,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 13,
+        "pct_off_6mo_high": -35.6,
+        "ret_1m_pct": -17.9,
+        "ret_3m_pct": 1.5,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 31.12,
+        "trailing_pe": 37.0253,
+        "peg": null,
+        "eps_growth": -21.531,
+        "rev_growth": 11.2092,
+        "src": "tushare"
+      },
+      "rating": "🟢",
+      "thesis": "非晶/纳米晶软磁材料龙头，高效电机铁芯核心材料；forward PE 31，股价处6个月13%分位，最冷门的上游材料瓶颈。",
+      "risk": "非晶材料在机器人电机中的渗透率不确定；下游电网/家电需求波动。",
+      "invalidation": "跌破¥70且1个月动量转负；或非晶电机铁芯渗透率无提升。"
+    },
+    {
+      "ticker": "300811.SZ",
+      "name": "铂科新材",
+      "layer": "L5 上游材料",
+      "archetypes": [
+        1,
+        4,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300811.SZ",
+        "provider": "tushare",
+        "last": 87.9,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 60,
+        "pct_off_6mo_high": -22.2,
+        "ret_1m_pct": -5.5,
+        "ret_3m_pct": 64.1,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 185.67,
+        "trailing_pe": 82.564,
+        "peg": 4.13,
+        "eps_growth": 20.0029,
+        "rev_growth": 27.7284,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "金属软磁粉芯龙头，电机/电感上游；3个月+64%已涨，估值185x偏贵。",
+      "risk": "估值过高，3个月涨幅64%已price in。",
+      "invalidation": "跌破¥65且1个月动量转负；或电机软磁需求放缓。"
+    },
+    {
+      "ticker": "600366.SH",
+      "name": "宁波韵升",
+      "layer": "L5 上游材料",
+      "archetypes": [
+        1,
+        4,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "600366.SH",
+        "provider": "tushare",
+        "last": 16.11,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 80,
+        "pct_off_6mo_high": -7.5,
+        "ret_1m_pct": 27.5,
+        "ret_3m_pct": 36.9,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 53.65,
+        "trailing_pe": 43.1694,
+        "peg": 0.2,
+        "eps_growth": 213.1124,
+        "rev_growth": 33.534,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "稀土永磁老牌企业，3个月+36.9%已偏热；估值53x，作为材料龙头跟踪。",
+      "risk": "稀土价格与业绩波动大，近期已偏热。",
+      "invalidation": "跌破¥13且1个月动量转负；或稀土价格回调。"
+    },
+    {
+      "ticker": "300706.SZ",
+      "name": "阿石创",
+      "layer": "L5 上游材料",
+      "archetypes": [
+        1
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300706.SZ",
+        "provider": "tushare",
+        "last": 69.43,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 61,
+        "pct_off_6mo_high": -26.1,
+        "ret_1m_pct": 34.8,
+        "ret_3m_pct": 117.9,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": 572.3871,
+        "rev_growth": 41.6122,
+        "src": "tushare"
+      },
+      "rating": "🔴",
+      "thesis": "溅射靶材，与机器人关联度低，3个月+117%过热，pass。",
+      "risk": "与机器人关联度弱，3个月+117%已过热。",
+      "invalidation": "不参与。"
+    },
+    {
+      "ticker": "300007.SZ",
+      "name": "汉威科技",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        4,
+        5,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300007.SZ",
+        "provider": "tushare",
+        "last": 40.35,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 21,
+        "pct_off_6mo_high": -40.5,
+        "ret_1m_pct": -5.7,
+        "ret_3m_pct": -3.4,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 88.08,
+        "trailing_pe": 79.2968,
+        "peg": 1.72,
+        "eps_growth": 46.0823,
+        "rev_growth": -15.6089,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "气体传感器龙头，布局力/触觉传感器；机器人业务占比尚小，估值在传感器板块相对低（forward PE 88，PEG 1.72），股价处于6个月低位，但主题纯度不足。",
+      "risk": "机器人传感器业务占比仍小，主业气体传感器增速放缓；主题纯度不足导致估值修复弹性有限。",
+      "invalidation": "跌破¥33（6个月低点附近）且1个月动量转负；或力/触觉传感器布局无实质订单。"
+    },
+    {
+      "ticker": "300718.SZ",
+      "name": "长盛轴承",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300718.SZ",
+        "provider": "tushare",
+        "last": 70.52,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 42,
+        "pct_off_6mo_high": -22.1,
+        "ret_1m_pct": -7.8,
+        "ret_3m_pct": 1.2,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 86.0,
+        "trailing_pe": 80.6192,
+        "peg": 5.34,
+        "eps_growth": 15.0944,
+        "rev_growth": 23.4093,
+        "src": "tushare"
+      },
+      "rating": "🟢",
+      "thesis": "自润滑轴承龙头，机器人关节、丝杠等场景潜在BOM；股价低位、估值86x、增速15%，存在渗透率提升空间。",
+      "risk": "自润滑轴承在机器人中的用量/认证进度不确定；估值不便宜。",
+      "invalidation": "跌破¥55且1个月动量转负；或自润滑轴承未进入主流机器人BOM。"
+    },
+    {
+      "ticker": "603809.SH",
+      "name": "豪能股份",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        4,
+        5,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "603809.SH",
+        "provider": "tushare",
+        "last": 9.4,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 15,
+        "pct_off_6mo_high": -38.6,
+        "ret_1m_pct": -8.0,
+        "ret_3m_pct": -9.4,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 26.62,
+        "trailing_pe": 31.2664,
+        "peg": null,
+        "eps_growth": -0.4477,
+        "rev_growth": 10.9658,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "汽车传动件向机器人行星减速器/关节模组延伸，forward PE仅26.6，股价处6个月15%分位，估值安全；但机器人业务占比尚小，题材纯度不足。",
+      "risk": "机器人减速器业务占比仍小，汽车业务周期下行风险；题材纯度不足。",
+      "invalidation": "跌破¥8.0且1个月动量转负；或机器人减速器业务营收占比<3%且无产能扩张。"
+    },
+    {
+      "ticker": "002196.SZ",
+      "name": "方正电机",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        4
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "002196.SZ",
+        "provider": "tushare",
+        "last": 13.18,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 21,
+        "pct_off_6mo_high": -32.8,
+        "ret_1m_pct": -3.7,
+        "ret_3m_pct": -4.1,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 290.47,
+        "trailing_pe": 137.0872,
+        "peg": 0.77,
+        "eps_growth": 177.3317,
+        "rev_growth": 53.5364,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "伺服电机+新能源驱动电机，利润增速高但估值波动大；机器人占比尚低。",
+      "risk": "业绩波动大，伺服电机竞争加剧。",
+      "invalidation": "跌破¥11且1个月动量转负；或伺服电机毛利下滑。"
+    },
+    {
+      "ticker": "002472.SZ",
+      "name": "双环传动",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "002472.SZ",
+        "provider": "tushare",
+        "last": 46.75,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 82,
+        "pct_off_6mo_high": -5.4,
+        "ret_1m_pct": 9.7,
+        "ret_3m_pct": 31.0,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 38.73,
+        "trailing_pe": 31.2991,
+        "peg": 10.69,
+        "eps_growth": 2.9288,
+        "rev_growth": 1.488,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "RV+谐波+行星减速器全品类布局，子公司环动科技拟IPO；业绩稳健但市值较大、弹性一般。",
+      "risk": "机器人减速器业务占比仍低，主业齿轮增速放缓；市值大弹性有限。",
+      "invalidation": "跌破¥40且3个月动量转负；或环动科技IPO定价过低/减速器业务增速<20%。"
+    },
+    {
+      "ticker": "002896.SZ",
+      "name": "中大力德",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "002896.SZ",
+        "provider": "tushare",
+        "last": 84.02,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 59,
+        "pct_off_6mo_high": -11.9,
+        "ret_1m_pct": -3.2,
+        "ret_3m_pct": 16.0,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 234.21,
+        "trailing_pe": 292.9199,
+        "peg": null,
+        "eps_growth": -36.4187,
+        "rev_growth": 5.1164,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "少数同时覆盖谐波/RV/行星减速器的中小厂商，全品类储备具备弹性；当前估值偏高、利润承压。",
+      "risk": "多品类布局分散资源，利润负增长；估值过高，若订单不及预期有杀估值风险。",
+      "invalidation": "跌破¥65（接近SMA50）且1个月动量转负；或机器人减速器订单连续两季度无增长。"
+    },
+    {
+      "ticker": "003021.SZ",
+      "name": "兆威机电",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "003021.SZ",
+        "provider": "tushare",
+        "last": 95.38,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 29,
+        "pct_off_6mo_high": -30.2,
+        "ret_1m_pct": -8.9,
+        "ret_3m_pct": -0.0,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 160.42,
+        "trailing_pe": 106.0984,
+        "peg": null,
+        "eps_growth": -25.1475,
+        "rev_growth": -2.7354,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "微型传动系统+空心杯电机，灵巧手核心部件；股价较前期高点回撤30%，估值仍高。",
+      "risk": "估值160x，营收下滑；微型传动竞争加剧。",
+      "invalidation": "跌破¥75且1个月动量转负；或微型传动订单无增长。"
+    },
+    {
+      "ticker": "300100.SZ",
+      "name": "双林股份",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        4
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300100.SZ",
+        "provider": "tushare",
+        "last": 28.9,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 19,
+        "pct_off_6mo_high": -30.2,
+        "ret_1m_pct": -9.3,
+        "ret_3m_pct": -2.2,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 59.03,
+        "trailing_pe": 38.6527,
+        "peg": null,
+        "eps_growth": -47.0085,
+        "rev_growth": -10.4222,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "滚珠丝杠布局+汽车座椅，主业承压，机器人业务待验证；估值不高但纯度一般。",
+      "risk": "汽车主业下滑，丝杠业务待验证。",
+      "invalidation": "跌破¥24且1个月动量转负；或丝杠业务进展停滞。"
+    },
+    {
+      "ticker": "300660.SZ",
+      "name": "江苏雷利",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        4,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300660.SZ",
+        "provider": "tushare",
+        "last": 30.63,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 27,
+        "pct_off_6mo_high": -32.4,
+        "ret_1m_pct": -9.5,
+        "ret_3m_pct": -4.3,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 53.98,
+        "trailing_pe": 65.6837,
+        "peg": null,
+        "eps_growth": -29.7909,
+        "rev_growth": 15.0124,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "微型电机及执行器供应商，已进入多家本体/灵巧手企业；近期回撤较多，估值中等。",
+      "risk": "机器人业务占比小，家电/汽车业务拖累；近期动量弱。",
+      "invalidation": "跌破¥25且1个月动量转负；或机器人电机订单被证伪。"
+    },
+    {
+      "ticker": "301368.SZ",
+      "name": "丰立智能",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "301368.SZ",
+        "provider": "tushare",
+        "last": 46.17,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 23,
+        "pct_off_6mo_high": -37.6,
+        "ret_1m_pct": -5.1,
+        "ret_3m_pct": -9.7,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": -91.0739,
+        "rev_growth": 9.1706,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "小模数齿轮跨界谐波/行星减速器+灵巧手微型减速器；股价处于低位，市值小、前机构，但订单尚未规模化。",
+      "risk": "人形订单未规模化，小厂竞争激烈；市值小波动大。",
+      "invalidation": "跌破¥38且1个月动量转负；或谐波减速器送样无反馈。"
+    },
+    {
+      "ticker": "301550.SZ",
+      "name": "斯菱股份",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "301550.SZ",
+        "provider": "tushare",
+        "last": 101.63,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 40,
+        "pct_off_6mo_high": -30.6,
+        "ret_1m_pct": -12.9,
+        "ret_3m_pct": -6.9,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 334.13,
+        "trailing_pe": 206.0834,
+        "peg": null,
+        "eps_growth": -15.5508,
+        "rev_growth": 8.7151,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "汽车轴承向机器人关节轴承延伸；估值很贵（forward PE>300），业绩短期下滑。",
+      "risk": "估值过高（forward PE 334），利润下滑；机器人轴承订单待验证。",
+      "invalidation": "跌破¥80且1个月动量转负；或机器人轴承订单miss。"
+    },
+    {
+      "ticker": "603009.SH",
+      "name": "北特科技",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "603009.SH",
+        "provider": "tushare",
+        "last": 52.9,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 64,
+        "pct_off_6mo_high": -12.5,
+        "ret_1m_pct": 5.2,
+        "ret_3m_pct": 12.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 152.7,
+        "trailing_pe": 148.1725,
+        "peg": 8.3,
+        "eps_growth": 17.8577,
+        "rev_growth": 8.0364,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "转向器壳体龙头向行星滚柱丝杠延伸，是人形机器人线性关节稀缺标的；估值偏贵但产业位置关键。",
+      "risk": "丝杠业务从0到1，良率/产能爬坡风险；估值152x偏贵。",
+      "invalidation": "跌破¥42且1个月动量转负；或行星滚柱丝杠量产推迟>6个月。"
+    },
+    {
+      "ticker": "603166.SH",
+      "name": "福达股份",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        4,
+        5,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "603166.SH",
+        "provider": "tushare",
+        "last": 13.03,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 20,
+        "pct_off_6mo_high": -28.6,
+        "ret_1m_pct": -3.1,
+        "ret_3m_pct": 0.9,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 26.29,
+        "trailing_pe": 25.7598,
+        "peg": 1.68,
+        "eps_growth": 15.3554,
+        "rev_growth": 6.9516,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "汽车锻件起家正向开发行星减速器，forward PE 26，股价低位；与豪能类似，业务稀释但估值安全。",
+      "risk": "行星减速器尚处早期，汽车曲轴业务拖累；小市值流动性差。",
+      "invalidation": "跌破¥11且1个月动量转负；或行星减速器量产推迟。"
+    },
+    {
+      "ticker": "603662.SH",
+      "name": "柯力传感",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "603662.SH",
+        "provider": "tushare",
+        "last": 73.2,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 72,
+        "pct_off_6mo_high": -9.9,
+        "ret_1m_pct": 10.5,
+        "ret_3m_pct": 35.0,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 272.85,
+        "trailing_pe": 67.1753,
+        "peg": null,
+        "eps_growth": -45.6484,
+        "rev_growth": 13.3436,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "六维力传感器国内领先，已送样多家机器人客户；估值较高，利润短期下滑。",
+      "risk": "六维力传感器技术门槛高、验证慢；利润下滑45%，估值272x。",
+      "invalidation": "跌破¥60且1个月动量转负；或六维力传感器订单 miss。"
+    },
+    {
+      "ticker": "603667.SH",
+      "name": "五洲新春",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "603667.SH",
+        "provider": "tushare",
+        "last": 68.54,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 41,
+        "pct_off_6mo_high": -29.0,
+        "ret_1m_pct": -7.6,
+        "ret_3m_pct": 3.1,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 147.95,
+        "trailing_pe": 311.3639,
+        "peg": null,
+        "eps_growth": -18.6204,
+        "rev_growth": -18.8288,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "滚珠丝杠+轴承，人形机器人线性关节潜在供应商；营收/利润短期承压，估值偏高。",
+      "risk": "营收利润双降，机器人丝杠业务尚未放量；估值147x需高增长消化。",
+      "invalidation": "跌破¥55且1个月动量转负；或丝杠业务营收占比<5%持续。"
+    },
+    {
+      "ticker": "603728.SH",
+      "name": "鸣志电器",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "603728.SH",
+        "provider": "tushare",
+        "last": 65.09,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 48,
+        "pct_off_6mo_high": -16.4,
+        "ret_1m_pct": -1.1,
+        "ret_3m_pct": 15.2,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": 402.4017,
+        "peg": 4.36,
+        "eps_growth": 92.1905,
+        "rev_growth": 17.6532,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "空心杯电机国内第一阵营，送样特斯拉Optimus灵巧手；估值高企，业绩释放节奏待验证。",
+      "risk": "空心杯电机验证周期长，特斯拉订单不确定；高估值+高预期，业绩miss会大幅回调。",
+      "invalidation": "跌破¥55且1个月动量转负；或空心杯电机未通过特斯拉验证/份额低于预期。"
+    },
+    {
+      "ticker": "603915.SH",
+      "name": "国茂股份",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        4
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "603915.SH",
+        "provider": "tushare",
+        "last": 15.25,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 27,
+        "pct_off_6mo_high": -25.3,
+        "ret_1m_pct": -6.6,
+        "ret_3m_pct": 1.3,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 84.69,
+        "trailing_pe": 41.2329,
+        "peg": 1.48,
+        "eps_growth": 27.8476,
+        "rev_growth": 9.2468,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "通用减速机龙头，机器人减速器布局中；估值84x，弹性一般。",
+      "risk": "通用减速机需求疲软，机器人减速器进展慢。",
+      "invalidation": "跌破¥13且1个月动量转负；或机器人减速器无订单。"
+    },
+    {
+      "ticker": "688017.SH",
+      "name": "绿的谐波",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4,
+        7,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "688017.SH",
+        "provider": "tushare",
+        "last": 453.98,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 88,
+        "pct_off_6mo_high": -8.4,
+        "ret_1m_pct": 15.5,
+        "ret_3m_pct": 134.6,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 679.41,
+        "trailing_pe": 608.604,
+        "peg": 9.95,
+        "eps_growth": 61.1688,
+        "rev_growth": 42.9556,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "国内谐波减速器龙头，市占率超60%，人形机器人旋转关节BOM必备；已切入特斯拉/国内本体供应链。但股价已大幅前置反映。",
+      "risk": "人形机器人量产进度不及预期；日本HD降价竞争；当前估值已透支2-3年业绩。",
+      "invalidation": "跌破6个月区间中位（约¥350）且1个月动量转负；或 harmonic reducer 订单被日本HD夺回份额。"
+    },
+    {
+      "ticker": "688160.SH",
+      "name": "步科股份",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "688160.SH",
+        "provider": "tushare",
+        "last": 129.52,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 45,
+        "pct_off_6mo_high": -24.5,
+        "ret_1m_pct": 6.2,
+        "ret_3m_pct": 26.9,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 159.65,
+        "trailing_pe": 158.2148,
+        "peg": 8.03,
+        "eps_growth": 19.6973,
+        "rev_growth": 43.2192,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "无框力矩电机+关节模组，专门面向人形机器人；收入放量中但估值不便宜。",
+      "risk": "无框力矩电机客户集中，竞争加剧；高估值下需要持续高增长。",
+      "invalidation": "跌破¥100且1个月动量转负；或无框力矩电机大客户流失。"
+    },
+    {
+      "ticker": "688322.SH",
+      "name": "奥比中光",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        2,
+        4,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "688322.SH",
+        "provider": "tushare",
+        "last": 127.21,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 68,
+        "pct_off_6mo_high": -17.0,
+        "ret_1m_pct": 0.9,
+        "ret_3m_pct": 68.4,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 425.32,
+        "trailing_pe": 388.6929,
+        "peg": 14.15,
+        "eps_growth": 27.4791,
+        "rev_growth": 6.1917,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "3D视觉传感器龙头，机器人之眼；3个月+68%，估值400x+，已过热。",
+      "risk": "3D视觉在机器人中的渗透率不确定；估值425x极度透支。",
+      "invalidation": "跌破¥100且1个月动量转负；或3D视觉在机器人中渗透率不及预期。"
+    },
+    {
+      "ticker": "688400.SH",
+      "name": "凌云光",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        4,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "688400.SH",
+        "provider": "tushare",
+        "last": 61.7,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 66,
+        "pct_off_6mo_high": -16.6,
+        "ret_1m_pct": 7.5,
+        "ret_3m_pct": 56.0,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 183.2,
+        "trailing_pe": 85.4244,
+        "peg": 0.07,
+        "eps_growth": 1233.1309,
+        "rev_growth": -2.7943,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "机器视觉+光通信，AI/机器人视觉方案；利润暴增但营收略降，估值波动大。",
+      "risk": "营收下滑，利润暴增系一次性/结构因素；估值难持续。",
+      "invalidation": "跌破¥45且1个月动量转负；或利润增长不可持续。"
+    },
+    {
+      "ticker": "688686.SH",
+      "name": "奥普特",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        4,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "688686.SH",
+        "provider": "tushare",
+        "last": 155.1,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 69,
+        "pct_off_6mo_high": -17.1,
+        "ret_1m_pct": 12.4,
+        "ret_3m_pct": 69.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 133.98,
+        "trailing_pe": 98.6414,
+        "peg": 9.48,
+        "eps_growth": 10.4032,
+        "rev_growth": 33.5071,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "机器视觉核心器件，进入锂电/汽车/机器人；3个月+70%，估值134x。",
+      "risk": "机器视觉行业竞争激烈，下游资本开支放缓；估值134x。",
+      "invalidation": "跌破¥120且1个月动量转负；或机器视觉下游订单放缓。"
+    },
+    {
+      "ticker": "688698.SH",
+      "name": "伟创电气",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        4,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "688698.SH",
+        "provider": "tushare",
+        "last": 59.86,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 19,
+        "pct_off_6mo_high": -47.0,
+        "ret_1m_pct": -9.5,
+        "ret_3m_pct": -6.9,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": 50.3548,
+        "peg": null,
+        "eps_growth": -14.7402,
+        "rev_growth": 20.9837,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "伺服系统+变频器，机器人下游占比仍小；股价处于6个月低位，估值合理但弹性不足。",
+      "risk": "机器人下游占比低，变频器行业价格战；缺乏主题纯度。",
+      "invalidation": "跌破¥50且1个月动量转负；或机器人伺服订单无进展。"
+    },
+    {
+      "ticker": "300115.SZ",
+      "name": "长盈精密",
+      "layer": "L3 中游核心器件",
+      "archetypes": [
+        4
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300115.SZ",
+        "provider": "tushare",
+        "last": 30.74,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 24,
+        "pct_off_6mo_high": -35.9,
+        "ret_1m_pct": -8.7,
+        "ret_3m_pct": -1.8,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 70.93,
+        "trailing_pe": 76.3613,
+        "peg": null,
+        "eps_growth": -28.3872,
+        "rev_growth": 16.7386,
+        "src": "tushare"
+      },
+      "rating": "🔴",
+      "thesis": "消费电子结构件转机器人关节/灵巧手；机器人业务占比低，非瓶颈，pass。",
+      "risk": "机器人业务占比低，消费电子主业承压。",
+      "invalidation": "不参与。"
+    },
+    {
+      "ticker": "300953.SZ",
+      "name": "震裕科技",
+      "layer": "L2 中游系统/执行器",
+      "archetypes": [
+        2,
+        4
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300953.SZ",
+        "provider": "tushare",
+        "last": 142.22,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 48,
+        "pct_off_6mo_high": -24.5,
+        "ret_1m_pct": -2.2,
+        "ret_3m_pct": 9.5,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 119.43,
+        "trailing_pe": 47.9812,
+        "peg": 0.17,
+        "eps_growth": 286.752,
+        "rev_growth": 65.6083,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "反向式行星滚柱丝杠+线性执行器，直接受益Optimus量产；估值偏高，等待订单visibility。",
+      "risk": "行星滚柱丝杠良率与量产进度不确定；估值119x偏高。",
+      "invalidation": "跌破¥110且1个月动量转负；或Optimus/国内人形订单无visibility。"
+    },
+    {
+      "ticker": "688320.SH",
+      "name": "禾川科技",
+      "layer": "L2 中游系统/执行器",
+      "archetypes": [
+        4,
+        7
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "688320.SH",
+        "provider": "tushare",
+        "last": 41.68,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 83,
+        "pct_off_6mo_high": -5.8,
+        "ret_1m_pct": 8.1,
+        "ret_3m_pct": 40.1,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": 79.1024,
+        "rev_growth": 18.7042,
+        "src": "tushare"
+      },
+      "rating": "🟡",
+      "thesis": "伺服与PLC，人形机器人专用电机通过部分客户认证；缺乏PE数据，股价已处高位。",
+      "risk": "收入增速放缓，盈利未稳定；无PE数据，估值难锚定。",
+      "invalidation": "跌破¥32且1个月动量转负；或伺服业务连续两季度下滑。"
+    },
+    {
+      "ticker": "002050.SZ",
+      "name": "三花智控",
+      "layer": "L2 中游系统/执行器",
+      "archetypes": [
+        4,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "002050.SZ",
+        "provider": "tushare",
+        "last": 46.15,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 28,
+        "pct_off_6mo_high": -24.1,
+        "ret_1m_pct": -2.9,
+        "ret_3m_pct": 7.8,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 45.57,
+        "trailing_pe": 47.5153,
+        "peg": 17.73,
+        "eps_growth": 2.6793,
+        "rev_growth": 1.3574,
+        "src": "tushare"
+      },
+      "rating": "🔴",
+      "thesis": "执行器/热管理全球龙头，特斯拉核心供应商；估值合理但市值大、非纯上游，仅作锚。",
+      "risk": "市值过大，机器人业务占比有限；估值合理但向上弹性不足。",
+      "invalidation": "仅作参照，不参与。"
+    },
+    {
+      "ticker": "002747.SZ",
+      "name": "埃斯顿",
+      "layer": "L1 下游整机/系统集成",
+      "archetypes": [],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "002747.SZ",
+        "provider": "tushare",
+        "last": 46.03,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 92,
+        "pct_off_6mo_high": -4.7,
+        "ret_1m_pct": 48.4,
+        "ret_3m_pct": 132.7,
+        "above_sma50": true,
+        "stage": "extended/parabolic (already ran hot -> late for Mode A; DON'T chase, wait for pullback)"
+      },
+      "valuation": {
+        "forward_pe": 1048.18,
+        "trailing_pe": 342.2041,
+        "peg": 0.51,
+        "eps_growth": 674.6406,
+        "rev_growth": -2.2164,
+        "src": "tushare"
+      },
+      "rating": "🔴",
+      "thesis": "国产工业机器人龙头，但处于下游集成，近期3个月+132%进入抛物线，pass。",
+      "risk": "下游本体竞争激烈，价格战；股价已抛物线。",
+      "invalidation": "已过热，不参与。"
+    },
+    {
+      "ticker": "002979.SZ",
+      "name": "雷赛智能",
+      "layer": "L2 中游系统/执行器",
+      "archetypes": [
+        4,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "002979.SZ",
+        "provider": "tushare",
+        "last": 73.27,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 92,
+        "pct_off_6mo_high": -4.2,
+        "ret_1m_pct": 31.6,
+        "ret_3m_pct": 101.1,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 121.66,
+        "trailing_pe": 95.8033,
+        "peg": 3.28,
+        "eps_growth": 29.2028,
+        "rev_growth": 34.5483,
+        "src": "tushare"
+      },
+      "rating": "🔴",
+      "thesis": "运动控制+伺服，机器人控制器国产替代；1个月+31.6%、3个月+101%已过热，估值超100x，不宜追高。",
+      "risk": "短期涨幅过大（1m +31.6%，3m +101%），估值121x；若主题退潮首当其冲。",
+      "invalidation": "已在高位，回调至¥55以下且1个月动量转负前不参与。"
+    },
+    {
+      "ticker": "300024.SZ",
+      "name": "机器人",
+      "layer": "L1 下游整机/系统集成",
+      "archetypes": [],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300024.SZ",
+        "provider": "tushare",
+        "last": 17.03,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 49,
+        "pct_off_6mo_high": -15.2,
+        "ret_1m_pct": 9.4,
+        "ret_3m_pct": 16.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": -84.0228,
+        "rev_growth": -8.4193,
+        "src": "tushare"
+      },
+      "rating": "🔴",
+      "thesis": "中科院背景机器人整机厂，业务多元不纯；缺乏forward数据，pass。",
+      "risk": "国企效率低，业务杂；非纯机器人play。",
+      "invalidation": "非纯play，不参与。"
+    },
+    {
+      "ticker": "300124.SZ",
+      "name": "汇川技术",
+      "layer": "L2 中游系统/执行器",
+      "archetypes": [
+        4,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300124.SZ",
+        "provider": "tushare",
+        "last": 68.33,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 36,
+        "pct_off_6mo_high": -18.2,
+        "ret_1m_pct": -9.0,
+        "ret_3m_pct": 2.9,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 35.68,
+        "trailing_pe": 39.0266,
+        "peg": null,
+        "eps_growth": -23.3874,
+        "rev_growth": 12.9798,
+        "src": "tushare"
+      },
+      "rating": "🔴",
+      "thesis": "伺服/运动控制平台龙头，机器人业务占比有限；估值合理但市值过大、主题弹性低，仅作锚。",
+      "risk": "市值过大，机器人业务弹性小；作为锚而非投资标的。",
+      "invalidation": "仅作参照，不参与。"
+    },
+    {
+      "ticker": "300161.SZ",
+      "name": "华中数控",
+      "layer": "L1 下游整机/系统集成",
+      "archetypes": [],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300161.SZ",
+        "provider": "tushare",
+        "last": 31.01,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 27,
+        "pct_off_6mo_high": -27.0,
+        "ret_1m_pct": -2.7,
+        "ret_3m_pct": 13.5,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 424.94,
+        "trailing_pe": 377.5473,
+        "peg": null,
+        "eps_growth": -35.8627,
+        "rev_growth": 11.3919,
+        "src": "tushare"
+      },
+      "rating": "🔴",
+      "thesis": "数控系统+机器人，估值超400x，非纯上游，pass。",
+      "risk": "数控业务拖累，估值过高。",
+      "invalidation": "不参与。"
+    },
+    {
+      "ticker": "300607.SZ",
+      "name": "拓斯达",
+      "layer": "L1 下游整机/系统集成",
+      "archetypes": [],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "300607.SZ",
+        "provider": "tushare",
+        "last": 45.01,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 68,
+        "pct_off_6mo_high": -17.9,
+        "ret_1m_pct": 38.1,
+        "ret_3m_pct": 79.3,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": 306.69,
+        "trailing_pe": 181.7811,
+        "peg": 0.16,
+        "eps_growth": 1147.3647,
+        "rev_growth": 48.5255,
+        "src": "tushare"
+      },
+      "rating": "🔴",
+      "thesis": "机器人集成+注塑机，1个月+38%、3个月+79%已过热，pass。",
+      "risk": "集成业务毛利率低，近期涨幅过大。",
+      "invalidation": "已过热，不参与。"
+    },
+    {
+      "ticker": "601689.SH",
+      "name": "拓普集团",
+      "layer": "L2 中游系统/执行器",
+      "archetypes": [
+        4,
+        8
+      ],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "601689.SH",
+        "provider": "tushare",
+        "last": 60.57,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 28,
+        "pct_off_6mo_high": -28.7,
+        "ret_1m_pct": -10.9,
+        "ret_3m_pct": 4.0,
+        "above_sma50": false,
+        "stage": "range/neutral"
+      },
+      "valuation": {
+        "forward_pe": 38.28,
+        "trailing_pe": 38.0634,
+        "peg": null,
+        "eps_growth": -2.4171,
+        "rev_growth": 14.9212,
+        "src": "tushare"
+      },
+      "rating": "🔴",
+      "thesis": "特斯拉Optimus线性执行器核心供应商；近期回调明显，但市值大、主题弹性有限，仅作锚。",
+      "risk": "汽车业务占比高，机器人执行器量产节奏不确定；市值大。",
+      "invalidation": "仅作参照，不参与。"
+    },
+    {
+      "ticker": "688165.SH",
+      "name": "埃夫特",
+      "layer": "L1 下游整机/系统集成",
+      "archetypes": [],
+      "archetype_labels": {
+        "1": "上游材料/衬底垄断",
+        "2": "单一来源卡脖子",
+        "3": "产能售罄/已锁定",
+        "4": "BOM-普适",
+        "5": "估值对标套利",
+        "6": "测试/设备瓶颈",
+        "7": "冷门/前机构",
+        "8": "巨头依赖护城河",
+        "9": "宏观错杀"
+      },
+      "price": {
+        "ticker": "688165.SH",
+        "provider": "tushare",
+        "last": 21.95,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 62,
+        "pct_off_6mo_high": -15.0,
+        "ret_1m_pct": 7.5,
+        "ret_3m_pct": 33.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)"
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": 85.4715,
+        "rev_growth": 20.5509,
+        "src": "tushare"
+      },
+      "rating": "🔴",
+      "thesis": "工业机器人本体，下游整机，pass。",
+      "risk": "本体厂亏损，下游竞争激烈。",
+      "invalidation": "不参与。"
+    }
+  ]
+}

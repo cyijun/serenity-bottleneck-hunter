@@ -1,0 +1,1817 @@
+{
+  "theme_tag": "energy",
+  "theme_name": "A股能源转型",
+  "scope": "Energy transition / power system / electrical equipment / new-energy upstream in A-shares. Focus bottleneck-rich layers: power transformers, switchgear, grid automation, HVDC, energy storage materials (lithium, cobalt, nickel, manganese, electrolyte, separators, anode/cathode), power electronic devices (SiC/IGBT), nuclear equipment, offshore wind cables. Exclude coal/oil E&Ps unless there is a genuine supply-chain bottleneck.",
+  "scan_date": "2026-07-06",
+  "data_source_price": "Tushare (qfq) via scripts/price.py",
+  "data_source_valuation": "Tushare daily_basic/fina_indicator/forecast via scripts/price.py valuation()",
+  "census_note": {
+    "downstream_giants": [
+      "600900.SH 长江电力",
+      "601985.SH 中国核电",
+      "600905.SH 三峡能源",
+      "001289.SZ 龙源电力",
+      "300750.SZ 宁德时代",
+      "002594.SZ 比亚迪"
+    ],
+    "global_or_private_players": [
+      "Wolfspeed (SiC substrate, US, bankrupt/restructuring)",
+      "Infineon (IGBT/SiC modules, EU)",
+      "Sumitomo Electric (HVDC subsea cable, JP)",
+      "Nexans/Prysmian (offshore cable, EU)",
+      "ABB/Hitachi (grid equipment)"
+    ],
+    "acquired_or_delisted": [
+      "Wolfspeed Chapter 11 restructuring as of 2025; not A-share"
+    ],
+    "upstream_small_mid_focus": [
+      "688234.SH 天岳先进",
+      "603290.SH 斯达半导",
+      "603606.SH 东方电缆",
+      "603659.SH 璞泰来",
+      "002756.SZ 永兴材料",
+      "603799.SH 华友钴业",
+      "000792.SZ 盐湖股份"
+    ]
+  },
+  "supply_chain_map": {
+    "L1_下游/终端电力与储能": [
+      "600900.SH 长江电力",
+      "601985.SH 中国核电",
+      "600905.SH 三峡能源",
+      "001289.SZ 龙源电力",
+      "300750.SZ 宁德时代",
+      "002594.SZ 比亚迪"
+    ],
+    "L2_中游/电网设备与海缆": [
+      "600406.SH 国电南瑞",
+      "000400.SZ 许继电气",
+      "600312.SH 平高电气",
+      "601179.SH 中国西电",
+      "002028.SZ 思源电气",
+      "600089.SH 特变电工",
+      "600131.SH 国网信通",
+      "603606.SH 东方电缆",
+      "600487.SH 亨通光电",
+      "600522.SH 中天科技"
+    ],
+    "L3_中游/功率半导体(SiC/IGBT)": [
+      "603290.SH 斯达半导",
+      "600460.SH 士兰微",
+      "688187.SH 时代电气",
+      "688234.SH 天岳先进",
+      "600703.SH 三安光电"
+    ],
+    "L4_中游/锂电池材料": [
+      "002709.SZ 天赐材料",
+      "300037.SZ 新宙邦",
+      "002812.SZ 恩捷股份",
+      "300568.SZ 星源材质",
+      "300073.SZ 当升科技",
+      "688005.SH 容百科技",
+      "603659.SH 璞泰来",
+      "600884.SH 杉杉股份",
+      "002340.SZ 格林美",
+      "300919.SZ 中伟股份"
+    ],
+    "L5_上游/能源金属资源": [
+      "002466.SZ 天齐锂业",
+      "002460.SZ 赣锋锂业",
+      "000792.SZ 盐湖股份",
+      "603993.SH 洛阳钼业",
+      "603799.SH 华友钴业",
+      "002756.SZ 永兴材料",
+      "002738.SZ 中矿资源"
+    ]
+  },
+  "bottleneck_layers": [
+    {
+      "layer": "L2_中游/电网设备与海缆",
+      "archetypes": [
+        "single-source choke",
+        "sold-out capacity",
+        "BOM-ubiquitous"
+      ],
+      "reason": "全球变压器/HVDC/GIS供应紧缺，国内特高压订单排产至2027年；海上风电高压电缆玩家稀缺。"
+    },
+    {
+      "layer": "L3_上游/碳化硅衬底与功率器件",
+      "archetypes": [
+        "materials/substrate monopoly",
+        "single-source choke",
+        "BOM-ubiquitous"
+      ],
+      "reason": "SiC衬底是800V/高压电网/风电变流器的核心材料，8英寸导电衬底全球产能集中；IGBT/SiC模块进每个电力电子BOM。"
+    },
+    {
+      "layer": "L5_上游/能源金属资源",
+      "archetypes": [
+        "materials/substrate monopoly",
+        "macro dislocation"
+      ],
+      "reason": "锂/钴/镍资源地理分布集中、资本开支周期长，当前价格处于周期底部，供给出清后易再成瓶颈。"
+    }
+  ],
+  "candidates": [
+    {
+      "ticker": "600900.SH",
+      "name": "长江电力",
+      "layer": "L1_下游/电力运营与终端",
+      "archetype_hits": [
+        "giant-dependent moat"
+      ],
+      "price": {
+        "ticker": "600900.SH",
+        "provider": "tushare",
+        "last": 27.19,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 65,
+        "pct_off_6mo_high": -3.9,
+        "ret_1m_pct": -1.5,
+        "ret_3m_pct": 0.7,
+        "above_sma50": true,
+        "stage": "range/neutral",
+        "high_6mo": 28.29,
+        "low_6mo": 25.18,
+        "cur_div_high_pct": 96.1
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": 18.4378,
+        "peg": 0.6,
+        "eps_growth": 30.5016,
+        "rev_growth": 6.4428,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】利率上行压制高股息资产估值；来水波动影响盈利。 【多头逻辑】水电现金流龙头，是能源转型的基荷电源参考标的，但非供应链瓶颈环节。",
+      "risk": "利率上行压制高股息资产估值；来水波动影响盈利。",
+      "invalidation": "N/A（仅作基准参考）",
+      "catalyst": "N/A",
+      "target_range": "参考股息率定价",
+      "time_frame": "长期持有",
+      "notes": "下游巨型公用事业，仅作组合基准与资金避风港参考。"
+    },
+    {
+      "ticker": "601985.SH",
+      "name": "中国核电",
+      "layer": "L1_下游/电力运营与终端",
+      "archetype_hits": [
+        "giant-dependent moat",
+        "giant-dependent"
+      ],
+      "price": {
+        "ticker": "601985.SH",
+        "provider": "tushare",
+        "last": 8.86,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 41,
+        "pct_off_6mo_high": -6.1,
+        "ret_1m_pct": -1.4,
+        "ret_3m_pct": -1.7,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 9.44,
+        "low_6mo": 8.46,
+        "cur_div_high_pct": 93.9
+      },
+      "valuation": {
+        "forward_pe": 19.49,
+        "trailing_pe": 22.1381,
+        "peg": null,
+        "eps_growth": -34.1913,
+        "rev_growth": -6.6485,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】新机组核准节奏、核安全政策、融资成本。 【多头逻辑】核电运营龙头，具备稳定核准与基荷电源属性，但属于终端运营而非设备/材料瓶颈。",
+      "risk": "新机组核准节奏、核安全政策、融资成本。",
+      "invalidation": "N/A",
+      "catalyst": "新机组核准/并网",
+      "target_range": "参考核电DCF估值",
+      "time_frame": "长期",
+      "notes": "下游运营商，用作主题beta参考。"
+    },
+    {
+      "ticker": "600905.SH",
+      "name": "三峡能源",
+      "layer": "L1_下游/新能源发电",
+      "archetype_hits": [
+        "giant-dependent moat"
+      ],
+      "price": {
+        "ticker": "600905.SH",
+        "provider": "tushare",
+        "last": 3.8,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 15,
+        "pct_off_6mo_high": -18.6,
+        "ret_1m_pct": -9.7,
+        "ret_3m_pct": -9.1,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 4.67,
+        "low_6mo": 3.65,
+        "cur_div_high_pct": 81.4
+      },
+      "valuation": {
+        "forward_pe": 21.97,
+        "trailing_pe": 47.0741,
+        "peg": null,
+        "eps_growth": -57.4915,
+        "rev_growth": -8.9178,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】电价市场化改革、弃风弃光、补贴拖欠。 【多头逻辑】新能源电站运营商，受益于风光装机增长，但产业链利润已向上游制造/设备环节转移。",
+      "risk": "电价市场化改革、弃风弃光、补贴拖欠。",
+      "invalidation": "N/A",
+      "catalyst": "绿电交易/海风并网",
+      "target_range": "参考DCF",
+      "time_frame": "长期",
+      "notes": "下游运营，非瓶颈猎手目标。"
+    },
+    {
+      "ticker": "001289.SZ",
+      "name": "龙源电力",
+      "layer": "L1_下游/新能源发电",
+      "archetype_hits": [
+        "giant-dependent moat"
+      ],
+      "price": {
+        "ticker": "001289.SZ",
+        "provider": "tushare",
+        "last": 16.11,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 23,
+        "pct_off_6mo_high": -20.0,
+        "ret_1m_pct": -12.0,
+        "ret_3m_pct": -0.5,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 20.15,
+        "low_6mo": 14.9,
+        "cur_div_high_pct": 80.0
+      },
+      "valuation": {
+        "forward_pe": 27.91,
+        "trailing_pe": 31.7289,
+        "peg": null,
+        "eps_growth": -14.7793,
+        "rev_growth": -3.6264,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】风电利用小时波动、平价电价下行。 【多头逻辑】风电运营商龙头，资产规模庞大但估值受电价与补贴影响，非上游瓶颈。",
+      "risk": "风电利用小时波动、平价电价下行。",
+      "invalidation": "N/A",
+      "catalyst": "N/A",
+      "target_range": "参考运营估值",
+      "time_frame": "长期",
+      "notes": "下游运营参考。"
+    },
+    {
+      "ticker": "300750.SZ",
+      "name": "宁德时代",
+      "layer": "L1_下游/电池系统",
+      "archetype_hits": [
+        "giant-dependent",
+        "sold-out capacity"
+      ],
+      "price": {
+        "ticker": "300750.SZ",
+        "provider": "tushare",
+        "last": 374.51,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 33,
+        "pct_off_6mo_high": -20.1,
+        "ret_1m_pct": -7.1,
+        "ret_3m_pct": -5.2,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 468.75,
+        "low_6mo": 327.87,
+        "cur_div_high_pct": 79.9
+      },
+      "valuation": {
+        "forward_pe": 33.97,
+        "trailing_pe": 21.9397,
+        "peg": 0.45,
+        "eps_growth": 48.5237,
+        "rev_growth": 52.4487,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】电池价格战、海外关税、客户自研。 【多头逻辑】全球动力电池龙头，是能源转型需求侧的“ Mag7”，但机构覆盖充分、市值巨大，非冷门前机构标的。",
+      "risk": "电池价格战、海外关税、客户自研。",
+      "invalidation": "N/A",
+      "catalyst": "N/A",
+      "target_range": "参考龙头估值",
+      "time_frame": "长期",
+      "notes": "下游巨头，仅作为需求验证与产业链基准。"
+    },
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "layer": "L1_下游/整车与储能",
+      "archetype_hits": [
+        "giant-dependent"
+      ],
+      "price": {
+        "ticker": "002594.SZ",
+        "provider": "tushare",
+        "last": 87.54,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 29,
+        "pct_off_6mo_high": -21.7,
+        "ret_1m_pct": -5.9,
+        "ret_3m_pct": -13.9,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 111.82,
+        "low_6mo": 77.6,
+        "cur_div_high_pct": 78.3
+      },
+      "valuation": {
+        "forward_pe": 86.28,
+        "trailing_pe": 28.9713,
+        "peg": null,
+        "eps_growth": -55.3844,
+        "rev_growth": -11.8191,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】价格战侵蚀利润、海外政策风险、智能化投入。 【多头逻辑】新能源车与储能整车龙头，需求侧标杆，但市值庞大、竞争白热化，非上游瓶颈。",
+      "risk": "价格战侵蚀利润、海外政策风险、智能化投入。",
+      "invalidation": "N/A",
+      "catalyst": "N/A",
+      "target_range": "参考整车估值",
+      "time_frame": "长期",
+      "notes": "下游巨头参考。"
+    },
+    {
+      "ticker": "600406.SH",
+      "name": "国电南瑞",
+      "layer": "L2_中游/电网设备与自动化",
+      "archetype_hits": [
+        "giant-dependent",
+        "sold-out capacity",
+        "BOM-ubiquitous"
+      ],
+      "price": {
+        "ticker": "600406.SH",
+        "provider": "tushare",
+        "last": 23.16,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 13,
+        "pct_off_6mo_high": -26.3,
+        "ret_1m_pct": 0.8,
+        "ret_3m_pct": -9.4,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 31.42,
+        "low_6mo": 21.96,
+        "cur_div_high_pct": 73.7
+      },
+      "valuation": {
+        "forward_pe": 45.04,
+        "trailing_pe": 22.3574,
+        "peg": 3.7,
+        "eps_growth": 6.0424,
+        "rev_growth": 7.5225,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": false,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】电网投资节奏、国网集采降价、估值随大盘回调。 【多头逻辑】电网自动化/HVDC控制龙头，调度系统市占70%+，是真瓶颈环节，但大盘蓝筹、机构高度覆盖，缺乏“前机构”折价。",
+      "risk": "电网投资节奏、国网集采降价、估值随大盘回调。",
+      "invalidation": "国网投资增速低于5%且估值回升至30x以上。",
+      "catalyst": "特高压核准/数字化招标放量",
+      "target_range": "参考历史估值中枢22-28x PE",
+      "time_frame": "6-12个月",
+      "notes": "真瓶颈但拥挤，作为电网设备板块的流动性和情绪锚。"
+    },
+    {
+      "ticker": "000400.SZ",
+      "name": "许继电气",
+      "layer": "L2_中游/电网设备与自动化",
+      "archetype_hits": [
+        "single-source choke",
+        "sold-out capacity"
+      ],
+      "price": {
+        "ticker": "000400.SZ",
+        "provider": "tushare",
+        "last": 21.11,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 3,
+        "pct_off_6mo_high": -38.5,
+        "ret_1m_pct": -8.1,
+        "ret_3m_pct": -22.2,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 34.3,
+        "low_6mo": 20.76,
+        "cur_div_high_pct": 61.5
+      },
+      "valuation": {
+        "forward_pe": 29.34,
+        "trailing_pe": 20.0837,
+        "peg": null,
+        "eps_growth": -46.5044,
+        "rev_growth": 1.2606,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】2026Q1净利润大幅下滑近五成[tmtpost](https://www.tmtpost.com/7980294.html)，盈利能力修复节奏不确定。 【多头逻辑】特高压换流阀/直流控制保护核心供应商，2026年5月中标国网12.75亿元特高压订单[tmtpost](https://www.tmtpost.com/7980294.html)；当前股价处于近6月低位，估值压缩。",
+      "risk": "2026Q1净利润大幅下滑近五成[tmtpost](https://www.tmtpost.com/7980294.html)，盈利能力修复节奏不确定。",
+      "invalidation": "后续两个季度净利润继续同比下滑且特高压交付不及预期。",
+      "catalyst": "特高压直流工程交付/后续中标公告",
+      "target_range": "30-34元（6月高点34.3元附近）[price.py]",
+      "time_frame": "3-6个月",
+      "notes": "瓶颈逻辑成立，但需确认盈利拐点；当前股价处于近6月底部。"
+    },
+    {
+      "ticker": "600312.SH",
+      "name": "平高电气",
+      "layer": "L2_中游/电网设备与自动化",
+      "archetype_hits": [
+        "single-source choke",
+        "sold-out capacity"
+      ],
+      "price": {
+        "ticker": "600312.SH",
+        "provider": "tushare",
+        "last": 17.64,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 8,
+        "pct_off_6mo_high": -30.7,
+        "ret_1m_pct": -7.6,
+        "ret_3m_pct": -12.4,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 25.45,
+        "low_6mo": 16.98,
+        "cur_div_high_pct": 69.3
+      },
+      "valuation": {
+        "forward_pe": 27.83,
+        "trailing_pe": 20.3489,
+        "peg": 1.29,
+        "eps_growth": 15.7507,
+        "rev_growth": -2.4052,
+        "src": "tushare"
+      },
+      "rating": "🟢 candidate",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】电网招标降价、铜/钢等原材料价格波动、海外订单交付风险。 【多头逻辑】GIS/开关设备龙头，特高压订单饱满；2026年5月中标国网13.27亿元[gkzhan](https://www.gkzhan.com/news/detail/191693.html)，在手订单440-450亿元[xueqiu](https://xueqiu.com/3025117772/376772257)；变压器全球紧缺背景下开关设备产能同样受限；估值约20x trailing/28x forward，股价处于近6月区间低位。",
+      "risk": "电网招标降价、铜/钢等原材料价格波动、海外订单交付风险。",
+      "invalidation": "国网特高压招标延期或公司市占率下滑导致订单增速低于10%。",
+      "catalyst": "特高压GIS交付放量/海外EPC大单/半年报订单更新",
+      "target_range": "24-28元（对应前期平台/6月高点区域）[推断]",
+      "time_frame": "6-12个月",
+      "notes": "瓶颈+订单锁定+估值未透支，是电网设备层首选。"
+    },
+    {
+      "ticker": "601179.SH",
+      "name": "中国西电",
+      "layer": "L2_中游/电网设备与自动化",
+      "archetype_hits": [
+        "sold-out capacity",
+        "valuation arbitrage"
+      ],
+      "price": {
+        "ticker": "601179.SH",
+        "provider": "tushare",
+        "last": 14.02,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 43,
+        "pct_off_6mo_high": -31.9,
+        "ret_1m_pct": -6.4,
+        "ret_3m_pct": -8.2,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 20.59,
+        "low_6mo": 9.0,
+        "cur_div_high_pct": 68.1
+      },
+      "valuation": {
+        "forward_pe": 194.23,
+        "trailing_pe": 54.3857,
+        "peg": 3.1,
+        "eps_growth": 17.5364,
+        "rev_growth": 5.0893,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】盈利预测口径失真、变压器毛利率承压、国企改革不及预期。 【多头逻辑】变压器/开关设备央企平台，受益于变压器全球供应缺口与特高压建设；但估值数据异常（trailing PE 54x，forward PE 194x），需核实一次性损益或盈利预测口径。",
+      "risk": "盈利预测口径失真、变压器毛利率承压、国企改革不及预期。",
+      "invalidation": "2026年扣非净利润同比下降或forward PE维持>50x。",
+      "catalyst": "特高压变压器中标/海外订单",
+      "target_range": "待盈利预期明朗后重估",
+      "time_frame": "3个月内重估",
+      "notes": "估值数据源存在噪音，需交叉验证后再决定仓位。"
+    },
+    {
+      "ticker": "002028.SZ",
+      "name": "思源电气",
+      "layer": "L2_中游/电网设备与自动化",
+      "archetype_hits": [
+        "sold-out capacity",
+        "valuation arbitrage"
+      ],
+      "price": {
+        "ticker": "002028.SZ",
+        "provider": "tushare",
+        "last": 174.2,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 29,
+        "pct_off_6mo_high": -27.1,
+        "ret_1m_pct": -1.9,
+        "ret_3m_pct": -16.9,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 239.12,
+        "low_6mo": 147.25,
+        "cur_div_high_pct": 72.9
+      },
+      "valuation": {
+        "forward_pe": 402.68,
+        "trailing_pe": 41.8996,
+        "peg": 1.81,
+        "eps_growth": 23.1699,
+        "rev_growth": 41.5956,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】海外订单增速放缓、原材料涨价、估值不便宜。 【多头逻辑】民营电力设备出海标杆，2025年海外收入同比+89%[sohu](https://www.sohu.com/a/1028559859_122321629)，高压套管等国产替代空间大；但当前trailing PE 42x且forward PE因数据异常高达402x，股价仍处 downtrend。",
+      "risk": "海外订单增速放缓、原材料涨价、估值不便宜。",
+      "invalidation": "海外收入增速跌破20%或毛利率连续下滑。",
+      "catalyst": "海外大单/半年报海外收入占比提升",
+      "target_range": "210-230元（前期密集成交区）[推断]",
+      "time_frame": "6个月",
+      "notes": "优质但不够便宜，等待估值回落至30x以下或放量突破。"
+    },
+    {
+      "ticker": "600089.SH",
+      "name": "特变电工",
+      "layer": "L2_中游/变压器与能源装备",
+      "archetype_hits": [
+        "materials/substrate monopoly",
+        "sold-out capacity"
+      ],
+      "price": {
+        "ticker": "600089.SH",
+        "provider": "tushare",
+        "last": 21.35,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 1,
+        "pct_off_6mo_high": -34.8,
+        "ret_1m_pct": -15.6,
+        "ret_3m_pct": -17.1,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 32.74,
+        "low_6mo": 21.27,
+        "cur_div_high_pct": 65.2
+      },
+      "valuation": {
+        "forward_pe": 26.31,
+        "trailing_pe": 17.488,
+        "peg": 1.31,
+        "eps_growth": 13.3952,
+        "rev_growth": 6.8019,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】多晶硅价格低迷、新能源电站资产减值、变压器毛利率下滑。 【多头逻辑】变压器与能源装备龙头，特高压变压器核心供应商；当前估值17.5x trailing/26x forward，处于近6月低位；但光伏多晶硅业务拖累盈利。",
+      "risk": "多晶硅价格低迷、新能源电站资产减值、变压器毛利率下滑。",
+      "invalidation": "多晶硅业务继续亏损且变压器订单增速低于行业均值。",
+      "catalyst": "特高压变压器交付/多晶硅价格触底",
+      "target_range": "26-30元（前期平台）[推断]",
+      "time_frame": "6-12个月",
+      "notes": "估值便宜，但业务结构复杂，需跟踪非晶/变压器盈利修复。"
+    },
+    {
+      "ticker": "600131.SH",
+      "name": "国网信通",
+      "layer": "L2_中游/电网信息化",
+      "archetype_hits": [
+        "giant-dependent",
+        "BOM-ubiquitous"
+      ],
+      "price": {
+        "ticker": "600131.SH",
+        "provider": "tushare",
+        "last": 14.31,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 2,
+        "pct_off_6mo_high": -40.7,
+        "ret_1m_pct": -11.4,
+        "ret_3m_pct": -20.1,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 24.13,
+        "low_6mo": 14.1,
+        "cur_div_high_pct": 59.3
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": 26.1421,
+        "peg": null,
+        "eps_growth": -24.4585,
+        "rev_growth": -3.1229,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】电网IT资本开支波动、订单碎片化。 【多头逻辑】电网信息化/数字化服务商，业务与电网智能化相关，但非硬件产能瓶颈，竞争格局分散。",
+      "risk": "电网IT资本开支波动、订单碎片化。",
+      "invalidation": "N/A",
+      "catalyst": "电力信息化招标",
+      "target_range": "参考通信设备估值",
+      "time_frame": "N/A",
+      "notes": "不在瓶颈层，排除。"
+    },
+    {
+      "ticker": "603606.SH",
+      "name": "东方电缆",
+      "layer": "L2_中游/海缆与电缆",
+      "archetype_hits": [
+        "single-source choke",
+        "sold-out capacity"
+      ],
+      "price": {
+        "ticker": "603606.SH",
+        "provider": "tushare",
+        "last": 42.04,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 23,
+        "pct_off_6mo_high": -27.5,
+        "ret_1m_pct": 4.6,
+        "ret_3m_pct": -16.3,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 57.98,
+        "low_6mo": 37.32,
+        "cur_div_high_pct": 72.5
+      },
+      "valuation": {
+        "forward_pe": 54.61,
+        "trailing_pe": 25.458,
+        "peg": 0.79,
+        "eps_growth": 32.2647,
+        "rev_growth": 34.2783,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】海上风电核准与招标进度低于预期、海缆价格战、原材料铜价波动。 【多头逻辑】海上风电高压电缆龙头，国内海缆三寡头之一；海风深远化带动高压海缆价值量提升；股价处于近6月低位，trailing PE 25x。",
+      "risk": "海上风电核准与招标进度低于预期、海缆价格战、原材料铜价波动。",
+      "invalidation": "2026年海缆新签订单同比大幅下滑或毛利率跌破25%。",
+      "catalyst": "海风项目核准/广东/江苏海风竞配结果",
+      "target_range": "52-58元（6月高点57.98元附近）[price.py]",
+      "time_frame": "6-12个月",
+      "notes": "瓶颈逻辑强，但下游海风开工节奏是主要变量。"
+    },
+    {
+      "ticker": "600487.SH",
+      "name": "亨通光电",
+      "layer": "L2_中游/海缆与电缆",
+      "archetype_hits": [
+        "single-source choke"
+      ],
+      "price": {
+        "ticker": "600487.SH",
+        "provider": "tushare",
+        "last": 84.6,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 60,
+        "pct_off_6mo_high": -32.2,
+        "ret_1m_pct": -11.8,
+        "ret_3m_pct": 58.8,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 124.85,
+        "low_6mo": 23.72,
+        "cur_div_high_pct": 67.8
+      },
+      "valuation": {
+        "forward_pe": 94.12,
+        "trailing_pe": 64.6226,
+        "peg": 0.66,
+        "eps_growth": 98.5268,
+        "rev_growth": 34.0867,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】光通信需求波动、海缆毛利率承压。 【多头逻辑】海缆+光通信双主业，海缆有一定份额，但当前trailing PE 64.6x/forward 94x，估值高于同业；光纤业务占比较大。",
+      "risk": "光通信需求波动、海缆毛利率承压。",
+      "invalidation": "N/A",
+      "catalyst": "N/A",
+      "target_range": "估值回归后重估",
+      "time_frame": "N/A",
+      "notes": "非首选海缆标的，估值偏贵。"
+    },
+    {
+      "ticker": "600522.SH",
+      "name": "中天科技",
+      "layer": "L2_中游/海缆与电缆",
+      "archetype_hits": [
+        "single-source choke"
+      ],
+      "price": {
+        "ticker": "600522.SH",
+        "provider": "tushare",
+        "last": 48.03,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 60,
+        "pct_off_6mo_high": -29.5,
+        "ret_1m_pct": 4.3,
+        "ret_3m_pct": 63.8,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 68.1,
+        "low_6mo": 17.74,
+        "cur_div_high_pct": 70.5
+      },
+      "valuation": {
+        "forward_pe": 52.04,
+        "trailing_pe": 51.3283,
+        "peg": 1.11,
+        "eps_growth": 46.4204,
+        "rev_growth": 34.7112,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】股价已提前反映海风预期、估值透支。 【多头逻辑】海缆与电力电缆龙头，近3个月涨34%进入early-uptrend，订单景气；但trailing/forward PE均在50x以上，已脱离便宜区间。",
+      "risk": "股价已提前反映海风预期、估值透支。",
+      "invalidation": "股价跌破SMA50且海风订单增速放缓。",
+      "catalyst": "海风集中开工/海外海缆订单",
+      "target_range": "55-60元（6月高点附近）[推断]",
+      "time_frame": "3-6个月",
+      "notes": "趋势已起，但非“冷门前机构”，等回调再评估。"
+    },
+    {
+      "ticker": "603290.SH",
+      "name": "斯达半导",
+      "layer": "L3_中游/功率半导体(IGBT/SiC)",
+      "archetype_hits": [
+        "BOM-ubiquitous",
+        "single-source choke"
+      ],
+      "price": {
+        "ticker": "603290.SH",
+        "provider": "tushare",
+        "last": 126.71,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 50,
+        "pct_off_6mo_high": -20.7,
+        "ret_1m_pct": 12.4,
+        "ret_3m_pct": 30.9,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 159.69,
+        "low_6mo": 93.87,
+        "cur_div_high_pct": 79.3
+      },
+      "valuation": {
+        "forward_pe": 37.07,
+        "trailing_pe": 92.4673,
+        "peg": null,
+        "eps_growth": -74.3244,
+        "rev_growth": -5.996,
+        "src": "tushare"
+      },
+      "rating": "🟢 candidate",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】新能源车销量波动、SiC替代IGBT节奏快于预期、行业价格竞争。 【多头逻辑】国内IGBT模块龙头，新能源车/光伏/风电/电网变流器BOM普适；海外英飞凌供应受限背景下国产替代加速；当前forward PE 37x显著低于trailing 92x，反映业绩拐点；股价为early-uptrend但3个月涨幅30%尚未过热。",
+      "risk": "新能源车销量波动、SiC替代IGBT节奏快于预期、行业价格竞争。",
+      "invalidation": "连续两个季度营收环比下滑或SiC模块验证进度落后国际龙头12个月以上。",
+      "catalyst": "新能源车/光伏逆变器订单放量/SiC模块客户导入",
+      "target_range": "155-175元（突破6月高点159.69元后看前高平台）[推断]",
+      "time_frame": "6-12个月",
+      "notes": "功率半导体是电网友好型能源转型的核心瓶颈，估值与业绩拐点匹配。"
+    },
+    {
+      "ticker": "600460.SH",
+      "name": "士兰微",
+      "layer": "L3_中游/功率半导体(IGBT/SiC)",
+      "archetype_hits": [
+        "valuation arbitrage"
+      ],
+      "price": {
+        "ticker": "600460.SH",
+        "provider": "tushare",
+        "last": 46.62,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 68,
+        "pct_off_6mo_high": -18.4,
+        "ret_1m_pct": 37.3,
+        "ret_3m_pct": 85.1,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 57.1,
+        "low_6mo": 24.7,
+        "cur_div_high_pct": 81.6
+      },
+      "valuation": {
+        "forward_pe": 213.85,
+        "trailing_pe": 169.083,
+        "peg": 4.17,
+        "eps_growth": 40.5689,
+        "rev_growth": 17.3123,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】IDM资本开支大、盈利拐点未现、估值泡沫。 【多头逻辑】IDM模式功率半导体，IGBT/SiC布局较全；但当前PE 169x/forward 213x，盈利仍在低位，估值不便宜。",
+      "risk": "IDM资本开支大、盈利拐点未现、估值泡沫。",
+      "invalidation": "2026年扣非净利润未转正或毛利率低于20%。",
+      "catalyst": "12英寸产线投产/SiC器件放量",
+      "target_range": "待盈利修复后重估",
+      "time_frame": "6个月",
+      "notes": "瓶颈逻辑成立，但需等待盈利与估值匹配。"
+    },
+    {
+      "ticker": "688187.SH",
+      "name": "时代电气",
+      "layer": "L3_中游/功率半导体(IGBT/SiC)",
+      "archetype_hits": [
+        "giant-dependent",
+        "BOM-ubiquitous"
+      ],
+      "price": {
+        "ticker": "688187.SH",
+        "provider": "tushare",
+        "last": 57.04,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 44,
+        "pct_off_6mo_high": -17.7,
+        "ret_1m_pct": 3.0,
+        "ret_3m_pct": 12.2,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 69.27,
+        "low_6mo": 47.51,
+        "cur_div_high_pct": 82.3
+      },
+      "valuation": {
+        "forward_pe": 51.02,
+        "trailing_pe": 18.7102,
+        "peg": 9.78,
+        "eps_growth": 1.9132,
+        "rev_growth": 12.4545,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】轨交投资周期性、功率器件价格竞争。 【多头逻辑】轨交牵引变流器+IGBT/SiC器件，国内IGBT重要玩家；trailing PE 18.7x但forward 51x，3个月涨34%脱离低位，且轨交业务占比较高。",
+      "risk": "轨交投资周期性、功率器件价格竞争。",
+      "invalidation": "轨交订单下滑且功率器件收入占比未提升。",
+      "catalyst": "新能源车用IGBT放量/轨交复苏",
+      "target_range": "65-72元[推断]",
+      "time_frame": "6个月",
+      "notes": "质地稳健但不够“冷”，等待估值回落。"
+    },
+    {
+      "ticker": "688234.SH",
+      "name": "天岳先进",
+      "layer": "L3_上游/碳化硅衬底",
+      "archetype_hits": [
+        "materials/substrate monopoly",
+        "single-source choke",
+        "giant-dependent"
+      ],
+      "price": {
+        "ticker": "688234.SH",
+        "provider": "tushare",
+        "last": 141.41,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 59,
+        "pct_off_6mo_high": -25.1,
+        "ret_1m_pct": 8.0,
+        "ret_3m_pct": 65.3,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 188.88,
+        "low_6mo": 71.8,
+        "cur_div_high_pct": 74.9
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": -810.3594,
+        "rev_growth": -10.4069,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】盈利兑现慢于预期、8英寸客户验证进度、Wolfspeed重组后海外竞争。 【多头逻辑】SiC导电型衬底全球市占率27.6%，8英寸导电衬底全球市占51.3%[cinn.cn](https://www.cinn.cn/yc/2026/06-26/gD7OGGaD.html)，是能源转型功率半导体的最上游瓶颈；但当前无PE、未盈利，3个月涨65%，cheap+de-risked闸门未过。",
+      "risk": "盈利兑现慢于预期、8英寸客户验证进度、Wolfspeed重组后海外竞争。",
+      "invalidation": "连续两个季度营收环比下滑或毛利率未转正。",
+      "catalyst": "8英寸衬底大客户订单/季度营收加速",
+      "target_range": "110-130元（回调支撑位/前高）[推断]",
+      "time_frame": "6-12个月",
+      "notes": "最上游瓶颈，但当前价格已反映部分乐观预期，等回调或盈利信号。"
+    },
+    {
+      "ticker": "600703.SH",
+      "name": "三安光电",
+      "layer": "L3_中游/碳化硅器件与外延",
+      "archetype_hits": [
+        "single-source choke",
+        "giant-dependent"
+      ],
+      "price": {
+        "ticker": "600703.SH",
+        "provider": "tushare",
+        "last": 17.35,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 51,
+        "pct_off_6mo_high": -25.2,
+        "ret_1m_pct": 2.6,
+        "ret_3m_pct": 52.2,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 23.18,
+        "low_6mo": 11.33,
+        "cur_div_high_pct": 74.8
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": -68.1511,
+        "rev_growth": -32.5857,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】LED业务持续失血、SiC器件良率与价格竞争。 【多头逻辑】SiC外延/器件+LED双主业，与ST共建8英寸SiC合资厂；LED业务拖累盈利，当前亏损，无PE。",
+      "risk": "LED业务持续失血、SiC器件良率与价格竞争。",
+      "invalidation": "SiC业务收入增速低于30%或LED继续大幅亏损。",
+      "catalyst": "SiC MOSFET量产/合资公司爬坡",
+      "target_range": "待盈利转正后重估",
+      "time_frame": "6-12个月",
+      "notes": "SiC瓶颈参与者，但业绩与估值均不清晰。"
+    },
+    {
+      "ticker": "002709.SZ",
+      "name": "天赐材料",
+      "layer": "L4_中游/电解液",
+      "archetype_hits": [
+        "materials/substrate monopoly",
+        "sold-out capacity"
+      ],
+      "price": {
+        "ticker": "002709.SZ",
+        "provider": "tushare",
+        "last": 49.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 40,
+        "pct_off_6mo_high": -24.6,
+        "ret_1m_pct": 0.8,
+        "ret_3m_pct": 10.0,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 64.98,
+        "low_6mo": 38.49,
+        "cur_div_high_pct": 75.4
+      },
+      "valuation": {
+        "forward_pe": 73.99,
+        "trailing_pe": 34.8447,
+        "peg": 0.03,
+        "eps_growth": 1005.751,
+        "rev_growth": 91.2908,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】电解液价格战、六氟磷酸锂价格下行。 【多头逻辑】电解液龙头，但电解液环节产能严重过剩、价格低迷，且机构覆盖充分，非瓶颈。",
+      "risk": "电解液价格战、六氟磷酸锂价格下行。",
+      "invalidation": "N/A",
+      "catalyst": "N/A",
+      "target_range": "N/A",
+      "time_frame": "N/A",
+      "notes": "中游材料供给过剩，排除。"
+    },
+    {
+      "ticker": "300037.SZ",
+      "name": "新宙邦",
+      "layer": "L4_中游/电解液",
+      "archetype_hits": [
+        "valuation arbitrage"
+      ],
+      "price": {
+        "ticker": "300037.SZ",
+        "provider": "tushare",
+        "last": 85.13,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 78,
+        "pct_off_6mo_high": -11.4,
+        "ret_1m_pct": 12.0,
+        "ret_3m_pct": 54.4,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 96.08,
+        "low_6mo": 47.31,
+        "cur_div_high_pct": 88.6
+      },
+      "valuation": {
+        "forward_pe": 133.7,
+        "trailing_pe": 47.6132,
+        "peg": 0.44,
+        "eps_growth": 109.0212,
+        "rev_growth": 67.8549,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】电解液价格下行、海外客户拓展不及预期。 【多头逻辑】电解液二线龙头，氟化工添加剂有差异化，但整体电解液产能过剩，估值不便宜。",
+      "risk": "电解液价格下行、海外客户拓展不及预期。",
+      "invalidation": "N/A",
+      "catalyst": "N/A",
+      "target_range": "N/A",
+      "time_frame": "N/A",
+      "notes": "排除。"
+    },
+    {
+      "ticker": "002812.SZ",
+      "name": "恩捷股份",
+      "layer": "L4_中游/隔膜",
+      "archetype_hits": [
+        "materials/substrate monopoly",
+        "sold-out capacity"
+      ],
+      "price": {
+        "ticker": "002812.SZ",
+        "provider": "tushare",
+        "last": 65.0,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 43,
+        "pct_off_6mo_high": -25.9,
+        "ret_1m_pct": 2.7,
+        "ret_3m_pct": -1.4,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 87.71,
+        "low_6mo": 47.84,
+        "cur_div_high_pct": 74.1
+      },
+      "valuation": {
+        "forward_pe": 466.72,
+        "trailing_pe": 169.3913,
+        "peg": 0.19,
+        "eps_growth": 901.7037,
+        "rev_growth": 43.2109,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】隔膜价格下行、固态电池远期替代、高估值失真。 【多头逻辑】湿法隔膜全球龙头，技术壁垒高，是真瓶颈环节；但当前PE 169x/forward 466x因盈利低基数失真，行业产能过剩阴影未散。",
+      "risk": "隔膜价格下行、固态电池远期替代、高估值失真。",
+      "invalidation": "2026年隔膜出货量增速低于20%或单价继续下跌。",
+      "catalyst": "海外大客户订单/涂覆隔膜占比提升",
+      "target_range": "75-90元[推断]",
+      "time_frame": "6个月",
+      "notes": "龙头地位稳固，但需盈利修复确认。"
+    },
+    {
+      "ticker": "300568.SZ",
+      "name": "星源材质",
+      "layer": "L4_中游/隔膜",
+      "archetype_hits": [
+        "valuation arbitrage"
+      ],
+      "price": {
+        "ticker": "300568.SZ",
+        "provider": "tushare",
+        "last": 20.13,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 83,
+        "pct_off_6mo_high": -6.6,
+        "ret_1m_pct": 29.9,
+        "ret_3m_pct": 40.1,
+        "above_sma50": true,
+        "stage": "early-uptrend (reasonable Mode-A entry: theme igniting, not yet overextended)",
+        "high_6mo": 21.56,
+        "low_6mo": 13.14,
+        "cur_div_high_pct": 93.4
+      },
+      "valuation": {
+        "forward_pe": 885.27,
+        "trailing_pe": 1589.7509,
+        "peg": null,
+        "eps_growth": -37.3263,
+        "rev_growth": 21.5312,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】盈利波动大、海外产能爬坡不及预期。 【多头逻辑】隔膜二线厂商，海外产能扩张积极，但当前PE因微利失真（1589x），且股价近3个月涨约21%脱离低位。",
+      "risk": "盈利波动大、海外产能爬坡不及预期。",
+      "invalidation": "N/A",
+      "catalyst": "N/A",
+      "target_range": "N/A",
+      "time_frame": "N/A",
+      "notes": "估值失真，暂不纳入。"
+    },
+    {
+      "ticker": "300073.SZ",
+      "name": "当升科技",
+      "layer": "L4_中游/正极材料",
+      "archetype_hits": [
+        "single-source choke",
+        "sold-out capacity"
+      ],
+      "price": {
+        "ticker": "300073.SZ",
+        "provider": "tushare",
+        "last": 46.77,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 10,
+        "pct_off_6mo_high": -28.8,
+        "ret_1m_pct": -9.0,
+        "ret_3m_pct": -9.4,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 65.68,
+        "low_6mo": 44.69,
+        "cur_div_high_pct": 71.2
+      },
+      "valuation": {
+        "forward_pe": 40.73,
+        "trailing_pe": 31.8788,
+        "peg": 0.21,
+        "eps_growth": 150.2501,
+        "rev_growth": 137.1907,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】正极加工费下行、海外客户订单波动。 【多头逻辑】三元正极龙头，海外大客户占比高，但正极环节产能普遍过剩、加工费承压；trailing PE 31.9x，forward 40.7x，不便宜。",
+      "risk": "正极加工费下行、海外客户订单波动。",
+      "invalidation": "正极单吨净利继续下滑或海外收入占比下降。",
+      "catalyst": "高镍/固态正极放量",
+      "target_range": "55-65元[推断]",
+      "time_frame": "6个月",
+      "notes": "材料环节非当前瓶颈，观望。"
+    },
+    {
+      "ticker": "688005.SH",
+      "name": "容百科技",
+      "layer": "L4_中游/正极材料",
+      "archetype_hits": [
+        "valuation arbitrage"
+      ],
+      "price": {
+        "ticker": "688005.SH",
+        "provider": "tushare",
+        "last": 27.18,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 2,
+        "pct_off_6mo_high": -33.4,
+        "ret_1m_pct": -16.3,
+        "ret_3m_pct": -2.1,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 40.8,
+        "low_6mo": 26.88,
+        "cur_div_high_pct": 66.6
+      },
+      "valuation": {
+        "forward_pe": null,
+        "trailing_pe": null,
+        "peg": null,
+        "eps_growth": 175.1848,
+        "rev_growth": 27.5825,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】亏损持续、客户集中度。 【多头逻辑】高镍三元正极，当前无有效PE/盈利数据，正极环节产能过剩。",
+      "risk": "亏损持续、客户集中度。",
+      "invalidation": "N/A",
+      "catalyst": "N/A",
+      "target_range": "N/A",
+      "time_frame": "N/A",
+      "notes": "排除。"
+    },
+    {
+      "ticker": "603659.SH",
+      "name": "璞泰来",
+      "layer": "L4_中游/负极/隔膜涂覆/设备",
+      "archetype_hits": [
+        "single-source choke",
+        "valuation arbitrage"
+      ],
+      "price": {
+        "ticker": "603659.SH",
+        "provider": "tushare",
+        "last": 27.04,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 15,
+        "pct_off_6mo_high": -28.2,
+        "ret_1m_pct": -2.1,
+        "ret_3m_pct": -12.8,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 37.66,
+        "low_6mo": 25.19,
+        "cur_div_high_pct": 71.8
+      },
+      "valuation": {
+        "forward_pe": 24.67,
+        "trailing_pe": 22.5123,
+        "peg": 0.51,
+        "eps_growth": 44.3678,
+        "rev_growth": 35.3249,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】负极价格下行、隔膜基膜亏损、设备订单波动。 【多头逻辑】负极+隔膜涂覆+锂电设备一体化，trailing PE 22.5x/forward 24.7x，股价处于近6月低位；负极与基膜产能过剩，但涂覆隔膜与设备具备差异化。",
+      "risk": "负极价格下行、隔膜基膜亏损、设备订单波动。",
+      "invalidation": "涂覆隔膜收入增速低于10%或负极毛利率跌破15%。",
+      "catalyst": "海外负极基地投产/涂覆隔膜订单放量",
+      "target_range": "33-38元[推断]",
+      "time_frame": "6-12个月",
+      "notes": "估值低，但瓶颈逻辑弱于电网设备与SiC衬底，等待盈利结构改善。"
+    },
+    {
+      "ticker": "600884.SH",
+      "name": "杉杉股份",
+      "layer": "L4_中游/负极材料",
+      "archetype_hits": [
+        "valuation arbitrage"
+      ],
+      "price": {
+        "ticker": "600884.SH",
+        "provider": "tushare",
+        "last": 13.14,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 9,
+        "pct_off_6mo_high": -27.3,
+        "ret_1m_pct": -4.0,
+        "ret_3m_pct": 0.0,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 18.07,
+        "low_6mo": 12.66,
+        "cur_div_high_pct": 72.7
+      },
+      "valuation": {
+        "forward_pe": 59.11,
+        "trailing_pe": 39.1062,
+        "peg": 0.04,
+        "eps_growth": 898.8522,
+        "rev_growth": 11.9853,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】负极价格下行、治理风险。 【多头逻辑】负极材料龙头，但负极行业产能过剩、价格战持续，公司同时面临诉讼与股权质押风险。",
+      "risk": "负极价格下行、治理风险。",
+      "invalidation": "N/A",
+      "catalyst": "N/A",
+      "target_range": "N/A",
+      "time_frame": "N/A",
+      "notes": "排除。"
+    },
+    {
+      "ticker": "002340.SZ",
+      "name": "格林美",
+      "layer": "L4_中游/前驱体与回收",
+      "archetype_hits": [
+        "valuation arbitrage",
+        "macro dislocation"
+      ],
+      "price": {
+        "ticker": "002340.SZ",
+        "provider": "tushare",
+        "last": 6.89,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 14,
+        "pct_off_6mo_high": -32.3,
+        "ret_1m_pct": -4.3,
+        "ret_3m_pct": -11.6,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 10.18,
+        "low_6mo": 6.35,
+        "cur_div_high_pct": 67.7
+      },
+      "valuation": {
+        "forward_pe": 22.23,
+        "trailing_pe": 22.0894,
+        "peg": 10.12,
+        "eps_growth": 2.1838,
+        "rev_growth": 5.1151,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": true,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】金属价格下行、回收产能扩张过快、前驱体价格战。 【多头逻辑】电池回收+前驱体一体化，trailing PE 22x/forward 22x，股价处于低位；回收业务受金属价格影响大，当前并非硬瓶颈。",
+      "risk": "金属价格下行、回收产能扩张过快、前驱体价格战。",
+      "invalidation": "回收业务毛利率跌破10%或镍钴价格持续下跌。",
+      "catalyst": "电池回收政策/海外前驱体订单",
+      "target_range": "8.5-9.5元[推断]",
+      "time_frame": "6个月",
+      "notes": "便宜但瓶颈属性弱，作为周期修复备选。"
+    },
+    {
+      "ticker": "300919.SZ",
+      "name": "中伟股份",
+      "layer": "L4_中游/前驱体",
+      "archetype_hits": [
+        "valuation arbitrage"
+      ],
+      "price": {
+        "ticker": "300919.SZ",
+        "provider": "tushare",
+        "last": 41.97,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 3,
+        "pct_off_6mo_high": -36.1,
+        "ret_1m_pct": -12.9,
+        "ret_3m_pct": -11.7,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 65.63,
+        "low_6mo": 41.32,
+        "cur_div_high_pct": 63.9
+      },
+      "valuation": {
+        "forward_pe": 78.28,
+        "trailing_pe": 24.1523,
+        "peg": 0.3,
+        "eps_growth": 80.5445,
+        "rev_growth": 46.0037,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": false,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】加工费下行、客户集中。 【多头逻辑】三元前驱体龙头，客户以海外电池厂为主，但前驱体加工费承压，forward PE 78x不便宜。",
+      "risk": "加工费下行、客户集中。",
+      "invalidation": "N/A",
+      "catalyst": "N/A",
+      "target_range": "N/A",
+      "time_frame": "N/A",
+      "notes": "排除。"
+    },
+    {
+      "ticker": "002466.SZ",
+      "name": "天齐锂业",
+      "layer": "L5_上游/锂资源",
+      "archetype_hits": [
+        "materials/substrate monopoly",
+        "macro dislocation"
+      ],
+      "price": {
+        "ticker": "002466.SZ",
+        "provider": "tushare",
+        "last": 58.91,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 32,
+        "pct_off_6mo_high": -28.6,
+        "ret_1m_pct": -0.3,
+        "ret_3m_pct": 4.9,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 82.49,
+        "low_6mo": 47.66,
+        "cur_div_high_pct": 71.4
+      },
+      "valuation": {
+        "forward_pe": 54.55,
+        "trailing_pe": 45.1695,
+        "peg": 0.03,
+        "eps_growth": 1699.1224,
+        "rev_growth": 98.4383,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】锂价再次跌破现金成本、海外矿山政治风险。 【多头逻辑】全球优质锂辉石矿资源，锂价周期底部盈利修复空间大；但市值大、机构覆盖充分，trailing PE 45x/forward 54x并不便宜。",
+      "risk": "锂价再次跌破现金成本、海外矿山政治风险。",
+      "invalidation": "碳酸锂价格跌破7万元/吨并持续两个季度。",
+      "catalyst": "碳酸锂价格突破18万元/吨/供给侧减产扩大",
+      "target_range": "75-90元[推断]",
+      "time_frame": "6-12个月",
+      "notes": "周期修复弹性品种，但非“前机构”。"
+    },
+    {
+      "ticker": "002460.SZ",
+      "name": "赣锋锂业",
+      "layer": "L5_上游/锂资源",
+      "archetype_hits": [
+        "materials/substrate monopoly",
+        "macro dislocation"
+      ],
+      "price": {
+        "ticker": "002460.SZ",
+        "provider": "tushare",
+        "last": 62.83,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 6,
+        "pct_off_6mo_high": -31.5,
+        "ret_1m_pct": -4.3,
+        "ret_3m_pct": -21.4,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 91.67,
+        "low_6mo": 60.99,
+        "cur_div_high_pct": 68.5
+      },
+      "valuation": {
+        "forward_pe": 71.21,
+        "trailing_pe": 34.6118,
+        "peg": 0.06,
+        "eps_growth": 616.3357,
+        "rev_growth": 143.8135,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": false,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】锂价低迷、海外项目延期、财务费用。 【多头逻辑】全球最大锂生态企业，资源+冶炼+回收一体化；当前PE 34.6x/forward 71x，股价 downtrend，锂价底部未明确。",
+      "risk": "锂价低迷、海外项目延期、财务费用。",
+      "invalidation": "锂价跌破7万元/吨持续两个季度或海外锂矿投产不及预期。",
+      "catalyst": "锂价反弹/固态电池锂需求提升",
+      "target_range": "80-95元[推断]",
+      "time_frame": "6-12个月",
+      "notes": "周期底部观察。"
+    },
+    {
+      "ticker": "000792.SZ",
+      "name": "盐湖股份",
+      "layer": "L5_上游/锂资源",
+      "archetype_hits": [
+        "materials/substrate monopoly",
+        "macro dislocation"
+      ],
+      "price": {
+        "ticker": "000792.SZ",
+        "provider": "tushare",
+        "last": 29.25,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 14,
+        "pct_off_6mo_high": -29.7,
+        "ret_1m_pct": -0.7,
+        "ret_3m_pct": -20.3,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 41.6,
+        "low_6mo": 27.3,
+        "cur_div_high_pct": 70.3
+      },
+      "valuation": {
+        "forward_pe": 25.17,
+        "trailing_pe": 15.0062,
+        "peg": 0.1,
+        "eps_growth": 154.784,
+        "rev_growth": 94.892,
+        "src": "tushare"
+      },
+      "rating": "🟢 candidate",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】锂价长期低迷、盐湖扩产提速、钾肥价格波动。 【多头逻辑】国内盐湖提锂龙头，现金成本行业最低；碳酸锂价格约16万元/吨[10jqka](http://field.10jqka.com.cn/20260608/c677274967.shtml)处于周期底部区间，澳矿已减产支撑价格[sina](https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/807265320280/index.phtml)；当前PE 15x/forward 25x，股价 downtrend，是去风险后的上游资源押注。",
+      "risk": "锂价长期低迷、盐湖扩产提速、钾肥价格波动。",
+      "invalidation": "碳酸锂价格跌破7万元/吨并持续两个季度。",
+      "catalyst": "锂价反弹/青海盐湖供给扰动/新能源车旺季",
+      "target_range": "38-45元[推断]",
+      "time_frame": "6-12个月",
+      "notes": "上游资源+低成本+估值低位，是锂周期反弹的优质敞口。"
+    },
+    {
+      "ticker": "603993.SH",
+      "name": "洛阳钼业",
+      "layer": "L5_上游/铜钴镍",
+      "archetype_hits": [
+        "materials/substrate monopoly",
+        "giant-dependent"
+      ],
+      "price": {
+        "ticker": "603993.SH",
+        "provider": "tushare",
+        "last": 18.31,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 18,
+        "pct_off_6mo_high": -35.5,
+        "ret_1m_pct": 0.7,
+        "ret_3m_pct": 4.9,
+        "above_sma50": false,
+        "stage": "range/neutral",
+        "high_6mo": 28.37,
+        "low_6mo": 16.09,
+        "cur_div_high_pct": 64.5
+      },
+      "valuation": {
+        "forward_pe": 19.2,
+        "trailing_pe": 16.2188,
+        "peg": 0.17,
+        "eps_growth": 96.655,
+        "rev_growth": 44.3362,
+        "src": "tushare"
+      },
+      "rating": "🟡 watch",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": false,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】铜价波动、刚果（金）政治风险、钴价低迷。 【多头逻辑】全球铜钴巨头，钴/铜是能源转型关键金属；PE 16x/forward 19x，估值合理，但铜价与铜业务占主导，能源转型纯度一般。",
+      "risk": "铜价波动、刚果（金）政治风险、钴价低迷。",
+      "invalidation": "铜价跌破7500美元/吨或刚果金出口受限。",
+      "catalyst": "铜价上行/钴需求改善",
+      "target_range": "22-25元[推断]",
+      "time_frame": "6-12个月",
+      "notes": "资源禀赋强，但更像铜矿股，观察铜钴共振。"
+    },
+    {
+      "ticker": "603799.SH",
+      "name": "华友钴业",
+      "layer": "L5_上游/钴镍铜+前驱体",
+      "archetype_hits": [
+        "materials/substrate monopoly",
+        "giant-dependent"
+      ],
+      "price": {
+        "ticker": "603799.SH",
+        "provider": "tushare",
+        "last": 46.91,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 4,
+        "pct_off_6mo_high": -42.4,
+        "ret_1m_pct": -6.1,
+        "ret_3m_pct": -19.8,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 81.47,
+        "low_6mo": 45.56,
+        "cur_div_high_pct": 57.6
+      },
+      "valuation": {
+        "forward_pe": 14.44,
+        "trailing_pe": 12.076,
+        "peg": 0.12,
+        "eps_growth": 99.4457,
+        "rev_growth": 44.6238,
+        "src": "tushare"
+      },
+      "rating": "🟢 candidate",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】钴镍价格低迷、前驱体加工费下行、海外项目投产风险。 【多头逻辑】全球钴镍铜资源+正极材料一体化，绑定CATL/LG等巨头；当前trailing PE 12x/forward 14x，股价处于近6月低位，是材料与资源双杀的极致折价。",
+      "risk": "钴镍价格低迷、前驱体加工费下行、海外项目投产风险。",
+      "invalidation": "钴镍价格继续下跌且前驱体毛利率跌破8%。",
+      "catalyst": "镍/钴价格触底反弹/前驱体海外订单放量",
+      "target_range": "58-68元[推断]",
+      "time_frame": "6-12个月",
+      "notes": "估值触底+上游资源属性+巨头绑定，具备不对称修复空间。"
+    },
+    {
+      "ticker": "002756.SZ",
+      "name": "永兴材料",
+      "layer": "L5_上游/锂资源",
+      "archetype_hits": [
+        "materials/substrate monopoly",
+        "valuation arbitrage"
+      ],
+      "price": {
+        "ticker": "002756.SZ",
+        "provider": "tushare",
+        "last": 57.98,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 29,
+        "pct_off_6mo_high": -35.1,
+        "ret_1m_pct": -1.6,
+        "ret_3m_pct": -21.0,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 89.33,
+        "low_6mo": 45.41,
+        "cur_div_high_pct": 64.9
+      },
+      "valuation": {
+        "forward_pe": 27.66,
+        "trailing_pe": 32.5904,
+        "peg": 0.21,
+        "eps_growth": 155.4822,
+        "rev_growth": 35.8164,
+        "src": "tushare"
+      },
+      "rating": "🟢 candidate",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": true
+      },
+      "thesis": "【风险/杀点】锂价低迷、云母矿品位下降、特钢业务拖累。 【多头逻辑】云母提锂+特钢双主业，锂业务成本低于行业平均；当前PE 32.6x/forward 27.7x，股价 downtrend，市值小于天齐/赣锋，是更“冷”的锂上游标的。",
+      "risk": "锂价低迷、云母矿品位下降、特钢业务拖累。",
+      "invalidation": "碳酸锂价格跌破7万元/吨并持续两个季度或锂业务毛利率跌破20%。",
+      "catalyst": "锂价反弹/公司锂盐产能释放",
+      "target_range": "75-88元[推断]",
+      "time_frame": "6-12个月",
+      "notes": "上游小盘锂资源，周期底部具备弹性，且估值相对克制。"
+    },
+    {
+      "ticker": "002738.SZ",
+      "name": "中矿资源",
+      "layer": "L5_上游/锂资源",
+      "archetype_hits": [
+        "valuation arbitrage",
+        "macro dislocation"
+      ],
+      "price": {
+        "ticker": "002738.SZ",
+        "provider": "tushare",
+        "last": 63.47,
+        "last_date": "2026-07-06",
+        "range_pos_6mo_pct": 25,
+        "pct_off_6mo_high": -36.6,
+        "ret_1m_pct": 8.7,
+        "ret_3m_pct": -13.2,
+        "above_sma50": false,
+        "stage": "downtrend/basing (only Mode B 'buy the dip' if catalyst is non-material)",
+        "high_6mo": 100.09,
+        "low_6mo": 51.45,
+        "cur_div_high_pct": 63.4
+      },
+      "valuation": {
+        "forward_pe": 87.22,
+        "trailing_pe": 55.136,
+        "peg": 0.2,
+        "eps_growth": 276.679,
+        "rev_growth": -10.4411,
+        "src": "tushare"
+      },
+      "rating": "🔴 pass",
+      "gates": {
+        "true_bottleneck": true,
+        "pre_institutional": true,
+        "cheap_de_risked": false
+      },
+      "thesis": "【风险/杀点】高估值、矿山爬坡、锂价波动。 【多头逻辑】锂矿新秀，非洲矿山放量中，但PE 55x/forward 87x，估值远高于同业，且下游锂价仍在筑底。",
+      "risk": "高估值、矿山爬坡、锂价波动。",
+      "invalidation": "N/A",
+      "catalyst": "N/A",
+      "target_range": "N/A",
+      "time_frame": "N/A",
+      "notes": "排除，等待估值合理化。"
+    }
+  ]
+}
