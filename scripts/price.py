@@ -3,14 +3,17 @@
 Provider-agnostic price/momentum helper for the Serenity bottleneck-hunter skill.
 
 按优先级回退抓历史价,**严禁靠网页猜价格**——SKILL Step 6 的 stage 判定必须基于真实数据:
-  1) EODHD            (若环境变量 EODHD_API_KEY 已设;**全球覆盖最广,海外股优先**)
-  2) yfinance         (无需 key,**美股覆盖好,海外股常有 gap**)
-  3) 失败 → 报错退出 (do NOT silently guess)
+  1) Tushare         (A 股优先;默认前复权 qfq;需 TUSHARE_TOKEN;可用 TUSHARE_ADJ=raw 切未复权)
+  2) EODHD            (若环境变量 EODHD_API_KEY 已设;**全球覆盖最广,海外股优先**)
+  3) yfinance         (无需 key,**美股覆盖好,海外股常有 gap**)
+  4) 失败 → 报错退出 (do NOT silently guess)
 
 返回每只票的 JSON:last、6 月区间位置、距高点、1/3 月动量、stage 标签。
 
 CLI:
-    python scripts/price.py AEHR NVTS VICR IPWR POWI            # 默认走 yfinance(无 EODHD key)
+    python scripts/price.py AEHR NVTS VICR IPWR POWI            # 默认走 yfinance(无 EODHD/Tushare key)
+    TUSHARE_TOKEN=xxx python scripts/price.py 000001.SZ         # A 股优先 Tushare(默认前复权)
+    TUSHARE_ADJ=raw TUSHARE_TOKEN=xxx python scripts/price.py 000001.SZ  # 未复权
     EODHD_API_KEY=xxx python scripts/price.py XFAB.STU AEHR     # 海外股请用 EODHD
 
 可作为模块导入:
@@ -19,6 +22,94 @@ CLI:
 import json, os, sys, urllib.request, datetime
 
 EODHD_KEY = os.environ.get("EODHD_API_KEY", "").strip()
+TUSHARE_TOKEN = os.environ.get("TUSHARE_TOKEN", "").strip()
+TUSHARE_ADJ = os.environ.get("TUSHARE_ADJ", "qfq").strip().lower()  # qfq|hfq|raw
+
+
+def _to_float(v):
+    """把 pandas/numpy/字符串标量转成 float;无效值返回 None。"""
+    if v is None:
+        return None
+    try:
+        import pandas as pd
+        if pd.isna(v):
+            return None
+    except Exception:
+        pass
+    try:
+        f = float(v)
+        return f if f == f else None  # 过滤 NaN
+    except Exception:
+        return None
+
+
+def _to_ts_code(symbol):
+    """把 skill 内部的 A 股代码映射成 Tushare 的 ts_code。"""
+    su = (symbol or "").upper().strip()
+    for old, new in ((".SS", ".SH"), (".SHG", ".SH"), (".SH", ".SH"),
+                     (".SHE", ".SZ"), (".SZ", ".SZ"), (".BJ", ".BJ")):
+        if su.endswith(old):
+            return su[:-len(old)] + new
+    # 纯数字 6 位代码,按首位推断交易所
+    if su.isdigit() and len(su) >= 6:
+        code = su[:6]
+        if code.startswith("6") or code.startswith("9") or code.startswith("688"):
+            return f"{code}.SH"
+        if code.startswith("0") or code.startswith("3"):
+            return f"{code}.SZ"
+        if code.startswith("4") or code.startswith("8"):
+            return f"{code}.BJ"
+    return None
+
+
+def _is_a_share(symbol):
+    """判断 symbol 是否为 A 股(含北交所)。"""
+    su = (symbol or "").upper()
+    return _to_ts_code(su) is not None
+
+
+def _fetch_tushare(symbol, days=400):
+    """用 Tushare 拉 A 股日线。默认前复权(qfq),可通过 TUSHARE_ADJ=raw/hfq 切换。返回 list[dict] 或 None。"""
+    if not TUSHARE_TOKEN:
+        return None
+    ts_code = _to_ts_code(symbol)
+    if not ts_code:
+        return None
+    try:
+        import tushare as ts
+        pro = ts.pro_api(TUSHARE_TOKEN)
+    except Exception:
+        return None
+    end = datetime.date.today()
+    start = end - datetime.timedelta(days=days)
+    start_str = start.strftime("%Y%m%d")
+    end_str = end.strftime("%Y%m%d")
+    try:
+        adj = TUSHARE_ADJ if TUSHARE_ADJ in ("qfq", "hfq") else None
+        if adj:
+            df = ts.pro_bar(ts_code=ts_code, start_date=start_str, end_date=end_str,
+                            freq="D", adj=adj)
+        else:
+            df = pro.daily(ts_code=ts_code, start_date=start_str, end_date=end_str)
+        if df is None or df.empty:
+            return None
+        df = df.sort_values("trade_date", ascending=True)
+        out = []
+        for _, row in df.iterrows():
+            try:
+                d = datetime.datetime.strptime(str(row["trade_date"]), "%Y%m%d").date().isoformat()
+            except Exception:
+                d = str(row["trade_date"])
+            out.append({
+                "date": d,
+                "open": _to_float(row["open"]),
+                "high": _to_float(row["high"]),
+                "low": _to_float(row["low"]),
+                "close": _to_float(row["close"])
+            })
+        return out
+    except Exception:
+        return None
 
 
 def _fetch_eodhd(symbol, days=400):
@@ -56,7 +147,11 @@ def _fetch_yf(symbol, days=400):
 
 
 def fetch_history(symbol, days=400):
-    """按 EODHD → yfinance 顺序抓;返回 (data, provider) 或 (None, None)。"""
+    """按 Tushare(A股) → EODHD → yfinance 顺序抓;返回 (data, provider) 或 (None, None)。"""
+    if _is_a_share(symbol) and TUSHARE_TOKEN:
+        data = _fetch_tushare(symbol, days)
+        if data:
+            return data, "tushare"
     if EODHD_KEY:
         data = _fetch_eodhd(symbol, days)
         if data:
@@ -71,7 +166,7 @@ def analyze(symbol, days=400):
     data, prov = fetch_history(symbol, days)
     if data is None:
         return {"ticker": symbol,
-                "error": "no data from EODHD or yfinance (海外股请设 EODHD_API_KEY,或校验代码/交易所后缀)"}
+                "error": "no data from Tushare/EODHD/yfinance (A股请设 TUSHARE_TOKEN,海外股请设 EODHD_API_KEY,或校验代码/交易所后缀)"}
     closes = [x["close"] for x in data]
     last = closes[-1]
     last_date = data[-1]["date"]
@@ -180,15 +275,81 @@ def _yf_valuation(yf_symbol, info=None):
     out["rev_growth"] = round(rg * 100, 1) if rg is not None else None
     return out
 
-_A_SUFFIX = (".SS", ".SZ", ".SHG", ".SHE", ".SH")
+def _ts_valuation(symbol, last=None):
+    """用 Tushare 拉 A 股估值/增速。返回 dict 或 None。"""
+    if not TUSHARE_TOKEN:
+        return None
+    ts_code = _to_ts_code(symbol)
+    if not ts_code:
+        return None
+    try:
+        import tushare as ts
+        pro = ts.pro_api(TUSHARE_TOKEN)
+    except Exception:
+        return None
+
+    out = {"forward_pe": None, "trailing_pe": None, "peg": None,
+           "eps_growth": None, "rev_growth": None, "src": "tushare"}
+    latest_mv = None
+
+    try:  # ① trailing PE + 总市值
+        db = pro.daily_basic(ts_code=ts_code, fields="trade_date,pe_ttm,pe,total_mv")
+        if db is not None and not db.empty:
+            db = db.sort_values("trade_date", ascending=True).iloc[-1]
+            latest_mv = _to_float(db.get("total_mv"))
+            out["trailing_pe"] = _to_float(db.get("pe_ttm")) or _to_float(db.get("pe"))
+    except Exception:
+        pass
+
+    try:  # ② 增速
+        fi = pro.fina_indicator(ts_code=ts_code,
+                                fields="end_date,netprofit_yoy,or_yoy,grossprofit_margin")
+        if fi is not None and not fi.empty:
+            fi = fi.sort_values("end_date", ascending=True).iloc[-1]
+            out["eps_growth"] = _to_float(fi.get("netprofit_yoy"))
+            out["rev_growth"] = _to_float(fi.get("or_yoy"))
+    except Exception:
+        pass
+
+    try:  # ③ forward PE:用业绩预告净利润中值 / 总市值(不用券商一致预期)
+        if latest_mv:
+            fc = pro.forecast(ts_code=ts_code,
+                              fields="end_date,net_profit_min,net_profit_max")
+            if fc is not None and not fc.empty:
+                fc = fc.sort_values("end_date", ascending=True).iloc[-1]
+                np_min = _to_float(fc.get("net_profit_min"))
+                np_max = _to_float(fc.get("net_profit_max"))
+                if np_min and np_max and np_max > 0:
+                    np_mid = (np_min + np_max) / 2.0  # 单位都是万元,可直接相除
+                    forward_pe = latest_mv / np_mid
+                    if forward_pe > 0:
+                        out["forward_pe"] = round(forward_pe, 2)
+    except Exception:
+        pass
+
+    if out["trailing_pe"] and out["eps_growth"] and out["eps_growth"] > 0:
+        out["peg"] = round(out["trailing_pe"] / out["eps_growth"], 2)
+    return out
+
+
 def valuation(symbol, info=None, last=None):
-    """多源估值:A股(.SS/.SZ/.SHG/.SHE 或 6 位数)→ akshare,缺字段 yfinance 兜底;美股/海外 → yfinance。
+    """多源估值:A股优先 Tushare,缺字段 akshare → yfinance 兜底;美股/海外 → yfinance。
     传 last(现价)供 A股算 forward。返回含 src 标来源,便于报告标注与交叉验证。"""
     su = (symbol or "").upper()
-    is_a = su.endswith(_A_SUFFIX) or (len(su) >= 6 and su[:6].isdigit())
-    if not is_a:
+    if not _is_a_share(su):
         return _yf_valuation(symbol, info)
     code = su.split(".")[0][:6]
+
+    # 1) 优先 Tushare
+    if TUSHARE_TOKEN:
+        try:
+            out = _ts_valuation(symbol, last)
+            if out and any(out.get(k) is not None for k in ("trailing_pe", "forward_pe", "eps_growth", "rev_growth")):
+                return out
+        except Exception:
+            pass
+
+    # 2) Tushare 拿不到再用 akshare
     try:
         out = _ak_valuation(code, last)
     except Exception:
@@ -209,7 +370,7 @@ if __name__ == "__main__":
     syms = sys.argv[1:]
     if not syms:
         print("usage: python scripts/price.py TICKER [TICKER ...]", file=sys.stderr)
-        print("notes: 优先 EODHD (set EODHD_API_KEY),回退 yfinance。海外股必须 EODHD。", file=sys.stderr)
+        print("notes: A股优先 Tushare (set TUSHARE_TOKEN,默认前复权 qfq;TUSHARE_ADJ=raw 切未复权),其次 EODHD,最后 yfinance。海外股必须 EODHD。", file=sys.stderr)
         sys.exit(1)
     for s in syms:
         print(json.dumps(analyze(s), ensure_ascii=False))
