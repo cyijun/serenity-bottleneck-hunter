@@ -1,8 +1,9 @@
-# Serenity Bottleneck Hunter — a Claude Skill
+# Serenity Bottleneck Hunter — a Codex & Claude Skill
 
 [![GitHub stars](https://img.shields.io/github/stars/Mrjie7205/serenity-bottleneck-hunter?style=flat&logo=github)](https://github.com/Mrjie7205/serenity-bottleneck-hunter/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Mrjie7205/serenity-bottleneck-hunter?style=flat&logo=github)](https://github.com/Mrjie7205/serenity-bottleneck-hunter/network/members)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Codex Skill](https://img.shields.io/badge/OpenAI_Codex-Skill-10a37f)](SKILL.md)
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-d97757)](SKILL.md)
 
 > Given an investment **theme**, this skill reverse-maps the supply chain to surface **overlooked upstream "bottleneck" stocks** — distilled from the *publicly shared* methodology of X/Twitter trader **Serenity (@aleabitoreddit)**.
@@ -11,7 +12,37 @@
 
 ## ⚡ 30 秒装上 / Quick start
 
-**Claude Code(推荐)**:
+### OpenAI Codex
+
+macOS / Linux:
+
+```bash
+git clone https://github.com/Mrjie7205/serenity-bottleneck-hunter.git \
+  ~/.codex/skills/serenity-bottleneck-hunter
+```
+
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/Mrjie7205/serenity-bottleneck-hunter.git `
+  "$HOME\.codex\skills\serenity-bottleneck-hunter"
+```
+
+安装后重新启动 Codex 或开启新会话，然后显式调用:
+
+```text
+使用 $serenity-bottleneck-hunter 分析「AI 数据中心电力」主题，给出候选标的和论证。
+```
+
+也可以自然语言触发:
+
+```text
+用 Serenity 瓶颈猎手方法分析「人形机器人」产业链，寻找被忽视的上游瓶颈股。
+```
+
+Codex 会从 `~/.codex/skills/serenity-bottleneck-hunter/SKILL.md` 读取工作流；仓库中的 `scripts/`、`reference/` 和 `tracking/` 会作为配套资源使用。
+
+### Claude Code
 
 ```bash
 # 克隆到个人 skills 目录,立即生效
@@ -81,8 +112,9 @@ Theme → reverse supply-chain map → apply **9 "bottleneck archetypes"** → o
 
 ## Use / 用法
 
-- **As a Claude skill**: drop this folder into your skills directory (or install the `.skill` bundle), then ask Claude e.g. *"用 Serenity 的方法分析 AI 数据中心电力 这个主题,给候选标的"*.
-- Or just point Claude at `SKILL.md`.
+- **Codex Skill**: clone this repository into `~/.codex/skills/serenity-bottleneck-hunter`, start a new session, then invoke `$serenity-bottleneck-hunter`.
+- **Claude Skill**: clone it into `~/.claude/skills/serenity-bottleneck-hunter`, then ask Claude to analyze an investment theme.
+- **Manual use**: point a compatible agent at `SKILL.md`.
 - 进阶:跨主题取交集找"被多个 capex 周期同时锁定"的标的(Serenity ⑤原型),见 `tracking/cross_theme_scan.py`。
 
 ## Structure / 结构
